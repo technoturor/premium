@@ -141,11 +141,11 @@ else
 	echo "Anda dapat meninggalkan pilihan default dan hanya tekan enter jika Anda tidak ingin memilih"
 	echo ""
 	echo "Pertama, memilih varian dari script yang ingin Anda gunakan."
-	echo "Fast(cepat) adalah aman, tetapi Slow(lambat) adalah enkripsi terbaik Anda bisa dapatkan, pada biaya kecepatan (meskipun tidak terlalu lambat)"
+	echo "Fast(cepat) adalah aman, tetapi Slow(lambat) adalah enkripsi terbaik Anda bisa dapatkan, tp sangat lama pengintalannya 5 - 10 menit"
 	echo "   1) Fast (2048 bits RSA and DH, 128 bits AES)"
 	echo "   2) Slow (4096 bits RSA and DH, 256 bits AES)"
 	while [[ $VARIANT !=  "1" && $VARIANT != "2" ]]; do
-		read -p "Variant [1-2]: " -e -i 1 VARIANT
+		read -p "Variant [1-2]: 1" -e -i 1 VARIANT
 	done
 
 	echo ""
