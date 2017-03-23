@@ -20,8 +20,8 @@ TAKE NOTE !!!"
 clear
 echo "START AUTOSCRIPT"
 clear
-echo "SET TIMEZONE KUALA LUMPUT GMT +8"
-ln -fs /usr/share/zoneinfo/Asia/Kuala_Lumpur /etc/localtime;
+echo "SET TIMEZONE JAKARTA GMT +7"
+ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime;
 clear
 echo "
 ENABLE IPV4 AND IPV6
@@ -62,17 +62,17 @@ echo "/bin/false" >> /etc/shells
 echo "/usr/sbin/nologin" >> /etc/shells
 # squid3
 apt-get -y install squid3
-wget -O /etc/squid3/squid.conf "http://vpnpowerjack.com/debian8x64/source/squid.conf"
+wget -O /etc/squid3/squid.conf "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/conf/squid3.conf"
 sed -i "s/ipserver/$myip/g" /etc/squid3/squid.conf
 # nginx
 apt-get -y install nginx php5-fpm php5-cli
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-wget -O /etc/nginx/nginx.conf "http://vpnpowerjack.com/debian8x64/source/nginx.conf"
+wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/conf/nginx.conf"
 mkdir -p /home/vps/public_html
-echo "<pre>Setup by En Jack Bin Melayu | telegram @JackDotMy | whatsapp +60176777798</pre>" > /home/vps/public_html/index.php
+echo "<pre>Setup by YusufArdiansyah | telegram : e-Server | Pin BBM : yu-suf</pre>" > /home/vps/public_html/index.php
 echo "<?php phpinfo(); ?>" > /home/vps/public_html/info.php
-wget -O /etc/nginx/conf.d/vps.conf "http://vpnpowerjack.com/debian8x64/source/vps.conf"
+wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/conf/vps.conf"
 sed -i 's/listen = \/var\/run\/php5-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php5/fpm/pool.d/www.conf
 # openvpn
 apt-get -y install openvpn
