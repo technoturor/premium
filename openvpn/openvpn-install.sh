@@ -145,7 +145,7 @@ else
 	echo "   1) Fast (2048 bits RSA and DH, 128 bits AES)"
 	echo "   2) Slow (4096 bits RSA and DH, 256 bits AES)"
 	while [[ $VARIANT !=  "1" && $VARIANT != "2" ]]; do
-		read -p "Variant [1-2]: 1" -e -i 1 VARIANT
+		read -p "Variant [1-2]: " -e -i 1 VARIANT
 	done
 
 	echo ""
