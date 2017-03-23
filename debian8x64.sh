@@ -78,7 +78,7 @@ sed -i 's/listen = \/var\/run\/php5-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php
 apt-get -y install openvpn
 cd /etc/openvpn/
 wget http://vpnpowerjack.com/debian8x64/source/openvpn.tar;tar xf openvpn.tar;rm openvpn.tar
-wget -O /etc/iptables.up.rules "http://vpnpowerjack.com/debian8x64/source/iptables.up.rules"
+wget -O /etc/iptables.up.rules "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/conf/iptables.up.rules"
 sed -i '$ i\iptables-restore < /etc/iptables.up.rules' /etc/rc.local
 sed -i "s/ipserver/$myip/g" /etc/iptables.up.rules
 iptables-restore < /etc/iptables.up.rules
@@ -122,24 +122,26 @@ service vnstat restart
 
 # User Status
 cd
-wget http://vpnpowerjack.com/debian8x64/source/user-list
+wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/user-list"
 mv ./user-list /usr/local/bin/user-list
 chmod +x /usr/local/bin/user-list
 
 
 # Install Monitor
 cd
-wget http://vpnpowerjack.com/debian8x64/source/monssh; mv monssh /usr/local/bin/; chmod +x /usr/local/bin/monssh
+wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/monssh"
+mv monssh /usr/local/bin/
+chmod +x /usr/local/bin/monssh
 
 # Install Menu
 cd
-wget http://vpnpowerjack.com/debian8x64/source/menu
+wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/menu"
 mv ./menu /usr/local/bin/menu
 chmod +x /usr/local/bin/menu
 
 # moth
 cd
-wget http://vpnpowerjack.com/debian8x64/source/motd
+wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/motd"
 mv ./motd /etc/motd
 
 
@@ -154,7 +156,7 @@ service dropbear restart
 service nginx start
 clear
 echo "========================================"  | tee -a log-install.txt
-echo "Service Autoscript VPS Jack Bin Melayu"  | tee -a log-install.txt
+echo "Service Autoscript VPS Yusuf Ardiansyah"  | tee -a log-install.txt
 echo "----------------------------------------"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "Webmin   : http://$myip:10000/"
@@ -162,16 +164,16 @@ echo "Squid3   : 8080"  | tee -a log-install.txt
 echo "OpenSSH  : 22, 143"  | tee -a log-install.txt
 echo "Dropbear : 443"  | tee -a log-install.txt
 echo "OpenVPN  : TCP 1194 (client config : http://$myip/client.ovpn)"  | tee -a log-install.txt
-echo "Timezone : Asia/Kuala_Lumpur"  | tee -a log-install.txt
+echo "Timezone : Asia/Jakarta"  | tee -a log-install.txt
 echo "Fail2Ban : [on]"   | tee -a log-install.txt
-echo "Power By : EN JACK BIN MELAYU"  | tee -a log-install.txt
-echo "CALL     : +60176777798"  | tee -a log-install.txt
-echo "Telegram : @JackDotMy"  | tee -a log-install.txt
+echo "Power By : Yusuf Ardiansyah"  | tee -a log-install.txt
+echo "PIN BBM  : yu-suf "  | tee -a log-install.txt
+echo "Telegram : e-Server"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "----------------------------------------"
 echo "LOG INSTALL  --> /root/log-install.txt"
 echo "----------------------------------------"
 echo "========================================"  | tee -a log-install.txt
-echo "      PLEASE REBOOT TAKE EFFECT !"
+echo "      SILAHKAN REBOOT VPS ANDA !"
 echo "========================================"  | tee -a log-install.txt
 cat /dev/null > ~/.bash_history && history -c
