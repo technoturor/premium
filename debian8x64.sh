@@ -144,6 +144,12 @@ wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/mons
 mv monssh /usr/local/bin/
 chmod +x /usr/local/bin/monssh
 
+# speedtest
+cd
+apt-get install python
+wget -O speedtest.py "https://raw.githubusercontent.com/deeniedoank/debian7/master/speedtest.py"
+chmod +x speedtest.py
+
 # Install Menu
 cd
 wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/menu"
