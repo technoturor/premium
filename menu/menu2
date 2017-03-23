@@ -6,7 +6,7 @@ flag=0
 echo
 
 function create_user() {
-	useradd -M $uname
+	useradd -s /bin/false -M $uname
 	echo "$uname:$pass" | chpasswd
 	usermod -e $expdate $uname
 
@@ -16,11 +16,11 @@ function create_user() {
 	sed -i 's/remote xxxxxxxxx 1194/remote xxxxxxxxx 443/g' /tmp/client.ovpn
 	sed -i $myip2 /tmp/client.ovpn
 	echo ""
-	echo "OpenVPN  : TCP 443 (client config : http://$myip:80/client.ovpn)"
+	#echo "OpenVPN  : TCP 443 (client config : http://$myip:80/client.ovpn)"
 }
 
 function renew_user() {
-	echo "New expiration date for $uname: $expdate...";
+	echo "Tanggal Kadaluarsa Baru $uname: $expdate...";
 	usermod -e $expdate $uname
 }
 
@@ -74,50 +74,50 @@ function used_data(){
 
 clear
 echo "        =====================================================
-        #                                                   #
-        #          [WELCOME TO SYSTEM  BLACK VPS]           #
-        #                                                   #
-        #           WhatsApp     :+60176777798              #
-        #           Telegram     :@JackDotMy                #
-        #           Facebook     :fb.com/EnJackBinMelayu    #
-        #           Channel      :@BlackVps                 #
-        #                                                   #
-        #             Copyright © BlackVps                  #
         =====================================================
-
+        #                                                   #
+        #     [SELAMAT DATANG DI VPS YUSUF ARDIANSYAH]      #
+        #                                                   #
+        #           WhatsApp     : 082139743432             #
+        #           Telegram     : e-Server                 #
+        #           Facebook     : fb.com/t34mh4ck3r        #
+        #           Pin-BBM      : yu-suf                   #
+        #                                                   #
+        #            Copyright © yusuf-ardiansyah           #
+        =====================================================
 ";
 PS3='Please enter your choice: '
-options=("Add User" "Renew User" "Delete User" "User List" "Users Not Expired" "Expired Users" "Restart Server" "Change Password" "Used Data By Users" "Ram Status" "Monitor Multi Login" "Change OpenVPN Port" "Change Dropbear Port" "Change Squid3 Port" "Quit")
+options=("Buat User" "Perbarui User" "Hapus User" "Semua User" "User Belum Kadaluarsa" "User Sudah Kadaluarsa" "Restart Server" "Ganti Password VPS" "Used Data By Users" "Ram Status" "Monitor Multi Login" "Ganti Port OVPN" "Ganti Port Dropbear" "Ganti Port Squid3" "Speedtest" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
-        "Add User")
+        "Buat User")
             read -p "Enter username: " uname
             read -p "Enter password: " pass
-            read -p "Enter expiry date (YYYY-MM-DD): " expdate
+            read -p "Enter tanggal kadaluarsa (YYYY-MM-DD): " expdate
 	    create_user
 	    break
             ;;
-        "Renew User")
-            read -p "Enter username to renew: " uname
-            read -p "Enter expiry date (YYYY-MM-DD): " expdate
+        "Perbarui User")
+            read -p "Enter username yang di perbarui: " uname
+            read -p "Enter tanggal kadaluarsa (YYYY-MM-DD): " expdate
             renew_user
             break
             ;;
-        "Delete User")
-            read -p "Enter username to be removed: " uname
+        "Hapus User")
+            read -p "Enter username yang akan di hapus: " uname
             delete_user
             break
             ;;		
-		"User List")
+		"Semua User")
             user-list
             break
             ;;
-		"Users Not Expired")
+		"User Belum Kadaluarsa")
 			not_expired_users
 			break
 			;;
-		"Expired Users")
+		"User Sudah Kadaluarsa")
 			expired_users
 			break
 			;;		
@@ -125,7 +125,7 @@ do
 			reboot
 			break
 			;;	
-		"Change Password")
+		"Ganti Password VPS")
 			passwd
 			break
 			;;
@@ -142,30 +142,34 @@ do
                monssh
                 break
 	          ;;
-		"Change OpenVPN Port")	
-            echo "What OpenVPN port would you like  to change to?"
+		"Ganti Port OVPN")	
+            echo "Silahkan Ganti Port OpenVPN Anda?"
             read -p "Port: " -e -i 1194 PORT
             sed -i "s/port [0-9]*/port $PORT/" /etc/openvpn/server.conf
             service openvpn restart
             echo "OpenVPN Updated : Port $PORT"
 			break
 			;;
-		"Change Dropbear Port")	
-            echo "What Dropbear port would you like to change to?"
+		"Ganti Port Dropbear")	
+            echo "Silahkan Ganti Port Dropbear Anda?"
             read -p "Port: " -e -i 443 PORT
             sed -i "s/DROPBEAR_PORT=[0-9]*/DROPBEAR_PORT=$PORT/" /etc/default/dropbear
             service dropbear restart
             echo "Dropbear Updated : Port $PORT"
 			break
 			;;
-        "Change Squid3 Port")	
-            echo "What Squid3 port would you like to change to?"
+        "Ganti Port Squid3")	
+            echo "Silahkan Ganti Port Squid3 Anda?"
             read -p "Port: " -e -i 8080 PORT
             sed -i "s/http_port [0-9]*/http_port $PORT/" /etc/squid3/squid.conf
             service squid3 restart
             echo "echo "Squid3 Updated : Port $PORT""
 			break
-			;;		  
+			;;
+	"Speedtest")
+	python speedtest.py --share
+	break
+	;;
         "Quit")
             break
             ;;
