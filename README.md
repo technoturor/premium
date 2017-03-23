@@ -1,6 +1,11 @@
-Automatic Script Installer by Orang
+Automatic Script Installer by elang overdosis
 
 ==========
+# Debian8x64
+```
+cd
+wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/debian8x64.sh && chmod +x debian8x64.sh && ./debian8x64.sh
+```
 
 ## Usage
 ### Centos 6 (OpenVZ VPS)
