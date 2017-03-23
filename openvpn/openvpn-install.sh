@@ -164,7 +164,7 @@ else
 	read -p "DNS [1-3]: " -e -i 2 DNS
 	echo ""
 	echo "Beberapa setup (mis: Amazon Web Services),memerlukan penggunaan MASQUERADE daripada SNAT"
-echo" Metode mana forwarding yang Anda ingin menggunakan [jika tidak yakin, meninggalkan sebagai default]?"
+	echo" Metode mana forwarding yang Anda ingin menggunakan [jika tidak yakin, meninggalkan sebagai default]?"
 	echo "   1) SNAT (default)"
 	echo "   2) MASQUERADE"
 	while [[ $FORWARD_TYPE !=  "1" && $FORWARD_TYPE != "2" ]]; do
