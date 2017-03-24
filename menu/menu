@@ -5,19 +5,19 @@ flag=0
 
 echo 
 
-#function create_user() {
-	#useradd -s /bin/false -M $uname
-	#echo "$uname:$pass" | chpasswd
-	#usermod -e $expdate $uname
+function create_user() {
+	useradd -s /bin/false -M $uname
+	echo "$uname:$pass" | chpasswd
+	usermod -e $expdate $uname
 
-	#myip=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0' | head -n1`;
-	#myip2="s/xxxxxxxxx/$myip/g";	
-	#wget -qO /tmp/client.ovpn "http://vpnpowerjack.com/debian8x64/source/client.ovpn"
-	#sed -i 's/remote xxxxxxxxx 1194/remote xxxxxxxxx 443/g' /tmp/client.ovpn
-	#sed -i $myip2 /tmp/client.ovpn
-	#echo ""
-	#echo "OpenVPN  : TCP 443 (client config : http://$myip:80/client.ovpn)"
-#}
+	myip=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0' | head -n1`;
+	myip2="s/xxxxxxxxx/$myip/g";	
+	wget -qO /tmp/client.ovpn "http://vpnpowerjack.com/debian8x64/source/client.ovpn"
+	sed -i 's/remote xxxxxxxxx 1194/remote xxxxxxxxx 443/g' /tmp/client.ovpn
+	sed -i $myip2 /tmp/client.ovpn
+	echo ""
+	echo "OpenVPN  : TCP 443 (client config : http://$myip:80/client.ovpn)"
+}
 
 function renew_user() {
 	echo "Tanggal Kadaluarsa Baru $uname: $expdate...";
@@ -92,10 +92,10 @@ select opt in "${options[@]}"
 do
     case $opt in
         "Buat User")
-            #read -p "Enter username: " uname
-            #read -p "Enter password: " pass
-           # read -p "Enter tanggal kadaluarsa (YYYY-MM-DD): " expdate
-	  usernew
+            read -p "Enter username: " uname
+            read -p "Enter password: " pass
+            read -p "Enter tanggal kadaluarsa (YYYY-MM-DD): " expdate
+	  
 	    break
             ;;
         "Perbarui User")
