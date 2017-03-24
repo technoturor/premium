@@ -245,10 +245,10 @@ set_var EASYRSA_DIGEST "sha384"" > vars
 	fi
 	# Create the PKI, set up the CA, the DH params and the server + client certificates
 	./easyrsa init-pki
-	./easyrsa --batch build-ca nopass
+	./easyrsa --batch build-ca pass
 	./easyrsa gen-dh
-	./easyrsa build-server-full server nopass
-	./easyrsa build-client-full $CLIENT nopass
+	./easyrsa build-server-full server pass
+	./easyrsa build-client-full $CLIENT pass
 	./easyrsa gen-crl
 	# generate tls-auth key
 	openvpn --genkey --secret /etc/openvpn/tls-auth.key
@@ -409,7 +409,7 @@ echo "client
 dev tun
 dev-type tun
 remote $IP $PORT tcp
-http-proxy $IP $PORT 8080
+http-proxy $IP 8080
 http-proxy-retry
 nobind
 persist-tun
