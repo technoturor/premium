@@ -102,7 +102,7 @@ chmod +x /usr/bin/userssh
 chmod +x /usr/bin/uservpn
 useradd -m -g users -s /bin/bash deenie11
 echo "deenie11:deenie11" | chpasswd
-
+#
 # setting port ssh
 sed -i '/Port 22/a Port 143' /etc/ssh/sshd_config
 sed -i 's/Port 22/Port  22/g' /etc/ssh/sshd_config
@@ -131,10 +131,10 @@ sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
 service webmin restart
 service vnstat restart
 # usernew
-cd
-wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/create-user.sh"
-cp /root/create-user.sh /usr/local/bin/usernew
-chmod +x /usr/local/bin/usernew
+#cd
+#wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/create-user.sh"
+#cp /root/create-user.sh /usr/local/bin/usernew
+#chmod +x /usr/local/bin/usernew
 # User Status
 cd
 wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/user-list"
