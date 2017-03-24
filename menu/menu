@@ -38,7 +38,7 @@ echo -e "Team: Deny siswanto (newbie)"
 
 function renew_user() {
 	echo "Kadaluarsa User: $uname Di Perbarui Sampai: $exp";
-	usermod -e $expdate $uname
+	usermod -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $uname
 }
 
 function delete_user(){
