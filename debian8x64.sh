@@ -51,6 +51,14 @@ UPDATE AND UPGRADE PROCESS
 
 PLEASE WAIT TAKE TIME 1-5 MINUTE
 "
+# install essential package
+apt-get -y install nmap axel nano iptables traceroute sysv-rc-conf dnsutils bc nethogs openvpn vnstat less screen psmisc apt-file whois ptunnel ngrep mtr git zsh mrtg snmp snmpd snmp-mibs-downloader unzip unrar rsyslog debsums rkhunter
+apt-get -y install build-essential
+
+# disable exim
+service exim4 stop
+sysv-rc-conf exim4 off
+
 apt-get update;apt-get -y upgrade;apt-get -y install wget curl
 echo "
 INSTALLER PROCESS PLEASE WAIT
@@ -129,7 +137,24 @@ apt-get -y -f install
 rm /root/webmin_1.820_all.deb
 sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
 service webmin restart
+
+# install vnstat gui
+cd /home/vps/public_html/
+wget http://www.sqweek.com/sqweek/files/vnstat_php_frontend-1.5.1.tar.gz
+tar xf vnstat_php_frontend-1.5.1.tar.gz
+rm vnstat_php_frontend-1.5.1.tar.gz
+mv vnstat_php_frontend-1.5.1 vnstat
+cd vnstat
+sed -i 's/eth0/venet0/g' config.php
+sed -i "s/\$iface_list = array('venet0', 'sixxs');/\$iface_list = array('venet0');/g" config.php
+sed -i "s/\$language = 'nl';/\$language = 'en';/g" config.php
+sed -i 's/Internal/Internet/g' config.php
+sed -i '/SixXS IPv6/d' config.php
+cd
+# setting vnstat
+vnstat -u -i venet0
 service vnstat restart
+
 # user-list
 #cd
 #wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/user-list"
