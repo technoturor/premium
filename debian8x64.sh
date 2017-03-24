@@ -60,9 +60,9 @@ TAKE TIME 5-10 MINUTE
 echo "/bin/false" >> /etc/shells
 echo "/usr/sbin/nologin" >> /etc/shells
 # squid3
-apt-get -y install squid3
-wget -O /etc/squid3/squid.conf "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/conf/squid3.conf"
-sed -i "s/ipserver/$myip/g" /etc/squid3/squid.conf
+apt-get -y install squid
+wget -O /etc/squid/squid.conf https://raw.githubusercontent.com/deeniedoank/autoscript2/master/squid/squid.conf
+sed -i "s/ipserver/$myip/g" /etc/squid/squid.conf
 # nginx
 apt-get -y install nginx php5-fpm php5-cli
 rm /etc/nginx/sites-enabled/default
@@ -131,17 +131,17 @@ sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
 service webmin restart
 service vnstat restart
 # user-list
-cd
-wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/user-list"
-mv ./user-list /usr/local/bin/user-list
-chmod +x /usr/local/bin/user-list
+#cd
+#wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/user-list"
+#mv ./user-list /usr/local/bin/user-list
+#chmod +x /usr/local/bin/user-list
 
 
 # Install Monitor
-cd
-wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/monssh"
-mv monssh /usr/local/bin/
-chmod +x /usr/local/bin/monssh
+#cd
+#wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/monssh"
+#mv monssh /usr/local/bin/
+#chmod +x /usr/local/bin/monssh
 
 # speedtest
 cd
@@ -165,7 +165,7 @@ echo "UPDATE AND INSTALL COMPLETE COMPLETE 99% BE PATIENT"
 rm $0;rm *.txt;rm *.tar;rm *.deb;rm *.asc
 clear
 service openvpn restart
-service squid3 restart
+service squid restart
 service ssh restart
 service webmin restart
 service dropbear restart
