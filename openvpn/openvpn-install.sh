@@ -51,15 +51,15 @@ newclient () {
 	cat /etc/openvpn/easy-rsa/pki/ca.crt >> ~/$1.ovpn
 	echo "</ca>" >> ~/$1.ovpn
 	echo "<cert>" >> ~/$1.ovpn
-	cat /etc/openvpn/easy-rsa/pki/issued/$1.crt >> ~/$1.ovpn
-	echo "</cert>" >> ~/$1.ovpn
-	echo "<key>" >> ~/$1.ovpn
-	cat /etc/openvpn/easy-rsa/pki/private/$1.key >> ~/$1.ovpn
-	echo "</key>" >> ~/$1.ovpn
-	echo "key-direction 1" >> ~/$1.ovpn
-	echo "<tls-auth>" >> ~/$1.ovpn
-	cat /etc/openvpn/tls-auth.key >> ~/$1.ovpn
-	echo "</tls-auth>" >> ~/$1.ovpn
+	#cat /etc/openvpn/easy-rsa/pki/issued/$1.crt >> ~/$1.ovpn
+	#echo "</cert>" >> ~/$1.ovpn
+	#echo "<key>" >> ~/$1.ovpn
+	#cat /etc/openvpn/easy-rsa/pki/private/$1.key >> ~/$1.ovpn
+	#echo "</key>" >> ~/$1.ovpn
+	#echo "key-direction 1" >> ~/$1.ovpn
+	#echo "<tls-auth>" >> ~/$1.ovpn
+	#cat /etc/openvpn/tls-auth.key >> ~/$1.ovpn
+	#echo "</tls-auth>" >> ~/$1.ovpn
 }
 
 
@@ -271,6 +271,7 @@ server 10.8.0.0 255.255.255.0
 ifconfig-pool-persist ipp.txt
 cipher AES-256-CBC
 auth SHA512
+auth-user-pass
 tls-version-min 1.2" > /etc/openvpn/server.conf
 	if [[ "$VARIANT" = '1' ]]; then
 		# If the user selected the fast, less hardened version
