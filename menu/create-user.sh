@@ -1,7 +1,5 @@
 #!/bin/bash
 #Script auto create trial user SSH
-#yg akan expired setelah 1 hari
-#www.fawzya.net - 085799054816
 
 read -p "Username : " uname
 read -p "Password : " pass
@@ -15,7 +13,8 @@ echo -e ""
 echo -e "Informasi SSH"
 echo -e "=========-account-=========="
 echo -e "Host: $IP" 
-echo -e "Port: 443,143,80"
+echo -e "Port dropbear: 443"
+echo -e "Port openVPN: 22"
 echo -e "Username: $uname"
 echo -e "Password: $pass"
 echo -e "-----------------------------"
