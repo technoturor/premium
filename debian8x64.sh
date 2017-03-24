@@ -68,9 +68,9 @@ TAKE TIME 5-10 MINUTE
 echo "/bin/false" >> /etc/shells
 echo "/usr/sbin/nologin" >> /etc/shells
 # squid3
-apt-get -y install squid3
-wget -O /etc/squid3/squid.conf https://raw.githubusercontent.com/deeniedoank/autoscript2/master/squid/squid.conf
-sed -i "s/ipserver/$myip/g" /etc/squid3/squid.conf
+apt-get update
+wget –no-check-certificate https://raw.githubusercontent.com/deeniedoank/autoscript2/master/squid/setup-squid.sh && bash setup-squid.sh
+
 # nginx
 apt-get -y install nginx php5-fpm php5-cli
 rm /etc/nginx/sites-enabled/default
