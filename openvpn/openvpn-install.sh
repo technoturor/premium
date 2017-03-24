@@ -258,7 +258,7 @@ set_var EASYRSA_DIGEST "sha384"" > vars
 	chmod 644 /etc/openvpn/crl.pem
 	# Generate server.conf
 	echo "port $PORT
-proto udp
+proto tcp
 dev tun
 ca ca.crt
 cert server.crt
@@ -322,9 +322,9 @@ tls-auth tls-auth.key 0" >> /etc/openvpn/server.conf
 		# We don't use --add-service=openvpn because that would only work with
 		# the default port. Using both permanent and not permanent rules to
 		# avoid a firewalld reload.
-		firewall-cmd --zone=public --add-port=$PORT/udp
+		firewall-cmd --zone=public --add-port=$PORT/tcp
 		firewall-cmd --zone=trusted --add-source=10.8.0.0/24
-		firewall-cmd --permanent --zone=public --add-port=$PORT/udp
+		firewall-cmd --permanent --zone=public --add-port=$PORT/tcp
 		firewall-cmd --permanent --zone=trusted --add-source=10.8.0.0/24
 		if [[ "$FORWARD_TYPE" = '1' ]]; then
 			firewall-cmd --zone=trusted --add-masquerade
@@ -356,7 +356,7 @@ tls-auth tls-auth.key 0" >> /etc/openvpn/server.conf
 				if ! hash semanage 2>/dev/null; then
 					yum install policycoreutils-python -y
 				fi
-				semanage port -a -t openvpn_port_t -p udp $PORT
+				semanage port -a -t openvpn_port_t -p tcp $PORT
 			fi
 		fi
 	fi
@@ -392,19 +392,43 @@ tls-auth tls-auth.key 0" >> /etc/openvpn/server.conf
 		fi
 	fi
 	# client-common.txt dibuat sehingga kita memiliki template untuk menambahkan pengguna lebih lanjut kemudian
+#echo "client
+#dev tun
+#proto udp
+#remote $IP $PORT
+#resolv-retry infinite
+#nobind
+#persist-key
+#persist-tun
+#remote-cert-tls server
+#cipher AES-256-CBC
+#auth SHA512
+#setenv opt block-outside-dns
+#tls-version-min 1.2
 echo "client
 dev tun
-proto udp
-remote $IP $PORT
-resolv-retry infinite
+dev-type tun
+remote $IP $PORT tcp
+http-proxy $IP $PORT 8080
+http-proxy-retry
 nobind
-persist-key
 persist-tun
-remote-cert-tls server
 cipher AES-256-CBC
-auth SHA512
-setenv opt block-outside-dns
-tls-version-min 1.2
+auth SHA256
+verb 2
+mute 3
+push-peer-info
+ping 10
+ping-restart 60
+hand-window 70
+server-poll-timeout 4
+reneg-sec 2592000
+sndbuf 100000
+rcvbuf 100000
+remote-cert-tls server
+comp-lzo no
+auth-user-pass
+key-direction 1
 tls-client" > /etc/openvpn/client-common.txt
 	if [[ "$VARIANT" = '1' ]]; then
 		# If the user selected the fast, less hardened version
