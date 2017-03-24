@@ -69,7 +69,8 @@ echo "/bin/false" >> /etc/shells
 echo "/usr/sbin/nologin" >> /etc/shells
 # squid3
 apt-get update
-wget –no-check-certificate https://raw.githubusercontent.com/deeniedoank/autoscript2/master/squid/setup-squid.sh && bash setup-squid.sh
+wget –no-check-certificate https://raw.githubusercontent.com/deeniedoank/autoscript2/master/squid/setup-squid.sh
+bash setup-squid.sh
 
 # nginx
 apt-get -y install nginx php5-fpm php5-cli
