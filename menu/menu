@@ -37,6 +37,7 @@ echo -e "Team: Deny siswanto (newbie)"
 }
 
 function renew_user() {
+useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $uname
 	exp="$(chage -l $uname | grep "Account expires" | awk -F": " '{print $2}')"
 	echo "Kadaluarsa User: $uname Di Perbarui Sampai: $exp";
 	usermod -e $exp $uname
