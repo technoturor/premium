@@ -83,7 +83,7 @@ function not_expired_users(){
 	rm /tmp/expirelist.txt
 }
 
-function minssh(){
+function monssh(){
 echo "-------------------------------------------------------------"
 echo " Date-Time    |    PID   |    User Name    |     Dari IP "
 echo "-------------------------------------------------------------"
