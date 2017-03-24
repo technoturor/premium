@@ -3,7 +3,7 @@ myip=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*
 
 flag=0
 
-echo ""
+echo 
 
 #function create_user() {
 	#useradd -s /bin/false -M $uname
@@ -95,7 +95,7 @@ do
             #read -p "Enter username: " uname
             #read -p "Enter password: " pass
            # read -p "Enter tanggal kadaluarsa (YYYY-MM-DD): " expdate
-	    create_user.sh
+	    create-user.sh
 	    break
             ;;
         "Perbarui User")
