@@ -37,8 +37,8 @@ echo -e "Team: Deny siswanto (newbie)"
 }
 
 function renew_user() {
-	echo "New expiration date for $uname: $expdate...";
-	usermod -e $expdate $uname
+	echo "Kadaluarsa User: $uname Di Perbarui Sampai: $exp";
+	usermod -e $exp $uname
 }
 
 function delete_user(){
@@ -117,8 +117,8 @@ do
 	    break
             ;;
         "Perbarui User")
-            read -p "Enter username to renew: " uname
-            read -p "Enter expiry date (YYYY-MM-DD): " expdate
+            read -p "Enter username yg di perbarui: " uname
+            read -p "Kadaluarsa di perbarui berapa hari (Mulai dari sekarang): " masaaktif
             renew_user
             break
             ;;
