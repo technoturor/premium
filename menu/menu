@@ -88,7 +88,7 @@ echo "        =====================================================
 
 ";
 PS3='Silahkan ketik angka pilihan anda lalu enter: '
-options=("Buat User" "Perbarui User" "Hapus User" "Semua User" "User Belum Kadaluarsa" "User Sudah Kadaluarsa" "Restart Server" "Ganti Password VPS" "Used Data By Users" "Ram Status" "Monitor Multi Login" "Ganti Port OVPN" "Ganti Port Dropbear" "Ganti Port Squid3" "Speedtest" "Quit")
+options=("Buat User" "Perbarui User" "Hapus User" "Semua User" "User Belum Kadaluarsa" "User Sudah Kadaluarsa" "Restart Server" "Ganti Password VPS" "Used Data By Users" "Ram Status" "Monitor Multi Login" "Ganti Port OVPN" "Ganti Port Dropbear" "Ganti Port Squid3" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -167,12 +167,9 @@ do
             echo "Squid3 Updated : Port $PORT""
 			break
 			;;
-    "Speedtest")
-    python speedtest.py --share
-	break
-        "Quit")
-            break
-            ;;
+		"Quit")
+		break
+		;;
         *) echo invalid option;;
     esac
 done
