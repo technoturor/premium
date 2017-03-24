@@ -123,7 +123,7 @@ do
             break
             ;;
         "Hapus User")
-            read -p "Enter username to be removed: " uname
+            read -p "Ketik user yang akan di hapus: " uname
             delete_user
             break
             ;;		
