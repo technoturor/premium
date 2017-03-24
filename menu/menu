@@ -6,7 +6,7 @@ flag=0
 echo
 
 function create_user() {
-	useradd -M $uname
+	useradd -s /bin/false -M $uname
 	echo "$uname:$pass" | chpasswd
 	usermod -e $expdate $uname
 
