@@ -130,6 +130,11 @@ rm /root/webmin_1.820_all.deb
 sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
 service webmin restart
 service vnstat restart
+# usernew
+cd
+wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/create-user.sh"
+mv  create-user.sh /usr/local/bin/create-user.sh
+chmod +x /usr/local/bin/create-user.sh
 
 # User Status
 cd
