@@ -6,17 +6,34 @@ flag=0
 echo
 
 function create_user() {
-	useradd -s /bin/false -M $uname
-	echo "$uname:$pass" | chpasswd
-	usermod -e $expdate $uname
+	myip=`dig +short myip.opendns.com @resolver1.opendns.com`
+useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $uname
+exp="$(chage -l $uname | grep "Account expires" | awk -F": " '{print $2}')"
+echo -e "$pass\n$pass\n"|passwd $uname &> /dev/null
+echo -e ""
+echo -e "Informasi SSH"
+echo -e "=========-account-=========="
+echo -e "Host: $myip" 
+echo -e "Port dropbear: 443"
+echo -e "Port openVPN: 22"
+echo -e "Username: $uname"
+echo -e "Password: $pass"
+echo -e "-----------------------------"
+echo -e "Aktif Sampai: $exp"
+echo -e "==========================="
+echo -e "Script by Mastah YusufArdiansyah"
+echo -e "Team: Deny siswanto (newbie)"	
+#useradd -s /bin/false -M $uname
+	#echo "$uname:$pass" | chpasswd
+	#usermod -e $expdate $uname
 
-	myip=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0' | head -n1`;
-	myip2="s/xxxxxxxxx/$myip/g";	
-	wget -qO /tmp/client.ovpn "http://vpnpowerjack.com/debian8x64/source/client.ovpn"
-	sed -i 's/remote xxxxxxxxx 1194/remote xxxxxxxxx 443/g' /tmp/client.ovpn
-	sed -i $myip2 /tmp/client.ovpn
-	echo ""
-	echo "OpenVPN  : TCP 443 (client config : http://$myip:80/client.ovpn)"
+	#myip=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0' | head -n1`;
+	#myip2="s/xxxxxxxxx/$myip/g";	
+	#wget -qO /tmp/client.ovpn "http://vpnpowerjack.com/debian8x64/source/client.ovpn"
+	#sed -i 's/remote xxxxxxxxx 1194/remote xxxxxxxxx 443/g' /tmp/client.ovpn
+	#sed -i $myip2 /tmp/client.ovpn
+	#echo ""
+	#echo "OpenVPN  : TCP 443 (client config : http://$myip:80/client.ovpn)"
 }
 
 function renew_user() {
@@ -95,7 +112,7 @@ do
         "Buat User")
             read -p "Enter username: " uname
             read -p "Enter password: " pass
-            read -p "Enter expiry date (YYYY-MM-DD): " expdate
+            read -p "Kadaluarsa (Berapa Hari): " masaaktif
 	    create_user
 	    break
             ;;
