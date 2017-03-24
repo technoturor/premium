@@ -87,7 +87,7 @@ echo "        =====================================================
         =====================================================
 
 ";
-PS3='Please enter your choice: '
+PS3='Silahkan ketik nomor pilihan anda lalu tekan enter: '
 options=("Buat User" "Perbarui User" "Hapus User" "Semua User" "User Belum Kadaluarsa" "User Sudah Kadaluarsa" "Restart Server" "Ganti Password VPS" "Used Data By Users" "Ram Status" "Monitor Multi Login" "Ganti Port OpenVPN" "Ganti Port Dropbear" "Ganti Port Squid3" "Speedtest" "Quit")
 select opt in "${options[@]}"
 do
