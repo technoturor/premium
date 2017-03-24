@@ -133,9 +133,8 @@ service vnstat restart
 # usernew
 cd
 wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/create-user.sh"
-mv  create-user.sh /usr/local/bin/create-user.sh
-chmod +x /usr/local/bin/create-user.sh
-
+cp /root/create-user.sh /usr/local/bin/usernew
+chmod +x /usr/local/bin/usernew
 # User Status
 cd
 wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/user-list"
