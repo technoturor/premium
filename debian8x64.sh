@@ -130,12 +130,7 @@ rm /root/webmin_1.820_all.deb
 sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
 service webmin restart
 service vnstat restart
-# usernew
-#cd
-#wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/create-user.sh"
-#cp /root/create-user.sh /usr/local/bin/usernew
-#chmod +x /usr/local/bin/usernew
-# User Status
+# user-list
 cd
 wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/user-list"
 mv ./user-list /usr/local/bin/user-list
@@ -184,7 +179,7 @@ echo "Webmin   : http://$myip:10000/"
 echo "Squid3   : 8080"  | tee -a log-install.txt
 echo "OpenSSH  : 22, 143"  | tee -a log-install.txt
 echo "Dropbear : 443"  | tee -a log-install.txt
-echo "OpenVPN  : TCP 1194 (client config : http://$myip/client.ovpn)"  | tee -a log-install.txt
+#echo "OpenVPN  : TCP 1194 (client config : http://$myip/client.ovpn)"  | tee -a log-install.txt
 echo "Timezone : Asia/Jakarta"  | tee -a log-install.txt
 echo "Fail2Ban : [on]"   | tee -a log-install.txt
 echo "Power By : Yusuf Ardiansyah"  | tee -a log-install.txt
