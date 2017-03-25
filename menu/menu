@@ -7,7 +7,7 @@ echo
 
 function create_user() {
 	myip=`dig +short myip.opendns.com @resolver1.opendns.com`
-useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $uname
+#useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $uname
 exp="$(chage -l $uname | grep "Account expires" | awk -F": " '{print $2}')"
 echo -e "$pass\n$pass\n"|passwd $uname &> /dev/null
 echo -e ""
@@ -23,6 +23,7 @@ echo -e "Aktif Sampai: $exp"
 echo -e "==========================="| lolcat
 echo -e "Script by Mastah YusufArdiansyah"| lolcat
 echo -e "Team: Deny siswanto (newbie)"| lolcat
+useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $uname
 #useradd -s /bin/false -M $uname
 	#echo "$uname:$pass" | chpasswd
 	#usermod -e $expdate $uname
@@ -170,6 +171,7 @@ echo " ONLINE : $ON     OFFLINE : $OFF     TOTAL USER : $JUMLAH "
 echo "--------------------------------------------------"| lolcat
 }
 
+clear
 clear
 echo "        ====================================================="
 echo "        =      [SELAMAT DATANG DI VPS YUSUF ARDIANSYAH]     ="| lolcat
