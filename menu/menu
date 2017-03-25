@@ -100,7 +100,7 @@ do
 	USER=`cat /var/log/auth.log | grep -i dropbear | grep -i "Password auth succeeded" | grep "dropbear\[$PID\]" | awk -F" " '{print $10}'`;
 	IP=`cat /var/log/auth.log | grep -i dropbear | grep -i "Password auth succeeded" | grep "dropbear\[$PID\]" | awk -F" " '{print $12}'`;
 	waktu=`cat /var/log/auth.log | grep -i dropbear | grep -i "Password auth succeeded" | grep "dropbear\[$PID\]" | awk -F" " '{print $1,$2,$3}'`;
-| lolcat	if [ $NUM -eq 1 ]; then
+	if [ $NUM -eq 1 ]; then
 		echo "$waktu - $PID - $USER - $IP";
 	fi
 done
