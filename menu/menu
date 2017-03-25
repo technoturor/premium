@@ -43,7 +43,7 @@ myip=`dig +short myip.opendns.com @resolver1.opendns.com`
 	#usermod -e $expdate $uname
 	exp="$(chage -l $uname | grep "Account expires" | awk -F": " '{print $2}')"	
 usermod -e `date -d "$ms days" +"%Y-%m-%d"` -s /bin/false $uname
-echo "Kadaluarsa User: $uname Di Perbarui Sampai: $expdate";
+echo "Kadaluarsa User: $uname Di Perbarui Sampai: $exp";
 }
 
 function delete_user(){
