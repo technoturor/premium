@@ -181,7 +181,7 @@ echo "        =====================================================
 
 ";
 PS3='Silahkan ketik nomor pilihan anda lalu tekan enter: '
-options=("Buat User" "Perbarui User" "Hapus User" "Semua User" "User Belum Kadaluarsa" "User Sudah Kadaluarsa" "Restart Server" "Ganti Password VPS" "Used Data By Users" "Ram Status" "Monitor Multi Login" "Ganti Port OpenVPN" "Ganti Port Dropbear" "Ganti Port Squid3" "Speedtest" "Quit")
+options=("Buat User" "Perbarui User" "Hapus User" "Semua User" "User Belum Kadaluarsa" "User Sudah Kadaluarsa" "Restart Server" "Ganti Password User" "Ganti Password VPS" "Used Data By Users" "Ram Status" "Monitor Multi Login" "Ganti Port OpenVPN" "Ganti Port Dropbear" "Ganti Port Squid3" "Speedtest" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -218,7 +218,12 @@ do
 		"Restart Server")
 			reboot
 			break
-			;;	
+			;;
+		"Ganti Password User")
+		read -p "Ketik user yang akan di ganti passwordnya: " uname
+		passwd $uname
+		break
+		;;
 		"Ganti Password VPS")
 			passwd
 			break
