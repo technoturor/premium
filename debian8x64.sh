@@ -69,10 +69,15 @@ apt-get -y install squid3
 wget -O /etc/squid3/squid.conf "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/squid/squid.conf"
 sed -i "s/ipserver/$myip/g" /etc/squid3/squid.conf
 chmod 0640 /etc/squid3/squid.conf
+
 # text warna
 cd
 rm -rf .bashrc
 wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/text%20warna/.bashrc
+
+# text pelangi
+sudo apt-get install ruby
+sudo gem install lolcat
 
 # nginx
 apt-get -y install nginx php5-fpm php5-cli
