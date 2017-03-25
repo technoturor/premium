@@ -137,6 +137,8 @@ function used_data(){
 
 function bench-network(){
 wget freevps.us/downloads/bench.sh -O - -o /dev/null|bash
+fi
+fi
 }
 
 function user-list(){
