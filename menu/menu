@@ -191,20 +191,20 @@ select opt in "${options[@]}"
 do
     case $opt in
         "Buat User")
-            read -p "Enter username: " uname | lolcat
-            read -p "Enter password: " pass | lolcat
-            read -p "Kadaluarsa (Berapa Hari): " masaaktif | lolcat
+            read -p "Enter username: " uname
+            read -p "Enter password: " pass
+            read -p "Kadaluarsa (Berapa Hari): " masaaktif
 	    create_user
 	    break
             ;;
         "Perbarui User")
-            read -p "Enter username yg di perbarui: " uname | lolcat
-            read -p "Kadaluarsa diperbarui sampai tanggal Thn-Bln-Hr(YYYY-MM-DD): " expdate | lolcat
+            read -p "Enter username yg di perbarui: " uname
+            read -p "Kadaluarsa diperbarui sampai tanggal Thn-Bln-Hr(YYYY-MM-DD): " expdate
             renew_user
             break
             ;;
         "Hapus User")
-            read -p "Ketik user yang akan di hapus: " uname | lolcat
+            read -p "Ketik user yang akan di hapus: " uname
             delete_user
             break
             ;;		
@@ -225,7 +225,7 @@ do
 			break
 			;;
 		"Ganti Password User")
-		read -p "Ketik user yang akan di ganti passwordnya: " uname | lolcat
+		read -p "Ketik user yang akan di ganti passwordnya: " uname
 		passwd $uname
 		break
 		;;
