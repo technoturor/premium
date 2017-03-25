@@ -39,7 +39,7 @@ useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $uname
 
 function renew_user() {
 myip=`dig +short myip.opendns.com @resolver1.opendns.com`	
-echo "Kadaluarsa User: $uname Di Perbarui Sampai: $exp";
+echo "Kadaluarsa User $uname Di Perbarui Sampai: $exp";
 	#usermod -e $expdate $uname
 	exp="$(chage -l $uname | grep "Account expires" | awk -F": " '{print $2}')"	
 usermod -e `date -d "$ms days" +"%Y-%m-%d"` -s /bin/false $uname
@@ -203,8 +203,8 @@ do
 	    break
             ;;
         "Perbarui User")
-            read -p "Enter username yg di perbarui: " uname
-            read -p "Kadaluarsa diperbarui sampai tanggal Thn-Bln-Hr(YYYY-MM-DD): " ms
+            read -p "Username Yg Di Perbarui: " uname
+            read -p "Kadaluarsa Diperbarui Sampai (Berapa Hari): " ms
             renew_user
             break
             ;;
