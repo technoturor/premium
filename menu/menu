@@ -239,7 +239,7 @@ do
 			;;
 			"bench-network")
 			bench-network
-			breack
+			break
 			;;
 "Ram Status")
 		    free -h | grep -v + > /tmp/ramcache
