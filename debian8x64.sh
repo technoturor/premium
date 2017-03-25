@@ -52,7 +52,7 @@ UPDATE AND UPGRADE PROCESS
 PLEASE WAIT TAKE TIME 1-5 MINUTE
 "
 # install essential package
-apt-get -y install nano apt-file unzip unrar git tar
+apt-get -y install nano apt-file unzip unrar git tar sed
 apt-get -y install build-essential
 
 apt-get update;apt-get -y upgrade;apt-get -y install wget curl
