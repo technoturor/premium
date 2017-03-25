@@ -39,10 +39,10 @@ useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $uname
 
 function renew_user() {
 myip=`dig +short myip.opendns.com @resolver1.opendns.com
-echo "Kadaluarsa user diperbarui sampai: $exp";	
-	#usermod -e $expdate $uname
-	exp="$(chage -l $uname | grep "Account expires" | awk -F": " '{print $2}')"	
-usermod -e `date -d "$ms days" +"%Y-%m-%d"` -s /bin/false $uname
+echo "Kadaluarsa user diperbarui sampai: $exp";
+	usermod -e $expdate $uname
+	#exp="$(chage -l $uname | grep "Account expires" | awk -F": " '{print $2}')"	
+#usermod -e `date -d "$ms days" +"%Y-%m-%d"` -s /bin/false $uname
 #echo "Kadaluarsa User Di Perbarui Sampai: $exp"
 }
 
@@ -95,7 +95,7 @@ echo "-------------------------------------------------------------"| lolcat
 
 data=( `ps aux | grep -i dropbear | awk '{print $2}'`);
 
-echo "=================[ Checking Dropbear login ]================="| lolcat;
+echo "=================[ Checking Dropbear login ]================="| lolcat
 echo "-------------------------------------------------------------"| lolcat
 
 for PID in "${data[@]}"
@@ -205,7 +205,7 @@ do
             ;;
         "Perbarui User")
             read -p "Username Yg Di Perbarui: " uname
-            read -p "Kadaluarsa Diperbarui Sampai (Berapa Hari): " ms
+            read -p "Kadaluarsa Diperbarui Sampai (Berapa Hari): " expdate
             renew_user
             break
             ;;
