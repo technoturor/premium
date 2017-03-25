@@ -89,7 +89,7 @@ apt-get -y install openvpn
 cd /etc/openvpn/
 wget http://vpnpowerjack.com/debian8x64/source/openvpn.tar
 tar xf openvpn.tar
-rm openvpn.tar
+#rm openvpn.tar
 
 # iptables.up.rules
 wget -O /etc/iptables.up.rules "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/conf/iptables.up.rules"
@@ -133,10 +133,10 @@ service fail2ban restart
 
 # install webmin
 cd
-wget "http://prdownloads.sourceforge.net/webadmin/webmin_1.820_all.deb"
-dpkg --install webmin_1.820_all.deb
+wget http://prdownloads.sourceforge.net/webadmin/webmin_1.831_all.deb
+dpkg --install webmin_1.831_all.deb
 apt-get -y -f install
-rm /root/webmin_1.820_all.deb
+rm /root/webmin_1.831_all.deb
 sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
 service webmin restart
 
@@ -192,7 +192,7 @@ echo "UPDATE AND INSTALL COMPLETE COMPLETE 99% BE PATIENT"
 rm $0;rm *.txt;rm *.tar;rm *.deb;rm *.asc
 clear
 service openvpn restart
-service squid restart
+service squid3 restart
 service ssh restart
 service webmin restart
 service dropbear restart
