@@ -52,12 +52,8 @@ UPDATE AND UPGRADE PROCESS
 PLEASE WAIT TAKE TIME 1-5 MINUTE
 "
 # install essential package
-apt-get -y install nmap axel nano iptables traceroute sysv-rc-conf dnsutils bc nethogs openvpn vnstat less screen psmisc apt-file whois ptunnel ngrep mtr git zsh mrtg snmp snmpd snmp-mibs-downloader unzip unrar rsyslog debsums rkhunter
+apt-get -y install nano apt-file unzip unrar git tar
 apt-get -y install build-essential
-
-# disable exim
-service exim4 stop
-sysv-rc-conf exim4 off
 
 apt-get update;apt-get -y upgrade;apt-get -y install wget curl
 echo "
