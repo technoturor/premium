@@ -39,7 +39,8 @@ useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $uname
 
 function renew_user() {
 	echo "Kadaluarsa User: $uname Di Perbarui Sampai: $expdate";
-	usermod -e $expdate $uname
+	#usermod -e $expdate $uname
+	usermod -e `date -d "$ms days" +"%Y-%m-%d"` -s /bin/false -M $uname
 }
 
 function delete_user(){
@@ -201,7 +202,7 @@ do
             ;;
         "Perbarui User")
             read -p "Enter username yg di perbarui: " uname
-            read -p "Kadaluarsa diperbarui sampai tanggal Thn-Bln-Hr(YYYY-MM-DD): " expdate
+            read -p "Kadaluarsa diperbarui sampai tanggal Thn-Bln-Hr(YYYY-MM-DD): " ms
             renew_user
             break
             ;;
