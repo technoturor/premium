@@ -68,6 +68,7 @@ apt-get update
 apt-get -y install squid3
 wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/squid/squid.conf
 sed -i "s/ipserver/$myip/g" /etc/squid3/squid.conf
+chmod 0640 /etc/squid3/squid.conf
 service squid3 restart
 # nginx
 apt-get -y install nginx php5-fpm php5-cli
