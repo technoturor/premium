@@ -38,9 +38,10 @@ useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $uname
 }
 
 function renew_user() {
-	echo "Kadaluarsa User: $uname Di Perbarui Sampai: $expdate";
+	echo "Kadaluarsa User: $uname Di Perbarui Sampai: $exp";
 	#usermod -e $expdate $uname
-	usermod -e `date -d "$ms days" +"%Y-%m-%d"` -s /bin/false $uname
+	exp="$(chage -l $uname | grep "Account expires" | awk -F": " '{print $2}')"	
+usermod -e `date -d "$ms days" +"%Y-%m-%d"` -s /bin/false $uname
 }
 
 function delete_user(){
