@@ -6,6 +6,13 @@ Automatic Script Installer by elang overdosis
 cd
 wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/debian8x64.sh && chmod +x debian8x64.sh && ./debian8x64.sh
 ```
+# Menu
+```
+cd
+wged https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/menu
+mv ./menu /usr/local/bin/menu
+chmod +x /usr/local/bin/menu
+```
 
 ## Usage
 ### Centos 6 (OpenVZ VPS)
