@@ -186,7 +186,7 @@ echo "        =====================================================
 
 ";
 PS3='Silahkan ketik nomor pilihan anda lalu tekan enter: '| lolcat
-options=("Buat User"| lolcat "Perbarui User"| lolcat "Hapus User"| lolcat "Semua User"|lolcat "User Belum Kadaluarsa"| lolcat "User Sudah Kadaluarsa"| lolcat "Restart Server"| lolcat "Ganti Password User"| lolcat "Ganti Password VPS"| lolcat "Used Data By Users"| lolcat "bench-network"| lolcat "Ram Status"| lolcat "Monitor Multi Login"| lolcat "Ganti Port OpenVPN"| lolcat "Ganti Port Dropbear"| lolcat "Ganti Port Squid3"| lolcat "Speedtest"| lolcat "Quit"| lolcat)
+options=("Buat User" "Perbarui User" "Hapus User" "Semua User" "User Belum Kadaluarsa" "User Sudah Kadaluarsa" "Restart Server" "Ganti Password User" "Ganti Password VPS" "Used Data By Users" "bench-network" "Ram Status" "Monitor Multi Login" "Ganti Port OpenVPN" "Ganti Port Dropbear" "Ganti Port Squid3" "Speedtest" "Quit"| lolcat)
 select opt in "${options[@]}"
 do
     case $opt in
