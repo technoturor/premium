@@ -40,7 +40,7 @@ useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $uname
 function renew_user() {
 	echo "Kadaluarsa User: $uname Di Perbarui Sampai: $expdate";
 	#usermod -e $expdate $uname
-	usermod -e `date -d "$ms days" +"%Y-%m-%d"` -s /bin/false -M $uname
+	usermod -e `date -d "$ms days" +"%Y-%m-%d"` -s /bin/false $uname
 }
 
 function delete_user(){
