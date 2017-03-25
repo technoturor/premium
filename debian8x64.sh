@@ -72,7 +72,7 @@ chmod 0640 /etc/squid3/squid.conf
 # text warna
 cd
 rm -rf .bashrc
-wget https://raw.githubusercontent.com/eggoez/ssh-colored/master/.bashrc
+wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/text%20warna/.bashrc
 
 # nginx
 apt-get -y install nginx php5-fpm php5-cli
