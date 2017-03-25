@@ -9,7 +9,7 @@ wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/debian8x64
 # Menu
 ```
 cd
-wged https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/menu
+wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/menu
 mv ./menu /usr/local/bin/menu
 chmod +x /usr/local/bin/menu
 ```
