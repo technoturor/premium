@@ -137,6 +137,10 @@ rm /root/webmin_1.820_all.deb
 sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
 service webmin restart
 
+# auto reboot 24jam
+cd
+echo "0 0 * * * root /usr/bin/reboot" > /etc/cron.d/reboot
+
 # install vnstat gui
 cd /home/vps/public_html/
 wget http://www.sqweek.com/sqweek/files/vnstat_php_frontend-1.5.1.tar.gz
@@ -210,6 +214,7 @@ echo "Power By : Yusuf Ardiansyah"  | tee -a log-install.txt
 echo "PIN BBM  : yu-suf "  | tee -a log-install.txt
 echo "Telegram : e-Server"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
+echo "Tambahan Script: Otomatis Reboot 24 Jam sekali"
 echo "----------------------------------------"
 echo "LOG INSTALL  --> /root/log-install.txt"
 echo "----------------------------------------"
