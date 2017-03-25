@@ -172,7 +172,7 @@ echo "--------------------------------------------------"
 
 clear
 echo "        ====================================================="
-echo " =             [SELAMAT DATANG DI VPS YUSUF ARDIANSYAH]            "| lolcat -a -d 3500
+echo " =             [SELAMAT DATANG DI VPS YUSUF ARDIANSYAH]            ="| lolcat
 echo "        =====================================================
         #                                                   #
 	#                                                   #
