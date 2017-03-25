@@ -174,7 +174,7 @@ clear
 echo "        =====================================================
         =====================================================
         #                                                   #
-        #     [SELAMAT DATANG DI VPS YUSUF ARDIANSYAH]      #
+        #     \e[1;33;44m[SELAMAT DATANG DI VPS YUSUF ARDIANSYAH]\e[0m     #
         #                                                   #
         #           WhatsApp     : 082139743432             #
         #           Telegram     : e-Server                 #
