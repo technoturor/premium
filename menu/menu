@@ -171,20 +171,20 @@ echo "--------------------------------------------------"
 }
 
 clear
+echo "        ====================================================="
+echo " =             [SELAMAT DATANG DI VPS YUSUF ARDIANSYAH]            "| lolcat -a -d 3500
 echo "        =====================================================
-        =====================================================
-        =                                                   =
-        =      [SELAMAT DATANG DI VPS YUSUF ARDIANSYAH]     =
-        =                                                   =
-        =           WhatsApp     : 082139743432             =
-        =           Telegram     : e-Server                 =
-        =           Facebook     : fb.com/t34mh4ck3r        =
-        =           Pin-BBM      : yu-suf                   =
-        =                                                   =
-        =            Copyright © yusuf-ardiansyah           =
+        #                                                   #
+	#                                                   #
+        #           WhatsApp     : 082139743432             #
+        #           Telegram     : e-Server                 
+        #           Facebook     : fb.com/t34mh4ck3r        #
+        #           Pin-BBM      : yu-suf                   #
+        #                                                   #
+        #            Copyright © yusuf-ardiansyah           #
         =====================================================
 
-"| lolcat -a -d 3500 ;
+";
 PS3='Silahkan ketik nomor pilihan anda lalu tekan enter: '
 options=("Buat User" "Perbarui User" "Hapus User" "Semua User" "User Belum Kadaluarsa" "User Sudah Kadaluarsa" "Restart Server" "Ganti Password User" "Ganti Password VPS" "Used Data By Users" "bench-network" "Ram Status" "Monitor Multi Login" "Ganti Port OpenVPN" "Ganti Port Dropbear" "Ganti Port Squid3" "Speedtest" "Quit")
 select opt in "${options[@]}"
@@ -199,7 +199,7 @@ do
             ;;
         "Perbarui User")
             read -p "Enter username yg di perbarui: " uname
-            read -p "Kadaluarsa di perbarui sampai tanggal Thn-Bln-Hr (YYYY-MM-DD): " expdate
+            read -p "Kadaluarsa diperbarui sampai tanggal Thn-Bln-Hr(YYYY-MM-DD): " expdate
             renew_user
             break
             ;;
