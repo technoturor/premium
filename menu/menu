@@ -89,7 +89,7 @@ echo " Date-Time    |    PID   |    User Name    |     Dari IP "| lolcat
 echo "-------------------------------------------------------------"| lolcat
 data=( `ps aux | grep -i dropbear | awk '{print $2}'`);
 
-echo "=================[ Checking Dropbear login ]=================";| lolcat
+echo "=================[ Checking Dropbear login ]================="| lolcat;
 echo "-------------------------------------------------------------"| lolcat
 for PID in "${data[@]}"
 do
