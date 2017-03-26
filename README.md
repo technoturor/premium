@@ -1,6 +1,12 @@
 Automatic Script Installer by elang overdosis
 
 ==========
+# INSTALL all menu
+```
+cd
+
+```
+
 # Debian8x64
 ```
 cd
