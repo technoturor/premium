@@ -107,17 +107,17 @@ iptables-restore < /etc/iptables.up.rules
 wget -O /home/vps/public_html/client.ovpn "http://vpnpowerjack.com/debian8x64/source/client.ovpn"
 sed -i "s/ipserver/$myip/g" /home/vps/public_html/client.ovpn
 # cronjob
-cd
-wget http://vpnpowerjack.com/debian8x64/source/cronjob.tar
-tar xf cronjob.tar
-mv uptimes.php /home/vps/public_html/
-mv usertol userssh uservpn /usr/bin/
-mv cronvpn cronssh /etc/cron.d/
-chmod +x /usr/bin/usertol
-chmod +x /usr/bin/userssh
-chmod +x /usr/bin/uservpn
-useradd -m -g users -s /bin/bash deenie11
-echo "deenie11:deenie11" | chpasswd
+#cd
+#wget http://vpnpowerjack.com/debian8x64/source/cronjob.tar
+#tar xf cronjob.tar
+#mv uptimes.php /home/vps/public_html/
+#mv usertol userssh uservpn /usr/bin/
+#mv cronvpn cronssh /etc/cron.d/
+#chmod +x /usr/bin/usertol
+#chmod +x /usr/bin/userssh
+#chmod +x /usr/bin/uservpn
+#useradd -m -g users -s /bin/bash deenie11
+#echo "deenie11:deenie11" | chpasswd
 #
 # setting port ssh
 sed -i '/Port 22/a Port 143' /etc/ssh/sshd_config
