@@ -192,7 +192,7 @@ do
             read -p "Enter username: " uname
             read -p "Enter password: " pass
             read -p "Kadaluarsa (Berapa Hari): " masaaktif
-	    create_user | lolcat
+	    create_user
 	    break
             ;;
         "Perbarui User")
