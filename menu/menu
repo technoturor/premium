@@ -25,8 +25,8 @@ echo -e "     Password: $pass" | lolcat
 echo -e "-----------------------------------------" | lolcat
 echo -e "      Aktif Sampai: $exp" | lolcat
 echo -e "=========================================" | lolcat
-echo -e "   Script by Mastah Yusuf Ardiansyah" | lolcat
-echo -e "   Team: Deny siswanto (newbie)" | lolcat
+echo -e "   Script by Yusuf Ardiansyah" | lolcat
+echo -e "   DI LARANG: HACKING-DDOS-PHISING-SPAM-TORENT-CARDING.," | lolcat
 echo -e "=========================================" | lolcat
 echo -e ""
 #useradd -s /bin/false -M $uname
