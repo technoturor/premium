@@ -199,12 +199,12 @@ do
         "Perbarui User")
             read -p "Enter username yg di perbarui: " uname
             read -p "Aktif sampai tanggal Thn-Bln-Hr(YYYY-MM-DD): " expdate
-            renew_user
+            renew_user | lolcat
             break
             ;;
         "Hapus User")
             read -p "Ketik user yang akan di hapus: " uname
-            delete_user
+            delete_user | lolcat
             break
             ;;		
 		"Semua User")
@@ -212,11 +212,11 @@ do
             break
             ;;
 		"User Belum Kadaluarsa")
-			not_expired_users
+			not_expired_users | lolcat
 			break
 			;;
 		"User Sudah Kadaluarsa")
-			expired_users
+			expired_users | lolcat
 			break
 			;;		
 		"Restart Server")
@@ -233,11 +233,11 @@ do
 			break
 			;;
 		"Used Data By Users")
-			used_data
+			used_data | lolcat
 			break
 			;;
 			"bench-network")
-			bench-network2
+			bench-network2 | lolcat
 			break
 			;;
 "Ram Status")
@@ -274,7 +274,7 @@ do
 			break
 			;;
 "Speedtest")
-python speedtest.py --share
+python speedtest.py --share | lolcat
 break
 ;;		  
         "Quit")
