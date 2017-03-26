@@ -33,8 +33,8 @@ echo -e ""
 	#echo "$uname:$pass" | chpasswd
 	#usermod -e $expdate $uname
 
-	#myip=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0' | head -n1`;
-	#myip2="s/xxxxxxxxx/$myip/g";	
+	myip=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0' | head -n1`;
+	myip2="s/xxxxxxxxx/$myip/g";	
 	#wget -qO /tmp/client.ovpn "http://vpnpowerjack.com/debian8x64/source/client.ovpn"
 	#sed -i 's/remote xxxxxxxxx 1194/remote xxxxxxxxx 443/g' /tmp/client.ovpn
 	#sed -i $myip2 /tmp/client.ovpn
