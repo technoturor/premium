@@ -4,7 +4,7 @@ Automatic Script Installer by elang overdosis
 # INSTALL all menu
 ```
 cd
-
+wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/almenu.sh && chmod +x almenu.sh && ./almenu.sh
 ```
 
 # Debian8x64
