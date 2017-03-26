@@ -11,18 +11,18 @@ useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $uname
 exp="$(chage -l $uname | grep "Account expires" | awk -F": " '{print $2}')"
 echo -e "$pass\n$pass\n"|passwd $uname &> /dev/null
 echo -e ""
-echo -e "Informasi SSH"
-echo -e "=========-account-=========="
+echo -e "Informasi SSH"| lolcat
+echo -e "=========-account-=========="| lolcat
 echo -e "Host: $myip" 
-echo -e "Port dropbear: 443"
-echo -e "Port openVPN: 22"
+echo -e "Port dropbear: 443"| lolcat
+echo -e "Port openVPN: 22"| lolcat
 echo -e "Username: $uname"
 echo -e "Password: $pass"
-echo -e "-----------------------------"
+echo -e "-----------------------------"| lolcat
 echo -e "Aktif Sampai: $exp"
-echo -e "==========================="
-echo -e "Script by Mastah YusufArdiansyah"
-echo -e "Team: Deny siswanto (newbie)"	
+echo -e "==========================="| lolcat
+echo -e "Script by Mastah YusufArdiansyah"| lolcat
+echo -e "Team: Deny siswanto (newbie)"| lolcat
 #useradd -s /bin/false -M $uname
 	#echo "$uname:$pass" | chpasswd
 	#usermod -e $expdate $uname
@@ -46,9 +46,9 @@ function delete_user(){
 }
 
 function expired_users(){
-	echo "---------------------------------"
-echo "BIL  USERNAME          EXPIRED "
-echo "---------------------------------"
+	echo "---------------------------------"| lolcat
+echo "BIL  USERNAME          EXPIRED "| lolcat
+echo "---------------------------------"| lolcat
 count=1
 	cat /etc/shadow | cut -d: -f1,8 | sed /:$/d > /tmp/expirelist.txt
 	totalaccounts=`cat /tmp/expirelist.txt | wc -l`
@@ -84,15 +84,13 @@ function not_expired_users(){
 }
 
 function monssh(){
-echo "-------------------------------------------------------------"
-echo " Date-Time    |    PID   |    User Name    |     Dari IP "
-echo "-------------------------------------------------------------"
-
+echo "-------------------------------------------------------------"| lolcat
+echo " Date-Time    |    PID   |    User Name    |     Dari IP "| lolcat
+echo "-------------------------------------------------------------"| lolcat
 data=( `ps aux | grep -i dropbear | awk '{print $2}'`);
 
-echo "=================[ Checking Dropbear login ]=================";
-echo "-------------------------------------------------------------"
-
+echo "=================[ Checking Dropbear login ]=================";| lolcat
+echo "-------------------------------------------------------------"| lolcat
 for PID in "${data[@]}"
 do
 	#echo "check $PID";
@@ -106,13 +104,11 @@ do
 done
 
 
-echo "-------------------------------------------------------------"
-
+echo "-------------------------------------------------------------"| lolcat
 data=( `ps aux | grep "\[priv\]" | sort -k 72 | awk '{print $2}'`);
 
-echo "==================[ Checking OpenSSH login ]=================";
-
-echo "-------------------------------------------------------------"
+echo "==================[ Checking OpenSSH login ]=================";| lolcat
+echo "-------------------------------------------------------------"| lolcat
 for PID in "${data[@]}"
 do
         #echo "check $PID";
@@ -125,8 +121,8 @@ do
         fi
 done
 
-echo "-------------------------------------------------------------"
-echo -e "==============[ User Monitor Dropbear & OpenSSH]=============";
+echo "-------------------------------------------------------------"| lolcat
+echo -e "==============[ User Monitor Dropbear & OpenSSH]=============";| lolcat
 }
 
 function used_data(){
@@ -137,13 +133,13 @@ function used_data(){
 
 function bench-network(){
 wget freevps.us/downloads/bench.sh -O - -o /dev/null|bash
-echo -e "sekian..."
+echo -e "Sekian...!!!"| lolcat
 }
 
 function user-list(){
-echo "---------------------------------------------"
-echo "BIL  USERNAME        STATUS       EXP DATE   "
-echo "---------------------------------------------"
+echo "---------------------------------------------"| lolcat
+echo "BIL  USERNAME        STATUS       EXP DATE   "| lolcat
+echo "---------------------------------------------"| lolcat
 C=1
 ON=0
 OFF=0
@@ -165,26 +161,24 @@ do
         fi
 JUMLAH="$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /etc/passwd | wc -l)"
 done < /etc/passwd
-echo "--------------------------------------------------"
+echo "--------------------------------------------------"| lolcat
 echo " ONLINE : $ON     OFFLINE : $OFF     TOTAL USER : $JUMLAH "
-echo "--------------------------------------------------"
+echo "--------------------------------------------------"| lolcat
 }
 
 clear
-echo "        =====================================================
-        =====================================================
-        #                                                   #
-        #     [SELAMAT DATANG DI VPS YUSUF ARDIANSYAH]      #
-        #                                                   #
-        #           WhatsApp     : 082139743432             #
-        #           Telegram     : e-Server                 #
-        #           Facebook     : fb.com/t34mh4ck3r        #
-        #           Pin-BBM      : yu-suf                   #
-        #                                                   #
-        #            Copyright © yusuf-ardiansyah           #
-        =====================================================
-
-";
+echo "        ====================================================="| lolcat
+echo "        ====================================================="| lolcat
+echo "        =     [SELAMAT DATANG DI VPS YUSUF ARDIANSYAH]      ="| lolcat
+echo "        ====================================================="| lolcat
+echo "        #           WhatsApp     : 082139743432             #"| lolcat
+echo "        #           Telegram     : e-Server                 #"| lolcat
+echo "        #           Facebook     : fb.com/t34mh4ck3r        #"| lolcat
+echo "        #           Pin-BBM      : yu-suf                   #"| lolcat
+echo "        #                                                   #"| lolcat
+echo "        #            Copyright © yusuf-ardiansyah           #"| lolcat
+echo "        ====================================================="| lolcat
+;
 PS3='Silahkan ketik nomor pilihan anda lalu tekan enter: '
 options=("Buat User" "Perbarui User" "Hapus User" "Semua User" "User Belum Kadaluarsa" "User Sudah Kadaluarsa" "Restart Server" "Ganti Password User" "Ganti Password VPS" "Used Data By Users" "bench-network" "Ram Status" "Monitor Multi Login" "Ganti Port OpenVPN" "Ganti Port Dropbear" "Ganti Port Squid3" "Speedtest" "Quit")
 select opt in "${options[@]}"
@@ -251,7 +245,7 @@ do
                 break
 	          ;;
 		"Ganti Port OpenVPN")	
-            echo "What OpenVPN port would you like  to change to?"
+            echo "Silahkan ganti port OpenVPN anda lalu klik enter?"| lolcat
             read -p "Port: " -e -i 1194 PORT
             sed -i "s/port [0-9]*/port $PORT/" /etc/openvpn/server.conf
             service openvpn restart
@@ -259,7 +253,7 @@ do
 			break
 			;;
 		"Ganti Port Dropbear")	
-            echo "What Dropbear port would you like to change to?"
+            echo "Silahkan ganti port Dropbear anda lalu klik enter?"| lolcat
             read -p "Port: " -e -i 443 PORT
             sed -i "s/DROPBEAR_PORT=[0-9]*/DROPBEAR_PORT=$PORT/" /etc/default/dropbear
             service dropbear restart
@@ -267,7 +261,7 @@ do
 			break
 			;;
         "Ganti Port Squid3")	
-            echo "What Squid3 port would you like to change to?"
+            echo "Silahkan ganti port Squid3 anda lalu klik enter?"| lolcat
             read -p "Port: " -e -i 8080 PORT
             sed -i "s/http_port [0-9]*/http_port $PORT/" /etc/squid3/squid.conf
             service squid3 restart
