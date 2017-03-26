@@ -28,7 +28,7 @@ shopt -s checkwinsize
 #shopt -s globstar
 
 # make less more friendly for non-text input files, see lesspipe(1)
-#[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
@@ -76,12 +76,12 @@ esac
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
 
-    #alias grep='grep --color=auto'
-    #alias fgrep='fgrep --color=auto'
-    #alias egrep='egrep --color=auto'
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
 fi
 
 # some more ls aliases
@@ -114,16 +114,16 @@ blue='\e[1;34m'
 green='\e[0;23m'
 purple='\e[1;35m'
 cyan='\e[1;36m'
-red='\e[1;31m'
+red='\e[1;32m'
 
-echo -e $green'================================================================================'
-echo -e $red[+] $cyan"$HOSTNAME uptime is "$red[+]$cyan;uptime | awk /'up/ {print $3,$4,$5,$6,$7,$8,$9,$10}'
-uname -r
-uname -v -s
-echo -e $red[+]$cyan Today :$red[+]$cyan 
-date
-echo -e $green'================================================================================'
+#echo -e $green'================================================================================'
+#echo -e $red[+] $cyan"$HOSTNAME uptime is "$red[+]$cyan;uptime | awk /'up/ {print $3,$4,$5,$6,$7,$8,$9,$10}'
+#uname -r
+#uname -v -s
+#echo -e $red[+]$cyan Today :$red[+]$cyan 
+#date
+#echo -e $green'================================================================================'
 #Figlet nama
-echo -e $green
-figlet -f slant "#Bbm: Yu-suf #"
-echo -e $red     '_________________<☠ CINTA JANGAN BIARKAN SEDIH ☠>_________________'
+#echo -e $green
+#figlet -f slant "#Bbm: Yu-suf #"
+#echo -e $red     '_________________<☠ CINTA JANGAN BIARKAN SEDIH ☠>_________________'
