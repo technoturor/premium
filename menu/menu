@@ -12,18 +12,21 @@ exp="$(chage -l $uname | grep "Account expires" | awk -F": " '{print $2}')"
 echo -e "$pass\n$pass\n"|passwd $uname &> /dev/null
 echo -e "$pass\n$pass\n"|passwd $uname &> /dev/null
 echo -e ""
-echo -e "          Informasi Akun Baru SSH"
-echo -e "=========-Yusuf-Ardiansyah-=========="
-echo -e "          Host: $myip" 
-echo -e "          Port dropbear: 443"
-echo -e "          Port openVPN: 22"
-echo -e "          Username: $uname"
-echo -e "          Password: $pass"
-echo -e "-----------------------------------"
-echo -e "          Aktif Sampai: $exp"
-echo -e "=================================="
-echo -e "   Script by Mastah Yusuf Ardiansyah"
-echo -e "   Team: Deny siswanto (newbie)"
+echo -e "=========================================" | lolcat
+echo -e "        Informasi Akun Baru SSH" | lolcat
+echo -e "===========-Yusuf-Ardiansyah-==============" | lolcat
+echo -e "     Host: $myip" | lolcat
+echo -e "     Port dropbear: 443" | lolcat
+echo -e "     Port openVPN: 22" | lolcat
+echo -e "     Username: $uname" | lolcat
+echo -e "     Password: $pass" | lolcat
+echo -e "---------------------------------------" | lolcat
+echo -e "      Aktif Sampai: $exp" | lolcat
+echo -e "=========================================" | lolcat
+echo -e "   Script by Mastah Yusuf Ardiansyah" | lolcat
+echo -e "   Team: Deny siswanto (newbie)" | lolcat
+echo -e "=========================================" | lolcat
+echo -e ""
 #useradd -s /bin/false -M $uname
 	#echo "$uname:$pass" | chpasswd
 	#usermod -e $expdate $uname
