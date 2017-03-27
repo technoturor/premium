@@ -146,6 +146,17 @@ rm /root/webmin_1.820_all.deb
 sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
 service webmin restart
 
+# upgade dropbear
+apt-get install zlib1g-dev
+wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/update_dropbear/dropbear-2016.74.tar.bz2
+bzip2 -cd dropbear-2016.74.tar.bz2 | tar xvf -
+cd dropbear-2016.74
+./configure
+make && make install
+mv /usr/sbin/dropbear /usr/sbin/dropbear.old
+ln /usr/local/sbin/dropbear /usr/sbin/dropbear
+cd && rm -rf dropbear-2016.74 && rm -rf dropbear-2016.74.tar.bz2
+
 # auto reboot 24jam
 cd
 echo "0 0 * * * root /usr/bin/reboot" > /etc/cron.d/reboot
