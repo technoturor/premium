@@ -236,7 +236,7 @@ do
 			;;
 		"Used Data By Users")
 			used_data | lolcat
-			break
+ 			break
 			;;
 			"bench-network")
 			bench-network2 | lolcat
@@ -269,8 +269,9 @@ do
 			;;
         "Ganti Port Squid3")	
             echo "Silahkan ganti port Squid3 anda lalu klik enter?"| lolcat
-            read -p "Port: " -e -i 8080 PORT
-            sed -i "s/http_port [0-9]*/http_port $PORT/" /etc/squid3/squid.conf
+            read -p "Port 1: " -e -i 8080 PORT1
+	    read -p "Port 2: " -e -i 3128 PORT2
+            sed -i "s/http_port [0-9]*/http_port $PORT1/" "s/http_port [0-9]*/http_port $PORT2/" /etc/squid3/squid.conf
             service squid3 restart
             echo "Squid3 Updated : Port $PORT"| lolcat
 			break
