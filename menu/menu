@@ -273,7 +273,7 @@ do
 	    read -p "Port 2: " -e -i 3128 PORT2
             sed -i "s/http_port [0-9]*/http_port $PORT\n$PORT2\n/" /etc/squid3/squid.conf
             service squid3 restart
-            echo "Squid3 Updated : Port1 $PORT1"| lolcat
+            echo "Squid3 Updated : Port1 $PORT"| lolcat
 	    echo "Squid3 Updated : Port2 $PORT2"| lolcat
 			break
 			;;
