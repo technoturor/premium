@@ -36,7 +36,7 @@ echo -e ""
 	#usermod -e $expdate $uname
 
 	myip=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0' | head -n1`;
-	myip2="s/xxxxxxxxx/$myip/g";	
+	#myip2="s/xxxxxxxxx/$myip/g";	
 	#wget -qO /tmp/client.ovpn "http://vpnpowerjack.com/debian8x64/source/client.ovpn"
 	#sed -i 's/remote xxxxxxxxx 1194/remote xxxxxxxxx 443/g' /tmp/client.ovpn
 	#sed -i $myip2 /tmp/client.ovpn
@@ -257,7 +257,7 @@ do
             read -p "Port: " -e -i 1194 PORT
             sed -i "s/port [0-9]*/port $PORT/" /etc/openvpn/server.conf
             service openvpn restart
-            echo "OpenVPN Updated : Port $PORT"| lolcat
+            echo "OpenVPN Updated Port: $PORT"| lolcat
 			break
 			;;
 		"Ganti Port Dropbear")	
@@ -282,8 +282,8 @@ do
 	    read -p "Port 2: " -e -i 3128 PORT2
             sed -i "s/http_port [0-9]*\nhttp_port [0-9]*/http_port $PORT1\nhttp_port $PORT2/g" /etc/squid3/squid.conf
             service squid3 restart
-            echo "Squid3 Updated : Port1 $PORT1"| lolcat
-	    echo "Squid3 Updated : Port2 $PORT2"| lolcat
+            echo "Squid3 Updated Port1: $PORT1"| lolcat
+	    echo "Squid3 Updated Port2: $PORT2"| lolcat
 			break
 			;;
 "Speedtest")
