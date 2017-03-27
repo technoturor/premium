@@ -90,37 +90,36 @@ echo "<?php phpinfo(); ?>" > /home/vps/public_html/info.php
 wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/conf/vps.conf"
 sed -i 's/listen = \/var\/run\/php5-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php5/fpm/pool.d/www.conf
 
-# openvpn
-apt-get -y install openvpn
+# install openvpn
+wget -O /etc/openvpn/openvpn.tar "https://raw.github.com/arieonline/autoscript/master/conf/openvpn-debian.tar"
 cd /etc/openvpn/
-wget http://vpnpowerjack.com/debian8x64/source/openvpn.tar
 tar xf openvpn.tar
-#rm openvpn.tar
-
-# iptables.up.rules
-wget -O /etc/iptables.up.rules "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/conf/iptables.up.rules"
+wget -O /etc/openvpn/1194.conf "https://raw.github.com/arieonline/autoscript/master/conf/1194.conf"
+service openvpn restart
+sysctl -w net.ipv4.ip_forward=1
+sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf
+wget -O /etc/iptables.up.rules "https://raw.github.com/arieonline/autoscript/master/conf/iptables.up.rules"
 sed -i '$ i\iptables-restore < /etc/iptables.up.rules' /etc/rc.local
-sed -i "s/ipserver/$myip/g" /etc/iptables.up.rules
+MYIP=`curl -s ifconfig.me`;
+MYIP2="s/xxxxxxxxx/$MYIP/g";
+sed -i $MYIP2 /etc/iptables.up.rules;
 iptables-restore < /etc/iptables.up.rules
+service openvpn restart
 
-# etc
-wget -O /home/vps/public_html/client.ovpn "http://vpnpowerjack.com/debian8x64/source/client.ovpn"
-sed -i "s/ipserver/$myip/g" /home/vps/public_html/client.ovpn
-# cronjob
-#cd
-#wget http://vpnpowerjack.com/debian8x64/source/cronjob.tar
-#tar xf cronjob.tar
-#mv uptimes.php /home/vps/public_html/
-#mv usertol userssh uservpn /usr/bin/
-#mv cronvpn cronssh /etc/cron.d/
-#chmod +x /usr/bin/usertol
-#chmod +x /usr/bin/userssh
-#chmod +x /usr/bin/uservpn
-#useradd -m -g users -s /bin/bash deenie11
-#echo "deenie11:deenie11" | chpasswd
-#
+# configure openvpn client config
+cd /etc/openvpn/
+wget -O /etc/openvpn/1194-client.ovpn "https://raw.github.com/arieonline/autoscript/master/conf/1194-client.conf"
+sed -i $MYIP2 /etc/openvpn/1194-client.ovpn;
+PASS=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 15 | head -n 1`;
+useradd -M -s /bin/false deenie
+echo "deenie11:$PASS" | chpasswd
+echo "biasa wae,, zonk!!!" > pass.txt
+echo "$PASS" >> pass.txt
+tar cf client.tar 1194-client.ovpn pass.txt
+cp client.tar /home/vps/public_html/
+
 # setting port ssh
-sed -i '/Port 22/a Port 143' /etc/ssh/sshd_config
+sed -i '/Port 2
 sed -i 's/Port 22/Port  22/g' /etc/ssh/sshd_config
 service ssh restart
 
