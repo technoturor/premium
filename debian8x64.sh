@@ -112,7 +112,7 @@ wget -O /etc/openvpn/1194-client.ovpn "https://raw.github.com/arieonline/autoscr
 sed -i $MYIP2 /etc/openvpn/1194-client.ovpn;
 PASS=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 15 | head -n 1`;
 useradd -M -s /bin/false deenie
-echo "deenie11:$PASS" | chpasswd
+echo "deenie:$PASS" | chpasswd
 echo "biasa wae,, zonk!!!" > pass.txt
 echo "$PASS" >> pass.txt
 tar cf client.tar 1194-client.ovpn pass.txt
@@ -206,8 +206,6 @@ chmod +x /usr/local/bin/menu
 cd
 wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/motd"
 mv ./motd /etc/motd
-
-rm debian8x64.sh
 
 echo "UPDATE AND INSTALL COMPLETE COMPLETE 99% BE PATIENT"
 rm $0;rm *.txt;rm *.tar;rm *.deb;rm *.asc
