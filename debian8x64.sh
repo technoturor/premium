@@ -128,7 +128,7 @@ service ssh restart
 apt-get -y install dropbear
 sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=443/g' /etc/default/dropbear
-sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 443"/g' /etc/default/dropbear
+sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 109"/g' /etc/default/dropbear
 echo "/bin/false" >> /etc/shells
 service ssh restart
 service dropbear restart
@@ -147,15 +147,15 @@ sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
 service webmin restart
 
 # upgade dropbear
-#apt-get install zlib1g-dev
-#wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/update_dropbear/dropbear-2016.74.tar.bz2
-#bzip2 -cd dropbear-2016.74.tar.bz2 | tar xvf -
-#cd dropbear-2016.74
-#./configure
-#make && make install
-#mv /usr/sbin/dropbear /usr/sbin/dropbear.old
-#ln /usr/local/sbin/dropbear /usr/sbin/dropbear
-#cd && rm -rf dropbear-2016.74 && rm -rf dropbear-2016.74.tar.bz2
+apt-get install zlib1g-dev
+wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/update_dropbear/dropbear-2016.74.tar.bz2
+bzip2 -cd dropbear-2016.74.tar.bz2 | tar xvf -
+cd dropbear-2016.74
+./configure
+make && make install
+mv /usr/sbin/dropbear /usr/sbin/dropbear.old
+ln /usr/local/sbin/dropbear /usr/sbin/dropbear
+cd && rm -rf dropbear-2016.74 && rm -rf dropbear-2016.74.tar.bz2
 
 # auto reboot 24jam
 cd
@@ -226,7 +226,7 @@ echo ""  | tee -a log-install.txt
 echo "Webmin   : http://$myip:10000/"
 echo "Squid3   : 8080"  | tee -a log-install.txt
 echo "OpenSSH  : 22, 143"  | tee -a log-install.txt
-echo "Dropbear : 443"  | tee -a log-install.txt
+echo "Dropbear : 443, 109"  | tee -a log-install.txt
 #echo "OpenVPN  : TCP 1194 (client config : http://$myip/client.ovpn)"  | tee -a log-install.txt
 echo "Timezone : Asia/Jakarta"  | tee -a log-install.txt
 echo "Fail2Ban : [on]"   | tee -a log-install.txt
