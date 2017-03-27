@@ -266,9 +266,11 @@ do
 	    read -p "Port2: " -e -i 109 PORT2
 	    read -p "Port3: " -e -i 143 PORT3
             sed -i "s/DROPBEAR_PORT=[0-9]*/DROPBEAR_PORT=$PORT/g" /etc/default/dropbear
-            sed -i "s/DROPBEAR_EXTRA_ARGS="-p [0-9]*" "-p [0-9]*"/DROPBEAR_EXTRA_ARGS="-p $PORT2" "-p $PORT3"/g" /etc/default/dropbear
+            sed -i 's/DROPBEAR_EXTRA_ARGS="-p [0-9]*" "-p [0-9]*"/DROPBEAR_EXTRA_ARGS="-p $PORT2" "-p $PORT3"/g' /etc/default/dropbear
     service dropbear restart
-            echo "Dropbear Updated : Port $PORT"| lolcat
+            echo "Dropbear Updated : Port1 $PORT"| lolcat
+	    echo "Dropbear Updated : Port2 $PORT2" | lolcat
+	    echo "Dropbear Updated : Port3 $PORT3" | lolcat
 			break
 			;;
         "Ganti Port Squid3")	
