@@ -220,26 +220,26 @@ service webmin restart
 service dropbear restart
 service nginx start
 clear
-echo "========================================"  | lolcat | tee -a log-install.txt
-echo "Service Autoscript VPS Yusuf Ardiansyah" | lolcat | tee -a log-install.txt
-echo "----------------------------------------" | lolcat | tee -a log-install.txt
+echo "========================================"  
+echo "Service Autoscript VPS Yusuf Ardiansyah" | lolcat 
+echo "----------------------------------------" | lolcat
 echo ""  | tee -a log-install.txt
 echo "Webmin   : http://$myip:10000/" | lolcat
-echo "Squid3   : 8080,3128" | lolcat  | tee -a log-install.txt
-echo "OpenSSH  : 22, 143" | lolcat | tee -a log-install.txt
-echo "Dropbear : 443, 109"| lolcat  | tee -a log-install.txt
-echo "OpenVPN  : TCP 1194 (client config : http://$myip/client.ovpn)"  | tee -a log-install.txt
-echo "Timezone : Asia/Jakarta"| lolcat | lolcat | tee -a log-install.txt
-echo "Fail2Ban : [on]"| lolcat   | tee -a log-install.txt
-echo "Power By : Yusuf Ardiansyah"| lolcat  | tee -a log-install.txt
-echo "PIN BBM  : yu-suf " | lolcat | tee -a log-install.txt
-echo "Telegram : e-Server"| lolcat  | tee -a log-install.txt
+echo "Squid3   : 8080,3128" | lolcat
+echo "OpenSSH  : 22, 143" | lolcat
+echo "Dropbear : 443, 109"| lolcat
+echo "OpenVPN  : TCP 1194 (client config : http://$myip/client.ovpn)" | lolcat
+echo "Timezone : Asia/Jakarta"| lolcat
+echo "Fail2Ban : [on]"| lolcat
+echo "Power By : Yusuf Ardiansyah"| lolcat
+echo "PIN BBM  : yu-suf " | lolcat
+echo "Telegram : e-Server"| lolcat
 echo ""  | tee -a log-install.txt
 echo "Tambahan Script: Otomatis Reboot 24 Jam sekali" | lolcat
 echo "----------------------------------------"| lolcat
 echo "LOG INSTALL  --> /root/log-install.txt"| lolcat
 echo "----------------------------------------"| lolcat
-echo " CREATED BY YUSUF ARDIANSYAH - JUAL AKUN SSH - VPS - SCRIPT INSTALLER PREMIUM"| lolcat | tee -a log-install.txt
+echo " CREATED BY YUSUF ARDIANSYAH - JUAL AKUN SSH - VPS - SCRIPT INSTALLER PREMIUM"| lolcat
 echo "========================================"  | tee -a log-install.txt
 echo "      SILAHKAN REBOOT VPS ANDA !" | lolcat
 echo "========================================"  | tee -a log-install.txt
