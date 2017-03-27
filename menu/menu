@@ -261,20 +261,26 @@ do
 			;;
 		"Ganti Port Dropbear")	
             echo "Silahkan ganti port Dropbear anda lalu klik enter?"| lolcat
-            read -p "Port: " -e -i 443 PORT
-            sed -i "s/DROPBEAR_PORT=[0-9]*/DROPBEAR_PORT=$PORT/" /etc/default/dropbear
-            service dropbear restart
+	    echo "Port dropbear tidak boleh sama dengan port openVPN/openSSH/squid3 !!!"| lolcat
+            read -p "Port1: " -e -i 443 PORT
+	    read -p "Port2: " -e -i 109 PORT2
+	    read -p "Port3: " -e -i 143 PORT3
+            sed -i s/DROPBEAR_PORT=[0-9]*/DROPBEAR_PORT=$PORT/g /etc/default/dropbear
+            sed -i s/DROPBEAR_EXTRA_ARGS="-p [0-9]*" "-p [0-9]*"/DROPBEAR_EXTRA_ARGS="-p $PORT2" "-p $PORT3"/g /etc/default/dropbear
+    service dropbear restart
             echo "Dropbear Updated : Port $PORT"| lolcat
 			break
 			;;
         "Ganti Port Squid3")	
             echo "Silahkan ganti port Squid3 anda lalu klik enter?"| lolcat
-            read -p "Port 1: " -e -i 8080 PORT1
+            echo "Port 1 dan Port 2 tidak boleh sama !!!"| lolcat
+	    echo "Isi dengan angka tidak boleh huruf !!!"| lolcat
+	    read -p "Port 1: " -e -i 8080 PORT1
 	    read -p "Port 2: " -e -i 3128 PORT2
             sed -i "s/http_port [0-9]*\nhttp_port [0-9]*/http_port $PORT1\nhttp_port $PORT2/g" /etc/squid3/squid.conf
             service squid3 restart
-            echo "Squid3 Updated : Port1 $PORT1 Dan Port2 $PORT2"| lolcat
-	    #echo "Squid3 Updated : Port2 $PORT2"| lolcat
+            echo "Squid3 Updated : Port1 $PORT1"| lolcat
+	    echo "Squid3 Updated : Port2 $PORT2"| lolcat
 			break
 			;;
 "Speedtest")
