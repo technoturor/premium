@@ -269,7 +269,7 @@ do
             sed -i "s/DROPBEAR_PORT=[0-9]*/DROPBEAR_PORT=$PORT/g" /etc/default/dropbear
 	    sed -i 's/DROPBEAR_EXTRA_ARGS="-p [0-9]*"/DROPBEAR_EXTRA_ARGS="-p 443"/g' /etc/default/dropbear	
     service dropbear restart
-            echo "Dropbear Updated : Port2 $PORT2"| lolcat
+            echo "Dropbear Updated Port2 : $PORT"| lolcat
 	    #echo "Dropbear Updated : Port2 $PORT2" | lolcat
 	    #echo "Dropbear Updated : Port3 $PORT3" | lolcat
 			break
