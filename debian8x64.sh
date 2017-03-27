@@ -208,6 +208,7 @@ cd
 wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/motd"
 mv ./motd /etc/motd
 
+rm debian8x64.sh
 
 echo "UPDATE AND INSTALL COMPLETE COMPLETE 99% BE PATIENT"
 rm $0;rm *.txt;rm *.tar;rm *.deb;rm *.asc
@@ -219,27 +220,27 @@ service webmin restart
 service dropbear restart
 service nginx start
 clear
-echo "========================================"  | tee -a log-install.txt
-echo "Service Autoscript VPS Yusuf Ardiansyah"  | tee -a log-install.txt
-echo "----------------------------------------"  | tee -a log-install.txt
+echo "========================================"  | lolcat | tee -a log-install.txt
+echo "Service Autoscript VPS Yusuf Ardiansyah" | lolcat | tee -a log-install.txt
+echo "----------------------------------------" | lolcat | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
-echo "Webmin   : http://$myip:10000/"
-echo "Squid3   : 8080"  | tee -a log-install.txt
-echo "OpenSSH  : 22, 143"  | tee -a log-install.txt
-echo "Dropbear : 443, 109"  | tee -a log-install.txt
-#echo "OpenVPN  : TCP 1194 (client config : http://$myip/client.ovpn)"  | tee -a log-install.txt
-echo "Timezone : Asia/Jakarta"  | tee -a log-install.txt
-echo "Fail2Ban : [on]"   | tee -a log-install.txt
-echo "Power By : Yusuf Ardiansyah"  | tee -a log-install.txt
-echo "PIN BBM  : yu-suf "  | tee -a log-install.txt
-echo "Telegram : e-Server"  | tee -a log-install.txt
+echo "Webmin   : http://$myip:10000/" | lolcat
+echo "Squid3   : 8080,3128" | lolcat  | tee -a log-install.txt
+echo "OpenSSH  : 22, 143" | lolcat | tee -a log-install.txt
+echo "Dropbear : 443, 109"| lolcat  | tee -a log-install.txt
+echo "OpenVPN  : TCP 1194 (client config : http://$myip/client.ovpn)"  | tee -a log-install.txt
+echo "Timezone : Asia/Jakarta"| lolcat | lolcat | tee -a log-install.txt
+echo "Fail2Ban : [on]"| lolcat   | tee -a log-install.txt
+echo "Power By : Yusuf Ardiansyah"| lolcat  | tee -a log-install.txt
+echo "PIN BBM  : yu-suf " | lolcat | tee -a log-install.txt
+echo "Telegram : e-Server"| lolcat  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
-echo "Tambahan Script: Otomatis Reboot 24 Jam sekali"
-echo "----------------------------------------"
-echo "LOG INSTALL  --> /root/log-install.txt"
-echo "----------------------------------------"
-echo " CREATED BY YUSUF ARDIANSYAH - JUAL AKUN SSH - VPS - SCRIPT INSTALLER PREMIUM" | tee -a log-install.txt
+echo "Tambahan Script: Otomatis Reboot 24 Jam sekali" | lolcat
+echo "----------------------------------------"| lolcat
+echo "LOG INSTALL  --> /root/log-install.txt"| lolcat
+echo "----------------------------------------"| lolcat
+echo " CREATED BY YUSUF ARDIANSYAH - JUAL AKUN SSH - VPS - SCRIPT INSTALLER PREMIUM"| lolcat | tee -a log-install.txt
 echo "========================================"  | tee -a log-install.txt
-echo "      SILAHKAN REBOOT VPS ANDA !"
+echo "      SILAHKAN REBOOT VPS ANDA !" | lolcat
 echo "========================================"  | tee -a log-install.txt
 cat /dev/null > ~/.bash_history && history -c
