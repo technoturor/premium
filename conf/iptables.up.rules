@@ -11,6 +11,6 @@ COMMIT
 :PREROUTING ACCEPT [0:0]
 :OUTPUT ACCEPT [0:0]
 :POSTROUTING ACCEPT [0:0]
--A POSTROUTING -o venet0 -j SNAT --to-source xxxxxxxxx
+-A POSTROUTING -o venet0 -j SNAT --to-source ipserver
 COMMIT
 
