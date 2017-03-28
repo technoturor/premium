@@ -100,7 +100,7 @@ sysctl -w net.ipv4.ip_forward=1
 sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf
 wget -O /etc/iptables.up.rules "https://raw.github.com/deeniedoank/autoscript2/master/conf/iptables.up.rules"
 sed -i '$ i\iptables-restore < /etc/iptables.up.rules' /etc/rc.local
-#myip= `curl -s ifconfig.me`;
+
 myip2="s/ipserver/$myip/g";
 sed -i $myip2 /etc/iptables.up.rules;
 iptables-restore < /etc/iptables.up.rules
@@ -225,7 +225,7 @@ echo "Webmin   : http://$myip:10000/" | lolcat
 echo "Squid3   : 8080,3128" | lolcat
 echo "OpenSSH  : 22, 143" | lolcat
 echo "Dropbear : 443, 109"| lolcat
-echo "OpenVPN  : TCP 1194 (client config : http://$myip/client.ovpn)" | lolcat
+echo "OpenVPN  : TCP 1194 (client config : http://$myip/client.tar)" | lolcat
 echo "Timezone : Asia/Jakarta"| lolcat
 echo "Fail2Ban : [on]"| lolcat
 echo "Power By : Yusuf Ardiansyah"| lolcat
