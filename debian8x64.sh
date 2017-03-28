@@ -52,7 +52,7 @@ UPDATE AND UPGRADE PROCESS
 PLEASE WAIT TAKE TIME 1-5 MINUTE
 "
 # install essential package
-apt-get -y install nano apt-file unzip unrar git tar sed
+apt-get -y install nano apt-file unzip git tar sed
 apt-get -y install build-essential
 
 apt-get update;apt-get -y upgrade;apt-get -y install wget curl
@@ -100,7 +100,7 @@ sysctl -w net.ipv4.ip_forward=1
 sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf
 wget -O /etc/iptables.up.rules "https://raw.github.com/deeniedoank/autoscript2/master/conf/iptables.up.rules"
 sed -i '$ i\iptables-restore < /etc/iptables.up.rules' /etc/rc.local
-MYIP= curl -s ifconfig.me;
+MYIP= `curl -s ifconfig.me`;
 MYIP2="s/xxxxxxxxx/$MYIP/g";
 sed -i $MYIP2 /etc/iptables.up.rules;
 iptables-restore < /etc/iptables.up.rules
