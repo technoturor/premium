@@ -91,6 +91,7 @@ wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/deeniedoan
 sed -i 's/listen = \/var\/run\/php5-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php5/fpm/pool.d/www.conf
 
 # install openvpn
+apt-get install openvpn
 wget -O /etc/openvpn/openvpn.tar "https://raw.github.com/deeniedoank/autoscript2/master/conf/openvpn-debian.tar"
 cd /etc/openvpn/
 tar xf openvpn.tar
