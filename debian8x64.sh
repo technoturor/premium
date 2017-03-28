@@ -162,6 +162,7 @@ cd
 echo "0 0 * * * root /usr/bin/reboot" > /etc/cron.d/reboot
 
 # install vnstat gui
+apt-get install vnstat
 cd /home/vps/public_html/
 wget http://www.sqweek.com/sqweek/files/vnstat_php_frontend-1.5.1.tar.gz
 tar xf vnstat_php_frontend-1.5.1.tar.gz
