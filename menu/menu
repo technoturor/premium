@@ -259,7 +259,7 @@ do
 		"Ganti Port OpenVPN")	
             echo "Silahkan ganti port OpenVPN anda lalu klik enter?"| lolcat
             read -p "Port: " -e -i 1194 PORT
-            sed -i "s/port [0-9]*/port $PORT/" /etc/openvpn/server.conf
+            sed -i "s/port [0-9]*/port $PORT/" /etc/openvpn/1194.conf
             service openvpn restart
             echo "OpenVPN Updated Port: $PORT"| lolcat
 			break
