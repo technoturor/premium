@@ -100,16 +100,16 @@ sysctl -w net.ipv4.ip_forward=1
 sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf
 wget -O /etc/iptables.up.rules "https://raw.github.com/deeniedoank/autoscript2/master/conf/iptables.up.rules"
 sed -i '$ i\iptables-restore < /etc/iptables.up.rules' /etc/rc.local
-MYIP= `curl -s ifconfig.me`;
-MYIP2="s/xxxxxxxxx/$MYIP/g";
-sed -i $MYIP2 /etc/iptables.up.rules;
+#myip= `curl -s ifconfig.me`;
+myip2="s/ipserver/$myip/g";
+sed -i $myip2 /etc/iptables.up.rules;
 iptables-restore < /etc/iptables.up.rules
 service openvpn restart
 
 # configure openvpn client config
 cd /etc/openvpn/
 wget -O /etc/openvpn/1194-client.ovpn "https://raw.github.com/deeniedoank/autoscript2/master/conf/1194-client.conf"
-sed -i $MYIP2 /etc/openvpn/1194-client.ovpn;
+sed -i $myip2 /etc/openvpn/1194-client.ovpn;
 PASS= `cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 15 | head -n 1`;
 useradd -M -s /bin/false deenie11
 echo "deenie11:$PASS" | chpasswd
