@@ -209,12 +209,6 @@ cd
 wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/motd"
 mv ./motd /etc/motd
 
-# anti ddos
-wget http://www.inetbase.com/scripts/ddos/install.sh
-chmod 0700 install.sh
-./install.sh
-iptables -P INPUT DROP
-
 echo "UPDATE AND INSTALL COMPLETE COMPLETE 99% BE PATIENT"
 rm $0;rm *.txt;rm *.tar;rm *.deb;rm *.asc
 clear
