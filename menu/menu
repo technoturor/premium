@@ -26,7 +26,7 @@ echo -e ""
 echo -e "     Port dropbear: 443,109" | lolcat
 echo -e "     Port openSSH: 22,143" | lolcat
 echo -e "     Squid port: 8080,3128" | lolcat
-echo -e "     OpenVPN port default: 1194" | lolcat
+echo -e "     OpenVPN port default: 55" | lolcat
 echo -e "-----------------------------------------" | lolcat
 echo -e "      Aktif Sampai: $exp" | lolcat
 echo -e "=========================================" | lolcat
@@ -258,7 +258,7 @@ do
 	          ;;
 		"Ganti Port OpenVPN")	
             echo "Silahkan ganti port OpenVPN anda lalu klik enter?"| lolcat
-            read -p "Port: " -e -i 1194 PORT
+            read -p "Port: " -e -i 55 PORT
             sed -i "s/port [0-9]*/port $PORT/" /etc/openvpn/1194.conf
             service openvpn restart
             echo "OpenVPN Updated Port: $PORT"| lolcat
