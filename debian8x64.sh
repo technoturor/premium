@@ -99,12 +99,12 @@ wget -O /etc/openvpn/1194.conf "https://raw.github.com/deeniedoank/autoscript2/m
 service openvpn restart
 sysctl -w net.ipv4.ip_forward=1
 sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf
-wget -O /etc/iptables.up.rules "https://raw.github.com/deeniedoank/autoscript2/master/conf/iptables.up.rules"
-sed -i '$ i\iptables-restore < /etc/iptables.up.rules' /etc/rc.local
+wget -O /etc/iptables.conf "https://raw.github.com/deeniedoank/autoscript2/master/conf/iptables.conf"
+sed -i '$ i\iptables-restore < /etc/iptables.conf' /etc/rc.local
 
 myip2="s/ipserver/$myip/g";
-sed -i $myip2 /etc/iptables.up.rules;
-iptables-restore < /etc/iptables.up.rules
+sed -i $myip2 /etc/iptables.conf;
+iptables-restore < /etc/iptables.conf
 service openvpn restart
 
 # configure openvpn client config
