@@ -76,7 +76,7 @@ rm -rf .bashrc
 wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/text%20warna/.bashrc
 
 # text pelangi
-sudo apt-get install ruby
+sudo apt-get install ruby -y
 sudo gem install lolcat
 
 # nginx
