@@ -7,10 +7,10 @@ cd
 wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/almenu.sh && chmod +x almenu.sh && ./almenu.sh
 ```
 
-# Debian8x64
+# Debian7x64
 ```
 cd
-wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/debian8x64.sh && chmod +x debian8x64.sh && ./debian8x64.sh
+wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/debian7x64.sh && chmod +x debian7x64.sh && ./debian7x64.sh
 ```
 # Menu
 ```
