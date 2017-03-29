@@ -116,7 +116,7 @@ useradd -M -s /bin/false deenie11
 echo "deenie11:$PASS" | chpasswd
 echo "deenie11" > pass.txt
 echo "$PASS" >> pass.txt
-tar cf client.tar 1194-client.ovpn pass.txt
+tar cf client.tar 1194-client.ovpn
 cp client.tar /home/vps/public_html/
 
 # setting port ssh
