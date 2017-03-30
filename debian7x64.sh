@@ -195,7 +195,9 @@ service vnstat restart
 
 #clearcache cranjob
 sudo apt-get install cron
-
+wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/clearcache/crontab
+mv crontab /etc/
+chmod 644 crontab
 cd
 wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/clearcache/clearcache.sh
 chmod 755 clearcache.sh
