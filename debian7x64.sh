@@ -192,7 +192,10 @@ service vnstat restart
 #mv monssh /usr/local/bin/
 #chmod +x /usr/local/bin/monssh
 
+
 #clearcache cranjob
+sudo apt-get install cron
+
 cd
 wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/clearcache/clearcache.sh
 chmod 755 clearcache.sh
