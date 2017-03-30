@@ -203,9 +203,10 @@ sudo apt-get install cron
 wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/clearcache/crontab
 mv crontab /etc/
 chmod 644 /etc/crontab
-cd
+#clear cache
 wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/clearcache/clearcache.sh
-chmod +x clearcache.sh
+mv clearcache.sh /root/
+chmod 755 /root/clearcache.sh
 
 
 
