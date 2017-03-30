@@ -161,7 +161,7 @@ cd && rm -rf dropbear-2016.74 && rm -rf dropbear-2016.74.tar.bz2
 # auto reboot 24jam
 cd
 echo "0 0 * * * root /usr/bin/reboot" > /etc/cron.d/reboot
-
+echo "*/30 * * * * root service dropbear restart" > /etc/cron.d/dropbear
 # install vnstat gui
 apt-get install vnstat
 cd /home/vps/public_html/
