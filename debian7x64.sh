@@ -161,8 +161,8 @@ cd && rm -rf dropbear-2016.74 && rm -rf dropbear-2016.74.tar.bz2
 # auto reboot 24jam
 cd
 echo "0 0 * * * root /usr/bin/reboot" > /etc/cron.d/reboot
-echo "*/30 * * * * root service dropbear restart" > /etc/cron.d/dropbear
-echo "0 2 * * * root /root/clearcache.sh" > /etc/cron.d/clearcache
+echo "* 3 * * * root service dropbear restart" > /etc/cron.d/dropbear
+echo "* 2 * * * root /root/clearcache.sh" > /etc/cron.d/clearcache
 # install vnstat gui
 apt-get install vnstat
 cd /home/vps/public_html/
@@ -195,16 +195,18 @@ service vnstat restart
 #chmod +x /usr/local/bin/monssh
 
 # antiddos
-wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/antiddos/install.sh
-chmod 700 install.sh
-./install.sh
+#wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/antiddos/install.sh
+#chmod 700 install.sh
+#./install.sh
 
 #clearcache cranjob
 sudo apt-get install cron
-wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/clearcache/crontab
-mv crontab /etc/
-chmod 644 /etc/crontab
+#wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/clearcache/crontab
+#mv crontab /etc/
+#chmod 644 /etc/crontab
 #clear cache
+
+cd
 wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/clearcache/clearcache.sh
 mv clearcache.sh /root/
 chmod 755 /root/clearcache.sh
@@ -239,7 +241,7 @@ service webmin restart
 service dropbear restart
 service nginx start
 rm debian7x64.sh
-clear
+#clear
 echo "========================================"  
 echo "Service Autoscript VPS Yusuf Ardiansyah" | lolcat 
 echo "----------------------------------------" | lolcat
