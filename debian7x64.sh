@@ -158,8 +158,8 @@ ln /usr/local/sbin/dropbear /usr/sbin/dropbear
 cd && rm -rf dropbear-2016.74 && rm -rf dropbear-2016.74.tar.bz2
 
 # auto reboot 24jam
-cd
-echo "0 0 * * * root /usr/bin/reboot" > /etc/cron.d/reboot
+#cd
+#echo "0 0 * * * root /usr/bin/reboot" > /etc/cron.d/reboot
 
 # install vnstat gui
 apt-get install vnstat
