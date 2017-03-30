@@ -209,6 +209,9 @@ mv clearcache.sh /root/
 chmod 755 /root/clearcache.sh
 
 
+/etc/init.d/crond restart
+
+
 
 # speedtest
 cd
