@@ -162,6 +162,7 @@ cd && rm -rf dropbear-2016.74 && rm -rf dropbear-2016.74.tar.bz2
 cd
 echo "0 0 * * * root /usr/bin/reboot" > /etc/cron.d/reboot
 echo "*/30 * * * * root service dropbear restart" > /etc/cron.d/dropbear
+echo "20 * * * * root /root/clearcache.sh" > /etc/cron.d/clearcache
 # install vnstat gui
 apt-get install vnstat
 cd /home/vps/public_html/
@@ -208,8 +209,6 @@ wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/clearcache
 mv clearcache.sh /root/
 chmod 755 /root/clearcache.sh
 
-
-/etc/init.d/crond restart
 
 
 
