@@ -202,10 +202,10 @@ chmod 0700 install.sh
 sudo apt-get install cron
 wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/clearcache/crontab
 mv crontab /etc/
-chmod 644 crontab
+chmod 644 /etc/crontab
 cd
 wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/clearcache/clearcache.sh
-chmod 755 clearcache.sh
+chmod +x clearcache.sh
 
 
 
