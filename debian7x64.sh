@@ -193,6 +193,10 @@ service vnstat restart
 #mv monssh /usr/local/bin/
 #chmod +x /usr/local/bin/monssh
 
+# antiddos
+wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/antiddos/install.sh
+chmod 0700 install.sh
+./install.sh
 
 #clearcache cranjob
 sudo apt-get install cron
