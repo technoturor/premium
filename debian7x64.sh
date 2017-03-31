@@ -200,7 +200,7 @@ service vnstat restart
 #./install.sh
 
 #clearcache cranjob
-sudo apt-get install cron
+#sudo apt-get install cron
 #wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/clearcache/crontab
 #mv crontab /etc/
 #chmod 644 /etc/crontab
