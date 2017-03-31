@@ -148,10 +148,6 @@ wget freevps.us/downloads/bench.sh -O - -o /dev/null|bash
 echo -e "Sekian...!!!"| lolcat
 }
 
-function keluar_vps(){
-exit; exit
-}
-
 function user-list(){
 echo "--------------------------------------------------"| lolcat
 echo "BIL  USERNAME        STATUS       EXP DATE   "| lolcat
@@ -196,7 +192,7 @@ echo "        #            Copyright © yusuf-ardiansyah           #"| lolcat
 echo "        ====================================================="| lolcat
 echo ""
 PS3='Silahkan ketik nomor pilihan anda lalu tekan enter: '
-options=("Buat User" "Perbarui User" "Hapus User" "Semua User" "User Belum Kadaluarsa" "User Sudah Kadaluarsa" "Restart Server" "Ganti Password User" "Ganti Password VPS" "Used Data By Users" "bench-network" "Ram Status" "Monitor Multi Login" "Ganti Port OpenVPN" "Ganti Port Dropbear" "Ganti Port Squid3" "Speedtest" "Bersihkan cache ram" "Quit" "Keluar VPS")
+options=("Buat User" "Perbarui User" "Hapus User" "Semua User" "User Belum Kadaluarsa" "User Sudah Kadaluarsa" "Restart Server" "Ganti Password User" "Ganti Password VPS" "Used Data By Users" "bench-network" "Ram Status" "Bersihkan cache ram" "Monitor Multi Login" "Ganti Port OpenVPN" "Ganti Port Dropbear" "Ganti Port Squid3" "Speedtest" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -256,6 +252,10 @@ do
 			cat /tmp/ramcache | grep -v "Swap"
 			break
 			;;
+			"Bersihkan cache ram")
+		echo 3 > /proc/sys/vm/drop_caches
+			break
+			;;
 			"Monitor Multi Login")
 			monssh2
                 break
@@ -294,22 +294,15 @@ do
 	    echo "Squid3 Updated Port2: $PORT2"| lolcat
 			break
 			;;
-"Speedtest")
-python speedtest.py --share | lolcat
-break
-;;	
-"Bersihkan cache ram")
-echo 3 > /proc/sys/vm/drop_caches
-break
-;;
-        "Quit")
-	
-	break
-            ;;
-	    "Keluar VPS")
-	    keluar_vps
-	    break
-	    ;;
+			"Speedtest")
+			python speedtest.py --share | lolcat
+			break		
+			;;
+		"Quit")
+		
+		break
+		;;
+	 
         *) echo invalid option;;
     esac
 done
