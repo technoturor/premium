@@ -149,7 +149,7 @@ echo -e "Sekian...!!!"| lolcat
 }
 
 function keluar_vps(){
-exit
+exit; exit
 }
 
 function user-list(){
