@@ -303,7 +303,7 @@ break
 	break
             ;;
 	    "Keluar VPS")
-	    logout
+	    exit
 	    break
 	    ;;
         *) echo invalid option;;
