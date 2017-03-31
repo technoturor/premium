@@ -247,13 +247,13 @@ do
 			bench-network2 | lolcat
 			break
 			;;
-"Ram Status")
-		    free -h | grep -v + > /tmp/ramcache
-            cat /tmp/ramcache | grep -v "Swap"
-            break
-              ;;
-       "Monitor Multi Login")
-               monssh2
+			"Ram Status")
+			free -h | grep -v + > /tmp/ramcache
+			cat /tmp/ramcache | grep -v "Swap"
+			break
+			;;
+			"Monitor Multi Login")
+			monssh2
                 break
 	          ;;
 		"Ganti Port OpenVPN")	
@@ -295,7 +295,8 @@ python speedtest.py --share | lolcat
 break
 ;;	
 "Bersihkan cache ram")
-sync; echo 1 > /proc/sys/vm/drop_caches
+sync
+echo 1 > /proc/sys/vm/drop_caches
 break
 ;;
         "Quit")
