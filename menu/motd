@@ -4,15 +4,15 @@ purple='\e[1;35m'
 cyan='\e[1;36m'
 red='\e[1;32m'
 
-echo -e $red "       =====================================================" | lolcat
-echo -e $green "       #                                                   #" | lolcat
-echo -e $purple "       #    [SELAMAT DATANG DI VPS  YUSUF ARDIANSYAH]      #" | lolcat
-echo -e $blue "       #                                                   #" | lolcat
-echo -e $green "       #           WhatsApp       : 082139743432           #" | lolcat
-echo -e $red "       #           Telegram       : e-Server               #" | lolcat
-echo -e $blue "       #           Facebook       : fb.com/t34mh4ck3r      #" | lolcat
-echo -e $red "       #           Pin Bbm        : yu-suf                 #" | lolcat
-echo -e $purple "       #           Silahkan Ketik : menu (enter)           #" | lolcat
-echo -e green "       #                                                   #" | lolcat
-echo -e $cyan "       #     Copyright © YusufArdiansyah™ Premium 2017     #" | lolcat
-echo -e $red "       =====================================================" | lolcat
+echo -e $red "       =====================================================" 
+echo -e $green "       #                                                   #" 
+echo -e $purple "       #    [SELAMAT DATANG DI VPS  YUSUF ARDIANSYAH]      #" 
+echo -e $blue "       #                                                   #" 
+echo -e $green "       #           WhatsApp       : 082139743432           #" 
+echo -e $red "       #           Telegram       : e-Server               #" 
+echo -e $blue "       #           Facebook       : fb.com/t34mh4ck3r      #" 
+echo -e $red "       #           Pin Bbm        : yu-suf                 #" 
+echo -e $purple "       #           Silahkan Ketik : menu (enter)           #" 
+echo -e green "       #                                                   #" 
+echo -e $cyan "       #     Copyright © YusufArdiansyah™ Premium 2017     #" 
+echo -e $red "       =====================================================" 
