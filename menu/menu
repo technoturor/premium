@@ -19,7 +19,6 @@ echo -e "=========================================" | lolcat
 echo -e "        Informasi Akun Baru SSH" | lolcat
 echo -e "==========-Yusuf-Ardiansyah-=============" | lolcat
 echo -e "     Host: $myip" | lolcat
-echo -e ""
 echo -e "     Username: $uname" | lolcat
 echo -e "     Password: $pass" | lolcat
 echo -e ""
@@ -28,24 +27,15 @@ echo -e "     Port openSSH: 22,143" | lolcat
 echo -e "     Squid port: 8080,3128" | lolcat
 echo -e "     OpenVPN port default: 55" | lolcat
 echo -e "-----------------------------------------" | lolcat
-echo -e "      Aktif Sampai: $exp" | lolcat
+echo -e "     Aktif Sampai: $exp" | lolcat
 echo -e "=========================================" | lolcat
 echo -e "   Script by Yusuf Ardiansyah" | lolcat
 echo -e "   DI LARANG: HACKING-DDOS" | lolcat
 echo -e "          PHISING-SPAM-TORENT-CARDING." | lolcat
 echo -e "=========================================" | lolcat
 echo -e ""
-#useradd -s /bin/false -M $uname
-	#echo "$uname:$pass" | chpasswd
-	#usermod -e $expdate $uname
-
 	myip=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0' | head -n1`;
-	#myip2="s/xxxxxxxxx/$myip/g";	
-	#wget -qO /tmp/client.ovpn "http://vpnpowerjack.com/debian8x64/source/client.ovpn"
-	#sed -i 's/remote xxxxxxxxx 1194/remote xxxxxxxxx 443/g' /tmp/client.ovpn
-	#sed -i $myip2 /tmp/client.ovpn
-	#echo ""
-	echo "OpenVPN TCP (client config : http://$myip/client.tar)" | lolcat
+	echo "Config OVPN (http://$myip/client.tar)" | lolcat
 }
 
 function renew_user() {
