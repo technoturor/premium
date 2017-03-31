@@ -24,8 +24,8 @@ echo -e "     Password: $pass" | lolcat
 echo -e ""
 echo -e "     Port dropbear: 443,109" | lolcat
 echo -e "     Port openSSH: 22,143" | lolcat
-echo -e "     Squid port: 8080,3128" | lolcat
-echo -e "     OpenVPN port default: 55" | lolcat
+echo -e "     Port squid: 8080,3128" | lolcat
+echo -e "     Port OpenVPN default: 55" | lolcat
 echo -e "-----------------------------------------" | lolcat
 echo -e "     Aktif Sampai: $exp" | lolcat
 echo -e "=========================================" | lolcat
