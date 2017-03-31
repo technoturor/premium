@@ -78,7 +78,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias ls='ls --color=auto'
     alias dir='dir --color=auto'
     alias vdir='vdir --color=auto'
-
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
@@ -127,3 +126,16 @@ red='\e[1;32m'
 #echo -e $green
 #figlet -f slant "#Bbm: Yu-suf #"
 #echo -e $red     '_________________<☠ CINTA JANGAN BIARKAN SEDIH ☠>_________________'
+
+echo -e $red "       =====================================================" 
+echo -e $green "       #                                                   #" 
+echo -e $purple "       #    [SELAMAT DATANG DI VPS  YUSUF ARDIANSYAH]      #" 
+echo -e $blue "       #                                                   #" 
+echo -e $green "       #           WhatsApp       : 082139743432           #" 
+echo -e $red "       #           Telegram       : e-Server               #" 
+echo -e $blue "       #           Facebook       : fb.com/t34mh4ck3r      #" 
+echo -e $red "       #           Pin Bbm        : yu-suf                 #" 
+echo -e $purple "       #           Silahkan Ketik : menu (enter)           #" 
+echo -e green "       #                                                   #" 
+echo -e $cyan "       #     Copyright © YusufArdiansyah™ Premium 2017     #" 
+echo -e $red "       =====================================================" 
