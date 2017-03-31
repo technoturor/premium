@@ -192,7 +192,7 @@ echo "        #            Copyright © yusuf-ardiansyah           #"| lolcat
 echo "        ====================================================="| lolcat
 echo ""
 PS3='Silahkan ketik nomor pilihan anda lalu tekan enter: '
-options=("Buat User" "Perbarui User" "Hapus User" "Semua User" "User Belum Kadaluarsa" "User Sudah Kadaluarsa" "Restart Server" "Ganti Password User" "Ganti Password VPS" "Used Data By Users" "bench-network" "Ram Status" "Monitor Multi Login" "Ganti Port OpenVPN" "Ganti Port Dropbear" "Ganti Port Squid3" "Speedtest" "Quit")
+options=("Buat User" "Perbarui User" "Hapus User" "Semua User" "User Belum Kadaluarsa" "User Sudah Kadaluarsa" "Restart Server" "Ganti Password User" "Ganti Password VPS" "Used Data By Users" "bench-network" "Ram Status" "Monitor Multi Login" "Ganti Port OpenVPN" "Ganti Port Dropbear" "Ganti Port Squid3" "Speedtest" "Bersihkan cache ram" "Exit menu" "Keluar VPS)
 select opt in "${options[@]}"
 do
     case $opt in
@@ -293,10 +293,19 @@ do
 "Speedtest")
 python speedtest.py --share | lolcat
 break
-;;		  
-        "Quit")
+;;	
+"Bersihkan cache ram")
+sync; echo 1 > /proc/sys/vm/drop_caches
+break
+;;
+        "Exit menu")
+	quit
             break
             ;;
+	    "Keluar VPS")
+	    exit
+	    break
+	    ;;
         *) echo invalid option;;
     esac
 done
