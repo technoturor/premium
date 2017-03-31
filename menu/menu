@@ -295,13 +295,12 @@ python speedtest.py --share | lolcat
 break
 ;;	
 "Bersihkan cache ram")
-sync
-echo 1 > /proc/sys/vm/drop_caches
+echo 3 > /proc/sys/vm/drop_caches
 break
 ;;
         "Quit")
 	
-            break
+	break
             ;;
 	    "Keluar VPS")
 	    logout
