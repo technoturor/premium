@@ -148,6 +148,10 @@ wget freevps.us/downloads/bench.sh -O - -o /dev/null|bash
 echo -e "Sekian...!!!"| lolcat
 }
 
+function keluar_vps(){
+exit
+}
+
 function user-list(){
 echo "--------------------------------------------------"| lolcat
 echo "BIL  USERNAME        STATUS       EXP DATE   "| lolcat
@@ -303,7 +307,7 @@ break
 	break
             ;;
 	    "Keluar VPS")
-	    exit
+	    keluar_vps
 	    break
 	    ;;
         *) echo invalid option;;
