@@ -1,12 +1,18 @@
-echo "       =====================================================" | lolcat
-echo "       #                                                   #" | lolcat
-echo "       #    [SELAMAT DATANG DI VPS  YUSUF ARDIANSYAH]      #" | lolcat
-echo "       #                                                   #" | lolcat
-echo "       #           WhatsApp       : 082139743432           #" | lolcat
-echo "       #           Telegram       : e-Server               #" | lolcat
-echo "       #           Facebook       : fb.com/t34mh4ck3r      #" | lolcat
-echo "       #           Pin Bbm        : yu-suf                 #" | lolcat
-echo "       #           Silahkan Ketik : menu (enter)           #" | lolcat
-echo "       #                                                   #" | lolcat
-echo "       #     Copyright © YusufArdiansyah™ Premium 2017     #" | lolcat
-echo "       =====================================================" | lolcat
+blue='\e[1;34m'
+green='\e[0;23m'
+purple='\e[1;35m'
+cyan='\e[1;36m'
+red='\e[1;32m'
+
+echo -e $red "       =====================================================" | lolcat
+echo -e $green "       #                                                   #" | lolcat
+echo -e $purple "       #    [SELAMAT DATANG DI VPS  YUSUF ARDIANSYAH]      #" | lolcat
+echo -e $blue "       #                                                   #" | lolcat
+echo -e $green "       #           WhatsApp       : 082139743432           #" | lolcat
+echo -e $red "       #           Telegram       : e-Server               #" | lolcat
+echo -e $blue "       #           Facebook       : fb.com/t34mh4ck3r      #" | lolcat
+echo -e $red "       #           Pin Bbm        : yu-suf                 #" | lolcat
+echo -e $purple "       #           Silahkan Ketik : menu (enter)           #" | lolcat
+echo -e green "       #                                                   #" | lolcat
+echo -e $cyan "       #     Copyright © YusufArdiansyah™ Premium 2017     #" | lolcat
+echo -e $red "       =====================================================" | lolcat
