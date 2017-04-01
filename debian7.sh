@@ -13,6 +13,15 @@ apt-get update;apt-get -y install wget curl;
 # set time GMT +7
 ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 
+# text warna
+cd
+rm -rf .bashrc
+wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/text%20warna/.bashrc
+
+# text pelangi
+sudo apt-get install ruby -y
+sudo gem install lolcat
+
 # set locale
 sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
 service ssh restart
@@ -86,6 +95,10 @@ sed -i $MYIP2 /etc/iptables.up.rules;
 iptables-restore < /etc/iptables.up.rules
 service openvpn restart
 
+#restart 24 jam
+echo "0 0 * * * root /usr/bin/reboot" > /etc/cron.d/reboot
+
+
 # configure openvpn client config
 cd /etc/openvpn/
 wget -O /etc/openvpn/1194-client.ovpn "https://raw.github.com/deeniedoank/autoscript2/master/conf/1194-client.conf"
@@ -103,6 +116,12 @@ wget -O /usr/bin/badvpn-udpgw "https://raw.github.com/deeniedoank/autoscript2/ma
 sed -i '$ i\screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300' /etc/rc.local
 chmod +x /usr/bin/badvpn-udpgw
 screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300
+
+#cache ram
+cd
+wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/clearcache/clearcache.sh
+mv clearcache.sh /root/
+chmod 755 /root/clearcache.sh
 
 # install mrtg
 wget -O /etc/snmp/snmpd.conf "https://raw.github.com/deeniedoank/autoscript2/master/conf/snmpd.conf"
@@ -187,6 +206,19 @@ sed -i '$ i\screen -AmdS limit /root/limit.sh' /etc/rc.local
 chmod +x user-expire.sh
 chmod +x user-limit.sh
 chmod +x limit.sh
+
+
+# speedtest
+cd
+apt-get install python
+wget -O speedtest.py "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/speedtest.py"
+chmod +x speedtest.py
+
+# Install Menu
+cd
+wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/menu"
+mv ./menu /usr/local/bin/menu
+chmod +x /usr/local/bin/menu
 
 # finalisasi
 chown -R www-data:www-data /home/vps/public_html
