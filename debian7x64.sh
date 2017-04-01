@@ -150,8 +150,8 @@ service webmin restart
 # auto reboot 24jam
 cd
 echo "0 0 * * * root /usr/bin/reboot" > /etc/cron.d/reboot
-echo "0 0 * * * root service dropbear restart" > /etc/cron.d/dropbear
-echo "0 2 * * * * root /root/clearcache.sh" > /etc/cron.d/clearcache
+#echo "0 0 * * * root service dropbear restart" > /etc/cron.d/dropbear
+#echo "0 2 * * * * root /root/clearcache.sh" > /etc/cron.d/clearcache
 # install vnstat gui
 apt-get install vnstat
 cd /home/vps/public_html/
@@ -165,9 +165,8 @@ sed -i "s/\$iface_list = array('venet0', 'sixxs');/\$iface_list = array('venet0'
 sed -i "s/\$language = 'nl';/\$language = 'en';/g" config.php
 sed -i "s/Internal/Internet/g" config.php
 sed -i "/SixXS IPv6/d" config.php
-cd
 # setting vnstat
-vnstat -u -i venet0
+#vnstat -u -i venet0
 service vnstat restart
 
 # user-list
@@ -195,10 +194,10 @@ service vnstat restart
 #chmod 644 /etc/crontab
 #clear cache
 
-cd
-wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/clearcache/clearcache.sh
-mv clearcache.sh /root/
-chmod 755 /root/clearcache.sh
+#cd
+#wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/clearcache/clearcache.sh
+#mv clearcache.sh /root/
+#chmod 755 /root/clearcache.sh
 
 
 
