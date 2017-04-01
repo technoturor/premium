@@ -244,7 +244,8 @@ do
 			;;
 			"Bersihkan cache ram")
 		echo 3 > /proc/sys/vm/drop_caches
-			break
+		echo "Cache ram anda sudah di bersihkan!!!"
+		break
 			;;
 			"Monitor Multi Login")
 			monssh2
