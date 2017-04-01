@@ -187,13 +187,13 @@ chmod 0640 /etc/squid3/squid.conf
 
 # install webmin
 cd
-wget "http://prdownloads.sourceforge.net/webadmin/webmin_1.670_all.deb"
-dpkg --install webmin_1.670_all.deb;
-apt-get -y -f install;
-rm /root/webmin_1.670_all.deb
+wget http://prdownloads.sourceforge.net/webadmin/webmin_1.820_all.deb
+dpkg --install webmin_1.820_all.deb
+apt-get -y -f install
+rm /root/webmin_1.820_all.deb
+sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
 service webmin restart
 service vnstat restart
-
 # downlaod script
 cd
 #wget -O speedtest_cli.py "https://raw.github.com/sivel/speedtest-cli/master/speedtest_cli.py"
