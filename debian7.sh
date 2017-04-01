@@ -178,11 +178,12 @@ cd
 # install fail2ban
 apt-get -y install fail2ban;service fail2ban restart
 
-# install squid3
+# squid3
+apt-get update
 apt-get -y install squid3
-wget -O /etc/squid3/squid.conf "https://raw.github.com/deeniedoank/autoscript2/master/conf/squid3.conf"
-sed -i $MYIP2 /etc/squid3/squid.conf;
-service squid3 restart
+wget -O /etc/squid3/squid.conf "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/squid/squid.conf"
+sed -i "s/ipserver/$myip/g" /etc/squid3/squid.conf
+chmod 0640 /etc/squid3/squid.conf
 
 # install webmin
 cd
