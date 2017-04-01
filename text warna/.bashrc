@@ -57,7 +57,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\u@\h\[\033[00m\]:\[\033[01;31m\]\w\[\033[00m\]\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -127,15 +127,15 @@ red='\e[1;32m'
 #figlet -f slant "#Bbm: Yu-suf #"
 #echo -e $red     '_________________<☠ CINTA JANGAN BIARKAN SEDIH ☠>_________________'
 
-echo -e $purple "       =====================================================" 
-echo -e $green "       #                                                   #" 
-echo -e $purple "       #    [SELAMAT DATANG DI VPS  YUSUF ARDIANSYAH]      #" 
-echo -e $blue "       #                                                   #" 
-echo -e $green "       #           WhatsApp       : 082139743432           #" 
-echo -e $red "       #           Telegram       : e-Server               #" 
-echo -e $blue "       #           Facebook       : fb.com/t34mh4ck3r      #" 
-echo -e $red "       #           Pin Bbm        : yu-suf                 #" 
-echo -e $purple "       #           Silahkan Ketik : menu (enter)           #" 
-echo -e $green "       #                                                   #" 
-echo -e $cyan "       #     Copyright © YusufArdiansyah™ Premium 2017     #" 
-echo -e $purple "       =====================================================" 
+echo -e $purple "      =====================================================" 
+echo -e $green "      #                                                   #" 
+echo -e $purple "      #    [SELAMAT DATANG DI VPS  YUSUF ARDIANSYAH]      #" 
+echo -e $blue "      #                                                   #" 
+echo -e $green "      #           WhatsApp       : 082139743432           #" 
+echo -e $red "      #           Telegram       : e-Server               #" 
+echo -e $blue "      #           Facebook       : fb.com/t34mh4ck3r      #" 
+echo -e $red "      #           Pin Bbm        : yu-suf                 #" 
+echo -e $purple "      #           Silahkan Ketik : menu (enter)           #" 
+echo -e $green "      #                                                   #" 
+echo -e $cyan "      #     Copyright © YusufArdiansyah™ Premium 2017     #" 
+echo -e $purple "      =====================================================" 
