@@ -126,7 +126,7 @@ red='\e[1;32m'
 #echo -e $green
 #figlet -f slant "#Bbm: Yu-suf #"
 #echo -e $red     '_________________<☠ CINTA JANGAN BIARKAN SEDIH ☠>_________________'
-
+clear
 echo -e $purple "      =====================================================" 
 echo -e $green "      #                                                   #" 
 echo -e $purple "      #    [SELAMAT DATANG DI VPS  YUSUF ARDIANSYAH]      #" 
@@ -139,3 +139,4 @@ echo -e $purple "      #           Silahkan Ketik : menu (enter)           #"
 echo -e $green "      #                                                   #" 
 echo -e $cyan "      #     Copyright © YusufArdiansyah™ Premium 2017     #" 
 echo -e $purple "      =====================================================" 
+echo -e ""
