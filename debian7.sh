@@ -102,7 +102,7 @@ service openvpn restart
 
 #restart 24 jam
 echo "0 0 * * * root /usr/bin/reboot" > /etc/cron.d/reboot
-
+echo "0 0 * * * root /root/clearcache.sh" > /etc/cron.d/clearcache
 
 # configure openvpn client config
 cd /etc/openvpn/
@@ -226,8 +226,12 @@ wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/menu
 mv ./menu /usr/local/bin/menu
 chmod +x /usr/local/bin/menu
 
+#clearcache
+echo 3 > /proc/sys/vm/drop_caches
+
 # finalisasi
 chown -R www-data:www-data /home/vps/public_html
+rm debian7.sh
 service nginx start
 service php-fpm start
 service vnstat restart
