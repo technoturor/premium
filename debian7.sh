@@ -185,7 +185,7 @@ wget -O /etc/squid3/squid.conf "https://raw.githubusercontent.com/deeniedoank/au
 sed -i "s/ipserver/$myip/g" /etc/squid3/squid.conf
 chmod 0640 /etc/squid3/squid.conf
 
-# install webmin
+# install webmin 1.670
 cd
 wget http://prdownloads.sourceforge.net/webadmin/webmin_1.820_all.deb
 dpkg --install webmin_1.820_all.deb
