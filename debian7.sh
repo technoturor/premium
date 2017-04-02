@@ -84,7 +84,6 @@ sed -i 's/listen = \/var\/run\/php5-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php
 service php5-fpm restart
 service nginx restart
 
-
 # install openvpn
 apt-get install openvpn -y
 wget -O /etc/openvpn/openvpn.tar "https://raw.github.com/deeniedoank/autoscript2/master/conf/openvpn-debian.tar"
@@ -164,6 +163,17 @@ echo "/bin/false" >> /etc/shells
 service ssh restart
 service dropbear restart
 
+# upgade dropbear
+apt-get install zlib1g-dev
+wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/update_dropbear/dropbear-2016.74.tar.bz2
+bzip2 -cd dropbear-2016.74.tar.bz2 | tar xvf -
+cd dropbear-2016.74
+./configure
+make && make install
+mv /usr/sbin/dropbear /usr/sbin/dropbear.old
+ln /usr/local/sbin/dropbear /usr/sbin/dropbear
+cd && rm -rf dropbear-2016.74 && rm -rf dropbear-2016.74.tar.bz2
+
 # install vnstat gui
 cd /home/vps/public_html/
 wget http://www.sqweek.com/sqweek/files/vnstat_php_frontend-1.5.1.tar.gz
@@ -204,16 +214,16 @@ cd
 #wget -O ps_mem.py "https://raw.github.com/pixelb/ps_mem/master/ps_mem.py"
 wget -O limit.sh "https://raw.github.com/arieonline/autoscript/master/conf/limit.sh"
 #curl http://script.jualssh.com/user-login.sh > user-login.sh
-curl http://script.jualssh.com/user-expire.sh > user-expire.sh
-curl http://script.jualssh.com/user-limit.sh > user-limit.sh
+#curl http://script.jualssh.com/user-expire.sh > user-expire.sh
+#curl http://script.jualssh.com/user-limit.sh > user-limit.sh
 echo "0 0 * * * root /root/user-expire.sh" > /etc/cron.d/user-expire
 sed -i '$ i\screen -AmdS limit /root/limit.sh' /etc/rc.local
 #chmod +x bench-network.sh
 #chmod +x speedtest_cli.py
 #chmod +x ps_mem.py
 #chmod +x user-login.sh
-chmod +x user-expire.sh
-chmod +x user-limit.sh
+#chmod +x user-expire.sh
+#chmod +x user-limit.sh
 chmod +x limit.sh
 
 
@@ -256,7 +266,7 @@ echo "-------"  | tee -a log-install.txt
 echo "OpenVPN  : TCP 55 (client config : http://$MYIP/client.tar)"  | tee -a log-install.txt
 echo "OpenSSH  : 22, 143"  | tee -a log-install.txt
 echo "Dropbear : 109, 443"  | tee -a log-install.txt
-echo "Squid3   : 8080 (limit to IP SSH)"  | tee -a log-install.txt
+echo "Squid3   : 8080, 3128 (limit to IP SSH)"  | tee -a log-install.txt
 echo "badvpn   : badvpn-udpgw port 7300"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "Tools"  | tee -a log-install.txt
@@ -275,8 +285,8 @@ echo "screenfetch"  | tee -a log-install.txt
 #echo "./speedtest_cli.py --share"  | tee -a log-install.txt
 #echo "./bench-network.sh"  | tee -a log-install.txt
 #echo "./user-login.sh"  | tee -a log-install.txt
-echo "./user-expire.sh"  | tee -a log-install.txt
-echo "./user-limit.sh 2"  | tee -a log-install.txt
+#echo "./user-expire.sh"  | tee -a log-install.txt
+#echo "./user-limit.sh 2"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 #echo "Account Default (utk SSH dan VPN)"  | tee -a log-install.txt
 echo "---------------"  | tee -a log-install.txt
@@ -294,6 +304,7 @@ echo "IPv6     : [off]"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "Log Installasi --> /root/log-install.txt"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
-echo "SILAHKAN REBOOT VPS ANDA !"  | tee -a log-install.txt
+echo "SILAHKAN REBOOT VPS ANDA UNTUK MENORMALKAN PEMAKAIAN !"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "==============================================="  | tee -a log-install.txt
+reboot
