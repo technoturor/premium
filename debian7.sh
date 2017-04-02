@@ -116,7 +116,7 @@ cp client.tar /home/vps/public_html/
 #restart 24 jam
 echo "0 0 * * * root /usr/bin/reboot" > /etc/cron.d/reboot
 echo "*/30 * * * * root /root/clearcache.sh" > /etc/cron.d/clearcache
-
+echo "0 1 * * * root service dropbear restart" > /etc/cron.d/dropbear
 cd
 # install badvpn
 wget -O /usr/bin/badvpn-udpgw "https://raw.github.com/deeniedoank/autoscript2/master/conf/badvpn-udpgw"
