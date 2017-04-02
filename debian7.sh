@@ -102,7 +102,7 @@ service openvpn restart
 
 #restart 24 jam
 echo "0 0 * * * root /usr/bin/reboot" > /etc/cron.d/reboot
-#echo "*/30 * * * * root /root/clearcache.sh" > /etc/cron.d/clearcache
+echo "*/30 * * * * root /root/clearcache.sh" > /etc/cron.d/clearcache
 
 # configure openvpn client config
 cd /etc/openvpn/
