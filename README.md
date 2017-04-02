@@ -6,6 +6,13 @@ Automatic Script Installer by elang overdosis
 cd
 wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/almenu.sh && chmod +x almenu.sh && ./almenu.sh
 ```
+# debian7
+```
+
+cd
+wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/debian7.sh && chmod +x debian7.sh && ./debian7.sh
+
+```
 
 # Debian7x64
 ```
