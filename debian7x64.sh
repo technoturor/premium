@@ -128,8 +128,8 @@ service ssh restart
 # install dropbear
 apt-get -y install dropbear
 sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
-sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=109/g' /etc/default/dropbear
-sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 443"/g' /etc/default/dropbear
+sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=443/g' /etc/default/dropbear
+sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 109"/g' /etc/default/dropbear
 echo "/bin/false" >> /etc/shells
 service ssh restart
 service dropbear restart
@@ -150,8 +150,8 @@ service webmin restart
 # auto reboot 24jam
 cd
 echo "0 0 * * * root /usr/bin/reboot" > /etc/cron.d/reboot
-#echo "0 0 * * * root service dropbear restart" > /etc/cron.d/dropbear
-#echo "0 2 * * * * root /root/clearcache.sh" > /etc/cron.d/clearcache
+echo "0 0 * * * root service dropbear restart" > /etc/cron.d/dropbear
+echo "*/30 * * * * root /root/clearcache.sh" > /etc/cron.d/clearcache
 # install vnstat gui
 apt-get install vnstat
 cd /home/vps/public_html/
