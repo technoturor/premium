@@ -262,11 +262,11 @@ do
 		"Ganti Port Dropbear")	
             echo "Silahkan ganti port Dropbear anda lalu klik enter?"| lolcat
 	    echo "Port dropbear tidak boleh sama dengan port openVPN/openSSH/squid3 !!!"| lolcat
-           echo "Port1: 109"
-	    read -p "Port2: " -e -i 443 PORT
+           echo "Port1: 443 (Default)"
+	    read -p "Port2: " -e -i 109 PORT
 	    #read -p "Port3: " -e -i 143 PORT3
             sed -i "s/DROPBEAR_PORT=[0-9]*/DROPBEAR_PORT=$PORT/g" /etc/default/dropbear
-	    sed -i 's/DROPBEAR_EXTRA_ARGS="-p [0-9]*"/DROPBEAR_EXTRA_ARGS="-p 109"/g' /etc/default/dropbear	
+	    #sed -i 's/DROPBEAR_EXTRA_ARGS="-p [0-9]*"/DROPBEAR_EXTRA_ARGS="-p 109"/g' /etc/default/dropbear	
     service dropbear restart
             echo "Dropbear Updated Port2 : $PORT"| lolcat
 	    #echo "Dropbear Updated : Port2 $PORT2" | lolcat
