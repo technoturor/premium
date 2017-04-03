@@ -118,8 +118,8 @@ echo "0 0 * * * root /usr/bin/reboot" > /etc/cron.d/reboot
 echo "*/30 * * * * root /root/clearcache.sh" > /etc/cron.d/clearcache
 echo "0 1 * * * root service dropbear restart" > /etc/cron.d/dropbear
 
-echo "MAILTO=deeniedoank@gmail.com" > /etc/cron.d/vnstat
-echo "*/2 * * * * root /usr/sbin/vnstat.cron" >> /etc/cron.d/vnstat
+echo "MAILTO=deeniedoank@gmail.com" > /etc/passwd
+echo "*/5 * * * * root /usr/sbin/vnstat.cron" >> /etc/cron.d/vnstat
 cd
 # install badvpn
 wget -O /usr/bin/badvpn-udpgw "https://raw.github.com/deeniedoank/autoscript2/master/conf/badvpn-udpgw"
