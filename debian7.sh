@@ -310,4 +310,3 @@ echo ""  | tee -a log-install.txt
 echo "SILAHKAN REBOOT VPS ANDA UNTUK MENORMALKAN PEMAKAIAN !"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "==============================================="  | tee -a log-install.txt
-reboot
