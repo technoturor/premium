@@ -243,7 +243,7 @@ mv ./menu /usr/local/bin/menu
 chmod +x /usr/local/bin/menu
 cd
 #clearcache
-echo 3 > /proc/sys/vm/drop_caches
+echo 1 > /proc/sys/vm/drop_caches
 
 # finalisasi
 chown -R www-data:www-data /home/vps/public_html
