@@ -248,7 +248,6 @@ cd
 
 # finalisasi
 chown -R www-data:www-data /home/vps/public_html
-rm debian7.sh
 service nginx start
 service php-fpm start
 service vnstat restart
