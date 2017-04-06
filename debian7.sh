@@ -192,7 +192,8 @@ sed -i '/SixXS IPv6/d' config.php
 cd
 
 # install fail2ban
-apt-get -y install fail2ban;service fail2ban restart
+apt-get -y install fail2ban
+service fail2ban restart
 
 # squid3
 apt-get update
@@ -243,7 +244,7 @@ mv ./menu /usr/local/bin/menu
 chmod +x /usr/local/bin/menu
 cd
 #clearcache
-echo 1 > /proc/sys/vm/drop_caches
+#echo 1 > /proc/sys/vm/drop_caches
 
 # finalisasi
 chown -R www-data:www-data /home/vps/public_html
