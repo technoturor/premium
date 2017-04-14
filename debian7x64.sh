@@ -147,6 +147,16 @@ rm /root/webmin_1.820_all.deb
 sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
 service webmin restart
 
+# upgade dropbear
+apt-get install zlib1g-dev
+wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/update_dropbear/dropbear-2016.74.tar.bz2
+bzip2 -cd dropbear-2016.74.tar.bz2 | tar xvf -
+cd dropbear-2016.74
+./configure
+make && make install
+mv /usr/sbin/dropbear /usr/sbin/dropbear.old
+ln /usr/local/sbin/dropbear /usr/sbin/dropbear
+cd && rm -rf dropbear-2016.74 && rm -rf dropbear-2016.74.tar.bz2
 # auto reboot 24jam
 cd
 echo "0 0 * * * root /usr/bin/reboot" > /etc/cron.d/reboot
@@ -183,9 +193,9 @@ service vnstat restart
 #chmod +x /usr/local/bin/monssh
 
 # antiddos
-#wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/antiddos/install.sh
-#chmod 700 install.sh
-#./install.sh
+wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/antiddos/install.sh
+chmod 700 install.sh
+./install.sh
 
 #clearcache cranjob
 #sudo apt-get install cron
@@ -215,9 +225,9 @@ mv ./menu /usr/local/bin/menu
 chmod +x /usr/local/bin/menu
 
 # moth
-#cd
-#wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/motd"
-#mv ./motd /etc/motd
+cd
+wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/motd"
+mv ./motd /etc/motd
 
 echo "UPDATE AND INSTALL COMPLETE COMPLETE 99% BE PATIENT"
 rm $0;rm *.txt;rm *.tar;rm *.deb;rm *.asc
