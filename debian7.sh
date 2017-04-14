@@ -18,15 +18,6 @@ apt-get update;apt-get -y install wget curl;
 # set time GMT +7
 ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 
-# text warna
-cd
-rm -rf .bashrc
-wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/text%20warna/.bashrc
-
-# text pelangi
-sudo apt-get install ruby -y
-sudo gem install lolcat
-
 # set locale
 sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
 service ssh restart
@@ -70,6 +61,15 @@ service vnstat restart
 #chmod +x /usr/bin/screenfetch
 #echo "clear" >> .profile
 #echo "screenfetch" >> .profile
+
+# text warna
+cd
+rm -rf .bashrc
+wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/text%20warna/.bashrc
+
+# text pelangi
+sudo apt-get install ruby -y
+sudo gem install lolcat
 
 # install webserver
 cd
