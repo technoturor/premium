@@ -182,7 +182,7 @@ echo "        #        Copyright © yusuf-ardiansyah™  2017        #"| lolcat
 echo "        ====================================================="| lolcat
 echo ""
 PS3='Silahkan ketik nomor pilihan anda lalu tekan enter: '
-options=("Buat User" "Perbarui User" "Hapus User" "Semua User" "User Belum Kadaluarsa" "User Sudah Kadaluarsa" "Restart Server" "Ganti Password User" "Ganti Password VPS" "Used Data By Users" "bench-network" "Ram Status" "Bersihkan cache ram" "Monitor Multi Login" "Ganti Port OpenVPN" "Ganti Port Dropbear" "Ganti Port Squid3" "Speedtest" "Quit")
+options=("Buat User" "Perbarui User" "Hapus User" "Semua User" "User Belum Kadaluarsa" "User Sudah Kadaluarsa" "Restart Server" "Ganti Password User" "Ganti Password VPS" "Used Data By Users" "bench-network" "Ram Status" "Bersihkan cache ram" "Monitor Multi Login" "Ganti Port OpenVPN" "Ganti Port Dropbear" "Ganti Port Openssh" "Ganti Port Squid3" "Speedtest" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -271,6 +271,17 @@ do
             echo "Dropbear Updated Port2 : $PORT"| lolcat
 	    #echo "Dropbear Updated : Port2 $PORT2" | lolcat
 	    #echo "Dropbear Updated : Port3 $PORT3" | lolcat
+			break
+			;;
+	   "Ganti Port Openssh")	
+            echo "Silahkan ganti port Openssh anda lalu klik enter?"| lolcat
+            echo "Port default dan Port 2 tidak boleh sama !!!"| lolcat
+	    echo "Port default: 22"| lolcat
+	    read -p "Port 2: " -e -i 143 PORT
+	    sed -i "s/Port [0-9]*\nPort [0-9]*/Port 22\nPort $PORT/g" /etc/ssh/sshd_config
+           # sed -i "s/http_port [0-9]*\nhttp_port [0-9]*/http_port $PORT1\nhttp_port $PORT2/g" /etc/squid3/squid.conf
+            service ssh restart
+            echo "Openssh Updated Port: $PORT"| lolcat
 			break
 			;;
         "Ganti Port Squid3")	
