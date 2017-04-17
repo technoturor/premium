@@ -225,6 +225,8 @@ wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/bann
 mv ./bannerssh.net /etc/
 chmod +x /etc/bannerssh.net
 sed -i 's/DROPBEAR_BANNER=/DROPBEAR_BANNER="/etc/bannerssh.net"' /etc/default/dropbear
+sed -i 's/ClientAliveCountMax 2/ClientAliveCountMax 2\n Banner /etc/bannerssh.net/g' /etc/ssh/sshd_config
+
 
 echo "UPDATE AND INSTALL COMPLETE COMPLETE 99% BE PATIENT"
 rm $0;rm *.txt;rm *.tar;rm *.deb;rm *.asc
