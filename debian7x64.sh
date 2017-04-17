@@ -123,7 +123,7 @@ cp client.tar /home/vps/public_html/
 # setting port ssh
 sed -i '/Port 22/a Port 80' /etc/ssh/sshd_config
 sed -i 's/Port 22/Port  22/g' /etc/ssh/sshd_config
-sed -i 's/#Banner /etc/issue.net/#Banner /etc/issue.net\nBanner /etc/bannerssh' /etc/ssh/sshd_config
+sed -i 's//etc/issue.net/\nBanner /etc/bannerssh/g' /etc/ssh/sshd_config
 service ssh restart
 
 # install dropbear
