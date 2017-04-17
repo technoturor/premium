@@ -123,7 +123,7 @@ cp client.tar /home/vps/public_html/
 # setting port ssh
 sed -i '/Port 22/a Port 80' /etc/ssh/sshd_config
 sed -i 's/Port 22/Port  22/g' /etc/ssh/sshd_config
-sed -i 's/ClientAliveCountMax 2/ClientAliveCountMax 2\n Banner /etc/bannerssh.net/g' /etc/ssh/sshd_config
+sed -i 's/ClientAliveCountMax 2/ClientAliveCountMax 2\nBanner /etc/bannerssh.net/g' /etc/ssh/sshd_config
 service ssh restart
 
 # install dropbear
