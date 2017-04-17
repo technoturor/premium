@@ -210,7 +210,6 @@ chmod 700 install.sh
 
 # buka port 80
 iptables -I INPUT -p tcp --dport 80 -j ACCEPT
-iptables -I INPUT -p udp --dport 80 -j ACCEPT
 
 
 # speedtest
