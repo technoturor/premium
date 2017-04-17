@@ -1,4 +1,4 @@
-sed -i 's/ClientAliveCountMax 2/ClientAliveCountMax 2\nBanner bannerssh' /etc/ssh/sshd_config
+sed -i 's/INFO/INFO\nBanner bannerssh' /etc/ssh/sshd_config
 
 #replace banner dropbear
 sed -i 's/DROPBEAR_BANNER=""/DROPBEAR_BANNER="bannerssh"/g' /etc/default/dropbear
