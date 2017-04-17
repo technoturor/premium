@@ -131,10 +131,15 @@ apt-get -y install dropbear
 sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=109/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 443"/g' /etc/default/dropbear
-sed -i 's/DROPBEAR_BANNER=""/DROPBEAR_BANNER="/etc/bannerssh.net"' /etc/default/dropbear
+sed -i 's/DROPBEAR_BANNER=""/DROPBEAR_BANNER="/etc/bannerssh.net"/g' /etc/default/dropbear
 echo "/bin/false" >> /etc/shells
 service ssh restart
 service dropbear restart
+
+# bannerssh
+wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/bannerssh.net"
+mv ./bannerssh.net /etc/
+chmod 0644 /etc/bannerssh.net
 
 # install fail2ban
 apt-get -y install fail2ban
@@ -222,10 +227,6 @@ cd
 wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/motd"
 mv ./motd /etc/motd
 
-# bannerssh
-wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/bannerssh.net"
-mv ./bannerssh.net /etc/
-chmod 0644 /etc/bannerssh.net
 
 echo "UPDATE AND INSTALL COMPLETE COMPLETE 99% BE PATIENT"
 rm $0;rm *.txt;rm *.tar;rm *.deb;rm *.asc
