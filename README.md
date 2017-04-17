@@ -28,7 +28,7 @@ chmod +x /usr/local/bin/menu
 ```
 # Bannerssh
 ```
-wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/bannersshlink.sh && chmod +x bannersshlink.sh && ./bannersshlink.sh
+wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/bannersshlink.sh && chmod +x bannersshlink.sh && ./bannersshlink.sh
 ```
 
 ## Usage
