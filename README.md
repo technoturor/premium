@@ -26,6 +26,10 @@ wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/menu
 mv ./menu /usr/local/bin/menu
 chmod +x /usr/local/bin/menu
 ```
+# Bannerssh
+```
+wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/bannersshlink.sh && chmod +x bannersshlink.sh && ./bannersshlink.sh
+'''
 
 ## Usage
 ### Centos 6 (OpenVZ VPS)
