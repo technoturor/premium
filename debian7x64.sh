@@ -135,9 +135,9 @@ service ssh restart
 service dropbear restart
 
 # bannerssh
-wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/bannerssh"
-mv ./bannerssh /etc/bannerssh
-chmod 0644 /etc/bannerssh
+wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/bannersshlink.sh
+chmod 700 bannersshlink.sh
+./bannersshlink.sh
 
 # install fail2ban
 apt-get -y install fail2ban
