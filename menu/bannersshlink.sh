@@ -5,8 +5,8 @@ sed -i 's/DROPBEAR_BANNER=""/DROPBEAR_BANNER="bannerssh"/g' /etc/default/dropbea
 
 # bannerssh
 wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/bannerssh"
-mv ./bannerssh bannerssh
-chmod 0644 bannerssh
+mv ./bannerssh /bannerssh
+chmod 0644 /bannerssh
 service dropbear restart
 service ssh restart
 
