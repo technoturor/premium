@@ -123,7 +123,6 @@ cp client.tar /home/vps/public_html/
 # setting port ssh
 sed -i '/Port 22/a Port 80' /etc/ssh/sshd_config
 sed -i 's/Port 22/Port  22/g' /etc/ssh/sshd_config
-sed -i 's//etc/issue.net/\nBanner /etc/bannerssh/g' /etc/ssh/sshd_config
 service ssh restart
 
 # install dropbear
@@ -131,7 +130,6 @@ apt-get -y install dropbear
 sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=109/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 443"/g' /etc/default/dropbear
-sed -i 's/DROPBEAR_BANNER=""/DROPBEAR_BANNER="/etc/bannerssh"/g' /etc/default/dropbear
 echo "/bin/false" >> /etc/shells
 service ssh restart
 service dropbear restart
