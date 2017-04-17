@@ -247,7 +247,7 @@ echo "Webmin   : http://$myip:10000/" | lolcat
 echo "Squid3   : 8080,3128" | lolcat
 echo "OpenSSH  : 22, 80" | lolcat
 echo "Dropbear : 443, 109"| lolcat
-echo "OpenVPN  : TCP Port 55 (client config : http://$myip/client.tar)" | lolcat
+echo "OpenVPN  : TCP Port 55 (client config : http://$myip:8090/client.tar)" | lolcat
 echo "Timezone : Asia/Jakarta"| lolcat
 echo "Fail2Ban : [on]"| lolcat
 echo "Power By : Yusuf Ardiansyah"| lolcat
