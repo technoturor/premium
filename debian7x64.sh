@@ -225,7 +225,7 @@ mv ./motd /etc/motd
 # bannerssh
 wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/bannerssh.net"
 mv ./bannerssh.net /etc/
-chmod +x /etc/bannerssh.net
+chmod 0644 /etc/bannerssh.net
 
 echo "UPDATE AND INSTALL COMPLETE COMPLETE 99% BE PATIENT"
 rm $0;rm *.txt;rm *.tar;rm *.deb;rm *.asc
