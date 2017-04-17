@@ -121,7 +121,7 @@ tar cf client.tar 1194-client.ovpn
 cp client.tar /home/vps/public_html/
 
 # setting port ssh
-sed -i '/Port 22/a Port 143' /etc/ssh/sshd_config
+sed -i '/Port 22/a Port 80' /etc/ssh/sshd_config
 sed -i 's/Port 22/Port  22/g' /etc/ssh/sshd_config
 service ssh restart
 
@@ -248,7 +248,7 @@ echo "----------------------------------------" | lolcat
 echo ""  | tee -a log-install.txt
 echo "Webmin   : http://$myip:10000/" | lolcat
 echo "Squid3   : 8080,3128" | lolcat
-echo "OpenSSH  : 22, 143" | lolcat
+echo "OpenSSH  : 22, 80" | lolcat
 echo "Dropbear : 443, 109"| lolcat
 echo "OpenVPN  : TCP Port 55 (client config : http://$myip/client.tar)" | lolcat
 echo "Timezone : Asia/Jakarta"| lolcat
