@@ -140,6 +140,7 @@ service dropbear restart
 wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/bannersshlink.sh
 chmod 700 bannersshlink.sh
 ./bannersshlink.sh
+rm bannersshlink.sh
 
 # install fail2ban
 apt-get -y install fail2ban
