@@ -45,7 +45,9 @@ apt-get -y --purge remove apache2*;
 apt-get -y --purge remove sendmail*;
 apt-get -y --purge remove postfix*;
 apt-get -y --purge remove bind*;
-clear
+apt-get -y --purge remove dropbear*;
+
+
 echo "
 UPDATE AND UPGRADE PROCESS 
 
@@ -158,7 +160,7 @@ service webmin restart
 cd
 echo "0 0 * * * root /usr/bin/reboot" > /etc/cron.d/reboot
 echo "0 0 * * * root service dropbear restart" > /etc/cron.d/dropbear
-echo "*/30 * * * * root /root/clearcache.sh" > /etc/cron.d/clearcache
+echo "*/20 * * * * root /root/clearcache.sh" > /etc/cron.d/clearcache
 # install vnstat gui
 apt-get install vnstat
 cd /home/vps/public_html/
@@ -202,9 +204,9 @@ chmod 700 install.sh
 #clear cache
 
 #cd
-#wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/clearcache/clearcache.sh
-#mv clearcache.sh /root/
-#chmod 755 /root/clearcache.sh
+wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/clearcache/clearcache.sh
+mv clearcache.sh /root/
+chmod 755 /root/clearcache.sh
 
 # buka port 80
 iptables -I INPUT -p tcp --dport 80 -j ACCEPT
