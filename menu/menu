@@ -289,12 +289,12 @@ do
             echo "Silahkan ganti port Squid3 anda lalu klik enter?"| lolcat
             echo "Port 1 dan Port 2 tidak boleh sama !!!"| lolcat
 	    echo "Isi dengan angka tidak boleh huruf !!!"| lolcat
-	    read -p "Port 1: " -e -i 8080 PORT1
-	    read -p "Port 2: " -e -i 3128 PORT2
-            sed -i "s/http_port [0-9]*\nhttp_port [0-9]*/http_port $PORT1\nhttp_port $PORT2/g" /etc/squid3/squid.conf
+	    read -p "Port 1: " -e -i 8080 PORT
+	    read -p "Port 2: " -e -i 3128 PORTT
+            sed -i "s/http_port [0-9]*\nhttp_port [0-9]*/http_port $PORT\nhttp_port $PORTT/g" /etc/squid3/squid.conf
             service squid3 restart
-            echo "Squid3 Updated Port1: $PORT1"| lolcat
-	    echo "Squid3 Updated Port2: $PORT2"| lolcat
+            echo "Squid3 Updated Port1: $PORT"| lolcat
+	    echo "Squid3 Updated Port2: $PORTT"| lolcat
 			break
 			;;
 			"Speedtest")
