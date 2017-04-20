@@ -278,7 +278,7 @@ do
             echo "Port default dan Port 2 tidak boleh sama !!!"| lolcat
 	    echo "Port default: 22"| lolcat
 	    read -p "Port 2: " -e -i 80 PORT
-	    sed -i "s/Port  22\nPort [0-9]*/Port  22\nPort $PORT/g" /etc/ssh/sshd_config
+	    sed -i "s/Port  [0-9]*\nPort [0-9]*/Port  22\nPort $PORT/g" /etc/ssh/sshd_config
            # sed -i "s/http_port [0-9]*\nhttp_port [0-9]*/http_port $PORT1\nhttp_port $PORT2/g" /etc/squid3/squid.conf
             
 	    service ssh restart
