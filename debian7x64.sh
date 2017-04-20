@@ -238,6 +238,8 @@ service webmin restart
 service dropbear restart
 service nginx start
 rm debian7x64.sh
+rm /root/debian7x64.sh
+
 #clear
 echo "========================================"  
 echo "Service Autoscript VPS Yusuf Ardiansyah" | lolcat 
