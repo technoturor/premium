@@ -160,7 +160,7 @@ service webmin restart
 cd
 echo "0 0 * * * root /usr/bin/reboot" > /etc/cron.d/reboot
 echo "0 0 * * * root service dropbear restart" > /etc/cron.d/dropbear
-echo "*/20 * * * * root /root/clearcache.sh" > /etc/cron.d/clearcache
+echo "*/50 * * * * root /root/clearcache.sh" > /etc/cron.d/clearcache
 # install vnstat gui
 apt-get install vnstat
 cd /home/vps/public_html/
