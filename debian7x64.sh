@@ -257,6 +257,8 @@ chmod 0600 /swapfile
 echo "UPDATE AND INSTALL COMPLETE COMPLETE 99% BE PATIENT"
 rm $0;rm *.txt;rm *.tar;rm *.deb;rm *.asc
 clear
+service cron restart
+service vnstat restart
 service openvpn restart
 service squid3 restart
 service ssh restart
