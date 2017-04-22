@@ -194,7 +194,12 @@ chmod 755 userlimit.sh
 chmod +x autokill.sh
 chmod +x userlimitssh.sh
 
-# install vnstat gui
+# userlimit
+cd
+wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/conf/limits.conf"
+mv limits.conf /etc/security/limits.conf
+chmod 644 /etc/security/limits.conf
+
 apt-get install vnstat
 cd /home/vps/public_html/
 wget http://www.sqweek.com/sqweek/files/vnstat_php_frontend-1.5.1.tar.gz
