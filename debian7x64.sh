@@ -161,6 +161,12 @@ cd
 echo "0 0 * * * root /usr/bin/reboot" > /etc/cron.d/reboot
 echo "0 0 * * * root service dropbear restart" > /etc/cron.d/dropbear
 echo "*/50 * * * * root /root/clearcache.sh" > /etc/cron.d/clearcache
+
+# auto kill multy login
+wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/tendang"
+mv ./tendang /usr/bin/tendang
+chmod +x /usr/bin/tendang
+
 # install vnstat gui
 apt-get install vnstat
 cd /home/vps/public_html/
