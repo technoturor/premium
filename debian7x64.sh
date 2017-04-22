@@ -161,11 +161,16 @@ cd
 echo "0 0 * * * root /usr/bin/reboot" > /etc/cron.d/reboot
 echo "0 0 * * * root service dropbear restart" > /etc/cron.d/dropbear
 
-# auto kill multy login
+# auto kill dropbear
 wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/userlimit"
 mv ./userlimit /usr/bin/userlimit
 chmod +x /usr/bin/userlimit
 #echo " /etc/security/limits.conf" > /etc/security/limits.conf
+
+# auto kill openssh
+wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/userlimitssh"
+mv ./userlimitssh /usr/bin/userlimitssh
+chmod +x /usr/bin/userlimitssh
 
 # cranjob
 apt-get install cron
