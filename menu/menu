@@ -183,7 +183,7 @@ echo "        #        Copyright © yusuf-ardiansyah™  2017        #"| lolcat
 echo "        ====================================================="| lolcat
 echo ""
 PS3='Silahkan ketik nomor pilihan anda lalu tekan enter: '
-options=("Buat User" "Perbarui User" "Hapus User" "Semua User" "Limit Login" "User Belum Kadaluarsa" "User Sudah Kadaluarsa" "Restart Server" "Ganti Password User" "Ganti Password VPS" "Used Data By Users" "bench-network" "Ram Status" "Bersihkan cache ram" "Monitor Multi Login" "Ganti Port OpenVPN" "Ganti Port Dropbear" "Ganti Port Openssh" "Ganti Port Squid3" "Speedtest" "Quit")
+options=("Buat User" "Perbarui User" "Hapus User" "Semua User" "Kill Multy Login" "User Belum Kadaluarsa" "User Sudah Kadaluarsa" "Restart Server" "Ganti Password User" "Ganti Password VPS" "Used Data By Users" "bench-network" "Ram Status" "Bersihkan cache ram" "Monitor Multi Login" "Ganti Port OpenVPN" "Ganti Port Dropbear" "Ganti Port Openssh" "Ganti Port Squid3" "Speedtest" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -209,10 +209,12 @@ do
             user-list
             break
             ;;
-	    "Limit Login")
-	    read -p "Batas multy login ketik angka 1 atau 2 (tidak bisa lebih): " batas
-	    sed -i "s/userlimit.sh [1-9]*/userlimit.sh $batas/g" /etc/crontab
-	    sed -i "s/userlimitssh.sh [1-9]*/userlimitssh.sh $batas/g" /etc/crontab
+	    "Kill Multy Login")
+	    #read -p "Batas multy login ketik angka 1 atau 2 (tidak bisa lebih): " batas
+	    #sed -i "s/userlimit.sh [1-9]*/userlimit.sh $batas/g" /etc/crontab
+	    #sed -i "s/userlimitssh.sh [1-9]*/userlimitssh.sh $batas/g" /etc/crontab
+	    ./userlimit.sh 2
+	    ./userlimitssh.sh 2
 	    service ssh restart
 	    service dropbear restart
 	    service cron restart
