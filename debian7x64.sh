@@ -190,7 +190,7 @@ echo "@reboot root /root/userlimitssh.sh" > /etc/cron.d/userlimitssh
 echo "@reboot root /root/autokill.sh" > /etc/cron.d/autokill
 sed -i '$ i\screen -AmdS check /root/autokill.sh' /etc/rc.local
 chmod +x userexpired.sh
-chmod +x userlimit.sh
+chmod 755 userlimit.sh
 chmod +x autokill.sh
 chmod +x userlimitssh.sh
 
