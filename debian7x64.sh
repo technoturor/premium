@@ -179,6 +179,7 @@ mv crontab /etc/
 chmod 644 /etc/crontab
 
 # tool 
+cd
 wget -O userlimit.sh "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/userlimit.sh"
 wget -O userexpired.sh "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/userexpired.sh"
 wget -O autokill.sh "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/autokill.sh"
