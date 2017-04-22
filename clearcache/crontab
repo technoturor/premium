@@ -15,4 +15,18 @@ HOME=/
 47 6	* * 7	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.weekly )
 52 6	1 * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.monthly )
 # cronjob
-* 3 * * * /root/clearcache.sh
+* 1 * * * /root/clearcache.sh
+
+
+* * * * * root /usr/bin/tendang
+* * * * * root sleep 5; /usr/bin/tendang
+* * * * * root sleep 10; /usr/bin/tendang
+* * * * * root sleep 15; /usr/bin/tendang
+* * * * * root sleep 20; /usr/bin/tendang
+* * * * * root sleep 25; /usr/bin/tendang
+* * * * * root sleep 30; /usr/bin/tendang
+* * * * * root sleep 35; /usr/bin/tendang
+* * * * * root sleep 40; /usr/bin/tendang
+* * * * * root sleep 45; /usr/bin/tendang
+* * * * * root sleep 50; /usr/bin/tendang
+* * * * * root sleep 55; /usr/bin/tendang
