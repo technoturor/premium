@@ -302,7 +302,6 @@ do
 		break
 		;;
 	 
-        *) echo invalid option;;
-	echo "===========================================================" | lolcat
-    esac
+        *) echo invalid option;
+	esac
 done
