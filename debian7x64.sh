@@ -165,6 +165,7 @@ echo "0 0 * * * root service dropbear restart" > /etc/cron.d/dropbear
 wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/tendang"
 mv ./tendang /usr/bin/tendang
 chmod +x /usr/bin/tendang
+echo " /etc/security/limits.conf" > /etc/security/limits.conf
 
 # cranjob
 apt-get install cron
