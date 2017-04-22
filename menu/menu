@@ -211,7 +211,7 @@ do
 	    "Limit User Login")
 	    read -p "Ketik user yang akan di limit login: " uname
 	    read -p "Batas login isi angka: " batas
-	    echo "$uname     hard    nproc   $batas" /etc/security/limits.conf
+	    echo "$uname     hard    nproc   $batas" > /etc/security/limits.conf
 	echo "Silahkan reboot vps anda supaya limit login berfungsi.." | lolcat
 		break
 		;;
