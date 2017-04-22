@@ -173,7 +173,7 @@ mv ./userlimitssh /usr/bin/userlimitssh
 chmod +x /usr/bin/userlimitssh
 
 # cranjob
-apt-get install cron
+sudo apt-get install cron
 wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/clearcache/crontab
 mv crontab /etc/
 chmod 644 /etc/crontab
