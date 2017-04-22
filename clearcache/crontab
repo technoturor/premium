@@ -19,27 +19,27 @@ HOME=/
 
 
 * * * * * root userlimi.sh 2
-* * * * * root sleep 5; userlimit.sh 2
+#* * * * * root sleep 5; userlimit.sh 2
 * * * * * root sleep 10; userlimit.sh 2
-* * * * * root sleep 15; userlimit.sh 2
+#* * * * * root sleep 15; userlimit.sh 2
 * * * * * root sleep 20; userlimit.sh 2
-* * * * * root sleep 25; userlimit.sh 2
+#* * * * * root sleep 25; userlimit.sh 2
 * * * * * root sleep 30; userlimit.sh 2
-* * * * * root sleep 35; userlimit.sh 2
+#* * * * * root sleep 35; userlimit.sh 2
 * * * * * root sleep 40; userlimit.sh 2
-* * * * * root sleep 45; userlimit.sh 2
+#* * * * * root sleep 45; userlimit.sh 2
 * * * * * root sleep 50; userlimit.sh 2
-* * * * * root sleep 55; userlimit.sh 2
+#* * * * * root sleep 55; userlimit.sh 2
 
 * * * * * root userlimitssh.sh 2
-* * * * * root sleep 5; userlimitssh.sh 2
+#* * * * * root sleep 5; userlimitssh.sh 2
 * * * * * root sleep 10; userlimitssh.sh 2
-* * * * * root sleep 15; userlimitssh.sh 2
+#* * * * * root sleep 15; userlimitssh.sh 2
 * * * * * root sleep 20; userlimitssh.sh 2
-* * * * * root sleep 25; userlimitssh.sh 2
+#* * * * * root sleep 25; userlimitssh.sh 2
 * * * * * root sleep 30; userlimitssh.sh 2
-* * * * * root sleep 35; userlimitssh.sh 2
+#* * * * * root sleep 35; userlimitssh.sh 2
 * * * * * root sleep 40; userlimitssh.sh 2
-* * * * * root sleep 45; userlimitssh.sh 2
+#* * * * * root sleep 45; userlimitssh.sh 2
 * * * * * root sleep 50; userlimitssh.sh 2
-* * * * * root sleep 55; userlimitssh.sh 2
+#* * * * * root sleep 55; userlimitssh.sh 2
