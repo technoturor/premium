@@ -210,7 +210,7 @@ do
             ;;
 	    "Limit Login")
 	    read -p "Batas login isi angka: " batas
-	    sed -i 's/tendang [1-9]*/tendang $batas/g' /usr/bin/tendang
+	    sed -i 's/tendang [1-9]*/tendang $batas/g' /etc/crontab
 	echo "Silahkan reboot vps anda supaya limit login berfungsi.." | lolcat
 		break
 		;;
