@@ -1,6 +1,6 @@
 #!/bin/bash
 # Program untuk membatasi jumlah login user dropbear
-# di edit oleh elang overdosis
+# elang overdosis
 #
 PARAM=$1
 echo -n > /tmp/pid2
