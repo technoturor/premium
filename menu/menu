@@ -214,6 +214,7 @@ do
 	    sed -i 's/userlimitssh [1-9]*/userlimitssh $batas/g' /etc/crontab
 	    service ssh restart
 	    service dropbear restart
+	    service cron restart
 	echo "Dasar pelit!!! user ente marah2 jangan salahkan ane ya" | lolcat
 		break
 		;;
