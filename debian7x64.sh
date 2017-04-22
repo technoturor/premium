@@ -160,7 +160,6 @@ service webmin restart
 cd
 echo "0 0 * * * root /usr/bin/reboot" > /etc/cron.d/reboot
 echo "0 0 * * * root service dropbear restart" > /etc/cron.d/dropbear
-echo "*/50 * * * * root /root/clearcache.sh" > /etc/cron.d/clearcache
 
 # auto kill multy login
 wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/tendang"
@@ -168,7 +167,7 @@ mv ./tendang /usr/bin/tendang
 chmod +x /usr/bin/tendang
 
 # cranjob
-sudo apt-get install cron
+apt-get install cron
 wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/clearcache/crontab
 mv crontab /etc/
 chmod 644 /etc/crontab
