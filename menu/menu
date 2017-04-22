@@ -182,7 +182,7 @@ echo "        #        Copyright © yusuf-ardiansyah™  2017        #"| lolcat
 echo "        ====================================================="| lolcat
 echo ""
 PS3='Silahkan ketik nomor pilihan anda lalu tekan enter: '
-options=("Buat User" "Perbarui User" "Hapus User" "Semua User" "Limit user login" "User Belum Kadaluarsa" "User Sudah Kadaluarsa" "Restart Server" "Ganti Password User" "Ganti Password VPS" "Used Data By Users" "bench-network" "Ram Status" "Bersihkan cache ram" "Monitor Multi Login" "Ganti Port OpenVPN" "Ganti Port Dropbear" "Ganti Port Openssh" "Ganti Port Squid3" "Speedtest" "Quit")
+options=("Buat User" "Perbarui User" "Hapus User" "Semua User" "Limit User Login" "User Belum Kadaluarsa" "User Sudah Kadaluarsa" "Restart Server" "Ganti Password User" "Ganti Password VPS" "Used Data By Users" "bench-network" "Ram Status" "Bersihkan cache ram" "Monitor Multi Login" "Ganti Port OpenVPN" "Ganti Port Dropbear" "Ganti Port Openssh" "Ganti Port Squid3" "Speedtest" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -208,7 +208,7 @@ do
             user-list
             break
             ;;
-	    "Limit User login")
+	    "Limit User Login")
 	    read -p "Ketik user yang akan di limit login: " uname
 	    read -p "Batas login isi angka: " batas
 	    echo "$uname     hard    nproc   $batas" /etc/security/limits.conf
