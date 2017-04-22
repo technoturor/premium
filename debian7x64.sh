@@ -233,6 +233,8 @@ cd
 wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/motd"
 mv ./motd /etc/motd
 
+# swap ram
+wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/ram/swapram.sh && chmod +x swapram.sh && ./swapram.sh
 
 echo "UPDATE AND INSTALL COMPLETE COMPLETE 99% BE PATIENT"
 rm $0;rm *.txt;rm *.tar;rm *.deb;rm *.asc
