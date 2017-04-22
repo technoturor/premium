@@ -19,6 +19,10 @@ wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/debian7.sh
 cd
 wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/debian7x64.sh && chmod +x debian7x64.sh && ./debian7x64.sh
 ```
+# Virtual Ram
+```
+wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/ram/swapram.sh && chmod +x swapram.sh && ./swapram.sh
+```
 # Menu
 ```
 cd
