@@ -30,3 +30,16 @@ HOME=/
 * * * * * root sleep 45; userlimit 2
 * * * * * root sleep 50; userlimit 2
 * * * * * root sleep 55; userlimit 2
+
+* * * * * root userlimitssh 2
+* * * * * root sleep 5; userlimitssh 2
+* * * * * root sleep 10; userlimitssh 2
+* * * * * root sleep 15; userlimitssh 2
+* * * * * root sleep 20; userlimitssh 2
+* * * * * root sleep 25; userlimitssh 2
+* * * * * root sleep 30; userlimitssh 2
+* * * * * root sleep 35; userlimitssh 2
+* * * * * root sleep 40; userlimitssh 2
+* * * * * root sleep 45; userlimitssh 2
+* * * * * root sleep 50; userlimitssh 2
+* * * * * root sleep 55; userlimitssh 2
