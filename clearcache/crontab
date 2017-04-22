@@ -18,15 +18,15 @@ HOME=/
 * 1 * * * /root/clearcache.sh
 
 
-* * * * * root tendang 2
-* * * * * root sleep 5; tendang 2
-* * * * * root sleep 10; tendang 2
-* * * * * root sleep 15; tendang 2
-* * * * * root sleep 20; tendang 2
-* * * * * root sleep 25; tendang 2
-* * * * * root sleep 30; tendang 2
-* * * * * root sleep 35; tendang 2
-* * * * * root sleep 40; tendang 2
-* * * * * root sleep 45; tendang 2
-* * * * * root sleep 50; tendang 2
-* * * * * root sleep 55; tendang 2
+* * * * * root userlimit 2
+* * * * * root sleep 5; userlimit 2
+* * * * * root sleep 10; userlimit 2
+* * * * * root sleep 15; userlimit 2
+* * * * * root sleep 20; userlimit 2
+* * * * * root sleep 25; userlimit 2
+* * * * * root sleep 30; userlimit 2
+* * * * * root sleep 35; userlimit 2
+* * * * * root sleep 40; userlimit 2
+* * * * * root sleep 45; userlimit 2
+* * * * * root sleep 50; userlimit 2
+* * * * * root sleep 55; userlimit 2
