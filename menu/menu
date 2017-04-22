@@ -210,8 +210,8 @@ do
             ;;
 	    "Limit Login")
 	    read -p "Batas multy login ketik angka 1 atau 2 (tidak bisa lebih): " batas
-	    sed -i 's/userlimit [1-9]*/userlimit $batas/g' /etc/crontab
-	    sed -i 's/userlimitssh [1-9]*/userlimitssh $batas/g' /etc/crontab
+	    sed -i 's/userlimit.sh [1-9]*/userlimit.sh $batas/g' /etc/crontab
+	    sed -i 's/userlimitssh.sh [1-9]*/userlimitssh.sh $batas/g' /etc/crontab
 	    service ssh restart
 	    service dropbear restart
 	    service cron restart
