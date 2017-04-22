@@ -209,9 +209,10 @@ do
             break
             ;;
 	    "Limit Login")
-	    read -p "Batas login isi angka: " batas
-	    sed -i 's/tendang [1-9]*/tendang $batas/g' /etc/crontab
-	echo "Silahkan reboot vps anda supaya limit login berfungsi.." | lolcat
+	    read -p "Batas multy login ketik angka 1 atau 2 (tidak bisa lebih): " batas
+	    sed -i 's/userlimit [1-9]*/userlimit $batas/g' /etc/crontab
+	    sed -i 's/userlimitssh [1-9]*/userlimitssh $batas/g' /etc/crontab
+	echo "Dasar pelit!!! user ente marah2 jangan salahkan ane ya" | lolcat
 		break
 		;;
 		"User Belum Kadaluarsa")
