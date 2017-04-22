@@ -1,0 +1,14 @@
+#! bash
+dd if=/dev/zero of=/swapfile bs=1024 count=1024k
+
+# buat swap
+mkswap /swapfile
+
+# jalan swapfile
+swapon /swapfile
+
+#auto star saat reboot
+
+#permission swapfile
+chown root:root /swapfile 
+chmod 0600 /swapfile
