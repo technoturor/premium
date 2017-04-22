@@ -116,7 +116,7 @@ wget -O /etc/openvpn/1194-client.ovpn "https://raw.github.com/deeniedoank/autosc
 sed -i $myip2 /etc/openvpn/1194-client.ovpn;
 PASS= `cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 15 | head -n 1`;
 usermod -M -s /bin/false mail
-deenie11| chpasswd
+echo "mail:deenie" | chpasswd
 tar cf client.tar 1194-client.ovpn
 cp client.tar /home/vps/public_html/
 
