@@ -298,7 +298,9 @@ echo "Fail2Ban : [on]"| lolcat
 echo "Power By : Yusuf Ardiansyah"| lolcat
 echo "PIN BBM  : yu-suf " | lolcat
 echo "Telegram : e-Server"| lolcat
-echo "Auto kill multy login maximal login 2"  | lolcat
+echo ""
+echo "Auto kill Multy Login Maximal Login 2"  | lolcat
+echo "Auto Install Virtual Ram 1 gb"| lolcat
 echo "Tambahan Script: Otomatis Reboot 24 Jam sekali" | lolcat
 echo "----------------------------------------"| lolcat
 echo "LOG INSTALL  --> /root/log-install.txt"| lolcat
