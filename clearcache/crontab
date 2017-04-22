@@ -18,7 +18,7 @@ HOME=/
 * 1 * * * /root/clearcache.sh
 
 
-* * * * * root userlimi.sh 2
+* * * * * root userlimit.sh 2
 #* * * * * root sleep 5; userlimit.sh 2
 * * * * * root sleep 10; userlimit.sh 2
 #* * * * * root sleep 15; userlimit.sh 2
