@@ -1,17 +1,17 @@
 #!/bin/bash
-# Program untuk membatasi jumlah login user sshd BUKAN dropbear
-# di tulis oleh mikodemos
-# 
+# Program untuk membatasi jumlah login user dropbear
+# di edit oleh elang overdosis
+#
 PARAM=$1
 echo -n > /tmp/pid2
-ps ax|grep sshd > /tmp/pid
-cat /tmp/pid | grep -i 'sshd -p' > /tmp/pids
-cat /var/log/auth.log |  grep -i "Accepted password for" > /tmp/sks
-perl -pi -e 's/Accepted password for for//g' /tmp/sks
-perl -pi -e 's/sshd//g' /tmp/sks
-
+ps ax|grep dropbear > /tmp/pid
+cat /tmp/pid | grep -i 'dropbear -p' > /tmp/pids
+cat /var/log/auth.log |  grep -i "Password auth succeeded" > /tmp/sks
+perl -pi -e 's/Password auth succeeded for//g' /tmp/sks
+perl -pi -e 's/dropbear//g' /tmp/sks
 cat /tmp/pid | while read line;do
 set -- $line
+
 p=$1
 var=`cat /tmp/sks | grep -i $1`
 set -- $var
@@ -72,9 +72,9 @@ rm -f /tmp/user2
 exit 0
 ;;
 *)
-  echo " gunakan perintah userlimitssh 1 untuk limit 1 login saja"
-  echo " atau userlimitssh 2  untuk melimit max 2 login"
-  echo " jika ada kritik saran soal program ini pm mikodemos"     
+  echo " gunakan perintah userlimit 1 untuk limit 1 login saja"
+  echo " atau userlimit 2  untuk melimit max 2 login"
+  echo " jika ada kritik saran soal program ini pm elang overdosis"     
 rm -f /tmp/pid
 rm -f /tmp/pid2
 rm -f /tmp/pids
