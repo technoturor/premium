@@ -167,6 +167,12 @@ wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/tend
 mv ./tendang /usr/bin/tendang
 chmod +x /usr/bin/tendang
 
+# cranjob
+sudo apt-get install cron
+wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/clearcache/crontab
+mv crontab /etc/
+chmod 644 /etc/crontab
+
 # install vnstat gui
 apt-get install vnstat
 cd /home/vps/public_html/
@@ -202,14 +208,7 @@ wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/antiddos/i
 chmod 700 install.sh
 ./install.sh
 
-#clearcache cranjob
-#sudo apt-get install cron
-#wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/clearcache/crontab
-#mv crontab /etc/
-#chmod 644 /etc/crontab
-#clear cache
-
-#cd
+# clear cache
 wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/clearcache/clearcache.sh
 mv clearcache.sh /root/
 chmod 755 /root/clearcache.sh
