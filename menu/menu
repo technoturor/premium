@@ -222,11 +222,13 @@ do
 			;;
 		"Ganti Password User")
 		read -p "Ketik user yang akan di ganti passwordnya: " uname
-		passwd $uname
+		read -p "Silahkan isi passwordnya: " pass
+		echo "$uname:$pass" | chpasswd
 		break
 		;;
 		"Ganti Password VPS")
-			passwd
+		read -p "Silahkan isi password baru VPS anda: " pass	
+		echo "root:$pass" | chpasswd
 			break
 			;;
 		"Used Data By Users")
