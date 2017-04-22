@@ -18,15 +18,15 @@ HOME=/
 * 1 * * * /root/clearcache.sh
 
 
-* * * * * root /usr/bin/tendang
-* * * * * root sleep 5; /usr/bin/tendang
-* * * * * root sleep 10; /usr/bin/tendang
-* * * * * root sleep 15; /usr/bin/tendang
-* * * * * root sleep 20; /usr/bin/tendang
-* * * * * root sleep 25; /usr/bin/tendang
-* * * * * root sleep 30; /usr/bin/tendang
-* * * * * root sleep 35; /usr/bin/tendang
-* * * * * root sleep 40; /usr/bin/tendang
-* * * * * root sleep 45; /usr/bin/tendang
-* * * * * root sleep 50; /usr/bin/tendang
-* * * * * root sleep 55; /usr/bin/tendang
+* * * * * root tendang 2
+* * * * * root sleep 5; tendang 2
+* * * * * root sleep 10; tendang 2
+* * * * * root sleep 15; tendang 2
+* * * * * root sleep 20; tendang 2
+* * * * * root sleep 25; tendang 2
+* * * * * root sleep 30; tendang 2
+* * * * * root sleep 35; tendang 2
+* * * * * root sleep 40; tendang 2
+* * * * * root sleep 45; tendang 2
+* * * * * root sleep 50; tendang 2
+* * * * * root sleep 55; tendang 2
