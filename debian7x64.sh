@@ -243,7 +243,7 @@ swapon /swapfile
 wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/ram/fstab
 mv ./fstab /etc/fstab
 chmod 644 /etc/fstab
-sysctl vm.swappiness=10
+sysctl vm.swappiness=50
 #permission swapfile
 chown root:root /swapfile 
 chmod 0600 /swapfile
