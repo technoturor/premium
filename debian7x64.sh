@@ -54,9 +54,8 @@ UPDATE AND UPGRADE PROCESS
 PLEASE WAIT TAKE TIME 1-5 MINUTE
 "
 # install essential package
-apt-get -y install bmon iftop htop nmap axel nano traceroute sysv-rc-conf bash curl zip sudo
-apt-get -y dnsutils bc nethogs less screen psmisc apt-file whois ptunnel ngrep mtr git zsh mrtg snmp snmpd snmp-mibs-downloader unzip rsyslog debsums rkhunter
 apt-get -y install build-essential
+apt-get -y install bmon iftop htop nmap axel nano iptables traceroute sysv-rc-conf dnsutils bc nethogs openvpn vnstat less screen psmisc apt-file whois ptunnel ngrep mtr git zsh mrtg snmp snmpd snmp-mibs-downloader unzip tar zip unrar rsyslog debsums rkhunter
 
 apt-get update;apt-get -y upgrade;apt-get -y install wget curl
 echo "
