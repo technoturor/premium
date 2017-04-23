@@ -163,7 +163,7 @@ service webmin restart
 cd
 echo "0 0 * * * root /usr/bin/reboot" > /etc/cron.d/reboot
 echo "0 0 * * * root service dropbear restart" > /etc/cron.d/dropbear
-
+echo "* * * * * sleep 5; root ./userlimit.sh 2" > /etc/cron.d/userlimit1
 # auto kill dropbear
 #wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/userlimit.sh"
 #mv ./userlimit /usr/bin/userlimit.sh
