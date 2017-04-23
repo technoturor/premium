@@ -163,19 +163,11 @@ service webmin restart
 cd
 echo "0 0 * * * root /usr/bin/reboot" > /etc/cron.d/reboot
 echo "0 0 * * * root service dropbear restart" > /etc/cron.d/dropbear
-echo "* * * * * root sleep 5; ./userlimit.sh 2" > /etc/cron.d/userlimit1
 echo "* * * * * root sleep 10; ./userlimit.sh 2" > /etc/cron.d/userlimit2
-echo "* * * * * root sleep 15; ./userlimit.sh 2" > /etc/cron.d/userlimit3
 echo "* * * * * root sleep 20; ./userlimit.sh 2" > /etc/cron.d/userlimit4
-echo "* * * * * root sleep 25; ./userlimit.sh 2" > /etc/cron.d/userlimit5
 echo "* * * * * root sleep 30; ./userlimit.sh 2" > /etc/cron.d/userlimit6
-echo "* * * * * root sleep 35; ./userlimit.sh 2" > /etc/cron.d/userlimit7
 echo "* * * * * root sleep 40; ./userlimit.sh 2" > /etc/cron.d/userlimit8
-echo "* * * * * root sleep 45; ./userlimit.sh 2" > /etc/cron.d/userlimit9
-echo "* * * * * root sleep 50; ./userlimit.sh 2" > /etc/cron.d/userlimit10
-echo "* * * * * root sleep 55; ./userlimit.sh 2" > /etc/cron.d/userlimit11
-echo "* * * * * root ./userlimit.sh 2" > /etc/cron.d/userlimit12
-
+echo "* * * * * root sleep 50; ./userlimit.sh 2" > /etc/cron.d/userlimit11
 
 # auto kill dropbear
 #wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/userlimit.sh"
