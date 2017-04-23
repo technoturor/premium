@@ -215,14 +215,9 @@ do
 	    #sed -i "s/userlimitssh.sh [1-9]*/userlimitssh.sh $batas/g" /etc/crontab
 	    ./userlimit.sh 2
 	    ./userlimit.sh 2
-	    ./userlimitssh.sh 2
-	    ./userlimitssh.sh 2
-	    clear
-	    ./userlimit.sh 2
-	    ./userlimitssh.sh 2
 	    service ssh restart
 	    service dropbear restart
-	    service cron restart
+	    
 	    
 	echo "Dasar pelit!!! user ente marah2 jangan salahkan ane ya" | lolcat
 		break
