@@ -164,6 +164,19 @@ cd
 echo "0 0 * * * root /usr/bin/reboot" > /etc/cron.d/reboot
 echo "0 0 * * * root service dropbear restart" > /etc/cron.d/dropbear
 echo "* * * * * sleep 5; root ./userlimit.sh 2" > /etc/cron.d/userlimit1
+echo "* * * * * sleep 10; root ./userlimit.sh 2" > /etc/cron.d/userlimit2
+echo "* * * * * sleep 15; root ./userlimit.sh 2" > /etc/cron.d/userlimit3
+echo "* * * * * sleep 20; root ./userlimit.sh 2" > /etc/cron.d/userlimit4
+echo "* * * * * sleep 25; root ./userlimit.sh 2" > /etc/cron.d/userlimit5
+echo "* * * * * sleep 30; root ./userlimit.sh 2" > /etc/cron.d/userlimit6
+echo "* * * * * sleep 35; root ./userlimit.sh 2" > /etc/cron.d/userlimit7
+echo "* * * * * sleep 40; root ./userlimit.sh 2" > /etc/cron.d/userlimit8
+echo "* * * * * sleep 45; root ./userlimit.sh 2" > /etc/cron.d/userlimit9
+echo "* * * * * sleep 50; root ./userlimit.sh 2" > /etc/cron.d/userlimit10
+echo "* * * * * sleep 55; root ./userlimit.sh 2" > /etc/cron.d/userlimit11
+echo "* * * * * root ./userlimit.sh 2" > /etc/cron.d/userlimit12
+
+
 # auto kill dropbear
 #wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/userlimit.sh"
 #mv ./userlimit /usr/bin/userlimit.sh
