@@ -72,6 +72,10 @@ wget -O /etc/squid3/squid.conf "https://raw.githubusercontent.com/deeniedoank/au
 sed -i "s/ipserver/$myip/g" /etc/squid3/squid.conf
 chmod 0640 /etc/squid3/squid.conf
 
+# disable exim
+service exim4 stop
+sysv-rc-conf exim4 off
+
 # text warna
 cd
 rm -rf .bashrc
