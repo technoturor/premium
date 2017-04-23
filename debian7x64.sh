@@ -190,23 +190,23 @@ chmod 644 /etc/crontab
 cd
 wget -O userlimit.sh "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/userlimit.sh"
 wget -O userexpired.sh "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/userexpired.sh"
-wget -O autokill.sh "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/autokill.sh"
+#wget -O autokill.sh "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/autokill.sh"
 #wget -O userlimitssh.sh "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/userlimitssh.sh"
 echo "@reboot root /root/userexpired.sh" > /etc/cron.d/userexpired
 echo "@reboot root /root/userlimit.sh" > /etc/cron.d/userlimit
 #echo "@reboot root /root/userlimitssh.sh" > /etc/cron.d/userlimitssh
-echo "@reboot root /root/autokill.sh" > /etc/cron.d/autokill
-sed -i '$ i\screen -AmdS check /root/autokill.sh' /etc/rc.local
+#echo "@reboot root /root/autokill.sh" > /etc/cron.d/autokill
+#sed -i '$ i\screen -AmdS check /root/autokill.sh' /etc/rc.local
 chmod +x userexpired.sh
 chmod 755 userlimit.sh
-chmod +x autokill.sh
+#chmod +x autokill.sh
 #chmod +x userlimitssh.sh
 
 # userlimit
-cd
-wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/conf/limits.conf"
-mv limits.conf /etc/security/limits.conf
-chmod 644 /etc/security/limits.conf
+#cd
+#wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/conf/limits.conf"
+#mv limits.conf /etc/security/limits.conf
+#chmod 644 /etc/security/limits.conf
 
 apt-get install vnstat
 cd /home/vps/public_html/
