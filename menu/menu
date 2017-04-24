@@ -17,8 +17,8 @@ echo -e "" | lolcat
 echo -e "" | lolcat
 echo -e ""
 echo -e ""
-echo -e "_____________________________________" | boxes -d dog | lolcat
-echo -e "        Informasi Akun Baru SSH          " | lolcat
+echo -e ""| lolcat
+echo -e "|      Informasi Akun Baru SSH      |" | boxes -d dog | lolcat
 echo -e "==========-Yusuf-Ardiansyah-===============" | lolcat
 echo -e "     Host: $myip" | lolcat
 echo -e "     Username: $uname" | lolcat
