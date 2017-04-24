@@ -9,6 +9,19 @@ echo
 function create_user() {
 #myip=`dig +short myip.opendns.com @resolver1.opendns.com`
 clear
+clear
+echo ""
+echo ""
+echo ""
+echo ""
+echo ""
+echo ""
+echo ""
+echo ""
+echo ""
+echo ""
+echo ""
+echo ""
 echo ""
 echo ""
 useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $uname
@@ -28,13 +41,13 @@ echo -e "=========================================
      Port OpenVPN default: 55
      Auto kill user maximal login 2
 -----------------------------------------
-     Aktif Sampai: $exp
-=========================================
+     Aktif Sampai: $exp" | boxes -d dog | lolcat
+echo -e "=========================================
    DI LARANG: 
    HACKING-DDOS-PHISING-SPAM-TORENT
    CARDING-CRIMINAL CYBER.
 =========================================
-   Script by Yusuf Ardiansyah" | boxes -d dog | lolcat
+   Script by Yusuf Ardiansyah" | lolcat
 myip=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0' | head -n1`;
 echo "Config OVPN (http://$myip:8090/client.tar)" | lolcat
 }
