@@ -273,7 +273,7 @@ sources/shc-3.8.7.tgz
 tar xvfz shc-3.8.7.tgz
 cd shc-3.8.7
 make
-./shc -f menu
+./shc -f /usr/local/bin/menu
 ./shc -f debian7x64.sh
 #./shc -e 16/09/2018 -f menu
 
