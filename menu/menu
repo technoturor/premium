@@ -215,7 +215,7 @@ do
        read -p "Enter password: " pass
        read -p "Kadaluarsa (Berapa Hari): " masaaktif
        clear
-       create_user | boxes -d dog | lolcat
+       create_user
 	    break
             ;;
 	"Buat User Trial")
@@ -223,7 +223,7 @@ do
 	masaaktif="1"
 	pass=`</dev/urandom tr -dc a-f0-9 | head -c9`
 	clear
-	create_user | boxes -d boy | lolcat
+	create_user
 	break
 	;;
         "Perbarui User")
