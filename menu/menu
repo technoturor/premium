@@ -34,7 +34,7 @@ echo -e "=========================================
    HACKING-DDOS-PHISING-SPAM-TORENT
    CARDING-CRIMINAL CYBER.
 =========================================
-   Script by Yusuf Ardiansyah" | boxes -d dog
+   Script by Yusuf Ardiansyah" | boxes -d dog | lolcat
 myip=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0' | head -n1`;
 echo "Config OVPN (http://$myip:8090/client.tar)" | lolcat
 }
