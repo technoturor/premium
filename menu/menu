@@ -100,7 +100,7 @@ function not_expired_users(){
 
 function monssh2(){
 echo ""| lolcat
-echo " Date-Time    |    PID   |    User Name    |     Dari IP "| boxes -d peek | lolcat
+echo "|   Tgl-Jam   | PID  |   User Name   |      Dari IP     "| boxes -d peek | lolcat
 echo "-------------------------------------------------------------"| lolcat
 data=( `ps aux | grep -i dropbear | awk '{print $2}'`);
 
@@ -210,20 +210,20 @@ do
        read -p "Enter username: " uname
        read -p "Enter password: " pass
        read -p "Kadaluarsa (Berapa Hari): " masaaktif
-       create_user
+       create_user | boxes -d dog
 	    break
             ;;
 	"Buat User Trial")
 	uname=trial-`</dev/urandom tr -dc X-Z0-9 | head -c4`
-masaaktif="1"
-pass=`</dev/urandom tr -dc a-f0-9 | head -c9`
-	create_user
+	masaaktif="1"
+	pass=`</dev/urandom tr -dc a-f0-9 | head -c9`
+	create_user | boxes -d dog
 	break
 	;;
         "Perbarui User")
             read -p "Enter username yg di perbarui: " uname
             read -p "Aktif sampai tanggal Thn-Bln-Hr(YYYY-MM-DD): " expdate
-            renew_user | lolcat
+            renew_user | boxes -d dog | lolcat
             break
             ;;
         "Hapus User")
@@ -239,8 +239,7 @@ pass=`</dev/urandom tr -dc a-f0-9 | head -c9`
 	    #read -p "Batas multy login ketik angka 1 atau 2 (tidak bisa lebih): " batas
 	    #sed -i "s/userlimit.sh [1-9]*/userlimit.sh $batas/g" /etc/crontab
 	    #sed -i "s/userlimitssh.sh [1-9]*/userlimitssh.sh $batas/g" /etc/crontab
-	    ./userlimit.sh 2
-	    ./userlimit.sh 2
+	    ./userlimit.sh 2 | boxes -d dog
 	    service ssh restart
 	    service dropbear restart
 	    
@@ -264,17 +263,17 @@ pass=`</dev/urandom tr -dc a-f0-9 | head -c9`
 		read -p "Ketik user yang akan di ganti passwordnya: " uname
 		read -p "Silahkan isi passwordnya: " pass
 		echo "$uname:$pass" | chpasswd
-		echo "Mantaffff gan!!! Password $uname user ente sudah di ganti..."| lolcat
+		echo "Mantaffff gan!!! Password $uname user ente sudah di ganti..."| boxes -d peek | lolcat
 		break
 		;;
 		"Ganti Password VPS")
 		read -p "Silahkan isi password baru untuk VPS anda: " pass	
 		echo "root:$pass" | chpasswd
-		echo "Ciieeee.. ciieeeeeee.. abis ganti password VPS ni yeeee...!!!"
+		echo "Ciieeee.. ciieeeeeee.. abis ganti password VPS ni yeeee...!!!"| boxes -d boy | lolcat
 			break
 			;;
 		"Used Data By Users")
-			used_data | lolcat
+			used_data | boxes -d boy | lolcat
  			break
 			;;
 			"bench-network")
@@ -288,7 +287,7 @@ pass=`</dev/urandom tr -dc a-f0-9 | head -c9`
 			;;
 			"Bersihkan cache ram")
 		echo 3 > /proc/sys/vm/drop_caches
-		echo "Cache ram anda sudah di bersihkan!!!" | boxes -d spring | lolcat
+		echo "SUKSES..!!!Cache ram anda sudah di bersihkan." | boxes -d spring | lolcat
 		break
 			;;
 			"Monitor Multi Login")
@@ -305,7 +304,7 @@ pass=`</dev/urandom tr -dc a-f0-9 | head -c9`
 			;;
 		"Ganti Port Dropbear")	
             echo "Silahkan ganti port Dropbear anda lalu klik enter?
-	    Port dropbear tidak boleh sama dengan port openVPN/openSSH/squid3 !!!"| boxes -d | lolcat
+	    Port dropbear tidak boleh sama dengan port openVPN/openSSH/squid3 !!!"| boxes -d peek | lolcat
            echo "Port1: 443 (Default)"
 	    read -p "Port2: " -e -i 109 PORT
 	    #read -p "Port3: " -e -i 143 PORT3
