@@ -20,28 +20,27 @@ echo ""
 useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $uname
 exp="$(chage -l $uname | grep "Account expires" | awk -F": " '{print $2}')"
 echo -e "$pass\n$pass\n"|passwd $uname &> /dev/null
-echo -e "" | lolcat
-echo -e "
-=========================================
-        Informasi Akun Baru SSH
-==========-Yusuf-Ardiansyah-=============
-     Host: $myip
-     Username: $uname
-     Password: $pass
-
-     Port dropbear: 443
-     Port openSSH: 22,80
-     Port squid: 8080
-     Port OpenVPN default: 55
-     Auto kill user maximal login 2
------------------------------------------
-     Aktif Sampai: $exp
-=========================================
-   DI LARANG: 
-   HACKING-DDOS-PHISING-SPAM-TORENT
-   CARDING-CRIMINAL CYBER.
-=========================================
-   Script by Yusuf Ardiansyah"| boxes -d dog | lolcat
+echo -e ""
+echo -e "=========================================" | lolcat
+echo -e "        Informasi Akun Baru SSH" | lolcat
+echo -e "==========-Yusuf-Ardiansyah-=============" | lolcat
+echo -e "     Host: $myip" | lolcat
+echo -e "     Username: $uname" | lolcat
+echo -e "     Password: $pass" | lolcat
+echo -e ""
+echo -e "     Port dropbear: 443,109" | lolcat
+echo -e "     Port openSSH: 22,80" | lolcat
+echo -e "     Port squid: 8080" | lolcat
+echo -e "     Port OpenVPN default: 55" | lolcat
+echo -e "     Auto kill user maximal login 2" | lolcat
+echo -e "-----------------------------------------" | lolcat
+echo -e "     Aktif Sampai: $exp" | lolcat
+echo -e "=========================================" | lolcat
+echo -e "   DI LARANG: "| lolcat
+echo -e "   HACKING-DDOS-PHISING-SPAM-TORENT" | lolcat
+echo -e "   CARDING-CRIMINAL CYBER."| lolcat
+echo -e "=========================================" | lolcat
+echo -e "   Script by Yusuf Ardiansyah"| lolcat
 echo -e ""
 myip=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0' | head -n1`;
 echo "Config OVPN (http://$myip:8090/client.tar)" | lolcat
