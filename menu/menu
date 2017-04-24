@@ -196,9 +196,9 @@ do
 	    break
             ;;
 	"Buat User Trial")
-	echo -p "Username: " uname
-	echo -p "Password: " pass
-	echo -p "kadaluarsa: " masaaktif
+	trial= uname
+	trial= pass
+	1= masaaktif
 	create_user
 	break
 	;;
