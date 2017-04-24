@@ -184,17 +184,24 @@ echo "        #        Copyright © yusuf-ardiansyah™  2017        #"| lolcat
 echo "        ====================================================="| lolcat
 echo ""
 PS3='Silahkan ketik nomor pilihan anda lalu tekan enter: '
-options=("Buat User" "Perbarui User" "Hapus User" "Semua User" "Kill Multy Login" "User Belum Kadaluarsa" "User Sudah Kadaluarsa" "Restart Server" "Ganti Password User" "Ganti Password VPS" "Used Data By Users" "bench-network" "Ram Status" "Bersihkan cache ram" "Monitor Multi Login" "Ganti Port OpenVPN" "Ganti Port Dropbear" "Ganti Port Openssh" "Ganti Port Squid3" "Speedtest" "Quit")
+options=("Buat User" "Buat User Trial" "Perbarui User" "Hapus User" "Semua User" "Kill Multy Login" "User Belum Kadaluarsa" "User Sudah Kadaluarsa" "Restart Server" "Ganti Password User" "Ganti Password VPS" "Used Data By Users" "bench-network" "Ram Status" "Bersihkan cache ram" "Monitor Multi Login" "Ganti Port OpenVPN" "Ganti Port Dropbear" "Ganti Port Openssh" "Ganti Port Squid3" "Speedtest" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
         "Buat User")
-            read -p "Enter username: " uname
-            read -p "Enter password: " pass
-            read -p "Kadaluarsa (Berapa Hari): " masaaktif
+            trial= uname
+            trial= pass
+            1= masaaktif
 	    create_user
 	    break
             ;;
+	"Buat User Trial")
+	echo -p "Username: " uname
+	echo -p "Password: " pass
+	echo -p "kadaluarsa: " masaaktif
+	create_user
+	break
+	;;
         "Perbarui User")
             read -p "Enter username yg di perbarui: " uname
             read -p "Aktif sampai tanggal Thn-Bln-Hr(YYYY-MM-DD): " expdate
