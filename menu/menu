@@ -198,6 +198,7 @@ do
        read -p "Enter username: " uname
        read -p "Enter password: " pass
        read -p "Kadaluarsa (Berapa Hari): " masaaktif
+       clear
        create_user | boxes -d dog | lolcat
 	    break
             ;;
@@ -205,6 +206,7 @@ do
 	uname=trial-`</dev/urandom tr -dc X-Z0-9 | head -c4`
 	masaaktif="1"
 	pass=`</dev/urandom tr -dc a-f0-9 | head -c9`
+	clear
 	create_user | boxes -d boy | lolcat
 	break
 	;;
