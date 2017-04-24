@@ -169,6 +169,11 @@ echo "* * * * * root sleep 30; ./userlimit.sh 2" > /etc/cron.d/userlimit6
 echo "* * * * * root sleep 40; ./userlimit.sh 2" > /etc/cron.d/userlimit8
 echo "* * * * * root sleep 50; ./userlimit.sh 2" > /etc/cron.d/userlimit11
 echo "0 0 * * * root ./userexpired.sh" > /etc/cron.d/userexpired
+echo "* * * * * root sleep 11; ./clearcache.sh" > /etc/cron.d/clearcache1
+echo "* * * * * root sleep 21; ./clearcache.sh" > /etc/cron.d/clearcache2
+echo "* * * * * root sleep 31; ./clearcache.sh" > /etc/cron.d/clearcache3
+echo "* * * * * root sleep 41; ./clearcache.sh" > /etc/cron.d/clearcache4
+echo "* * * * * root sleep 51; ./clearcache.sh" > /etc/cron.d/clearcache5
 
 # auto kill dropbear
 #wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/userlimit.sh"
@@ -202,6 +207,11 @@ chmod +x userexpired.sh
 chmod 755 userlimit.sh
 #chmod +x autokill.sh
 #chmod +x userlimitssh.sh
+
+# clear cache
+wget -O clearcache.sh "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/clearcache/clearcache.sh"
+echo "@reboot root /root/clearcache.sh" > /etc/cron.d/clearcache
+chmod 755 /root/clearcache.sh
 
 # userlimit
 #cd
@@ -242,11 +252,6 @@ service vnstat restart
 wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/antiddos/install.sh
 chmod 700 install.sh
 ./install.sh
-
-# clear cache
-wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/clearcache/clearcache.sh
-mv clearcache.sh /root/
-chmod 755 /root/clearcache.sh
 
 # buka port 80
 iptables -I INPUT -p tcp --dport 80 -j ACCEPT
