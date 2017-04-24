@@ -274,7 +274,10 @@ tar xvfz shc-3.8.7.tgz
 cd shc-3.8.7
 make
 ./shc -f /usr/local/bin/menu
-./shc -f debian7x64.sh
+rm /usr/local/bin/menu
+mv /usr/local/bin/menu.x /usr/local/bin/menu
+chmod +x /usr/local/bin/menu
+#./shc -f debian7x64.sh
 #./shc -e 16/09/2018 -f menu
 
 # moth
