@@ -198,7 +198,7 @@ do
        read -p "Enter username: " uname
        read -p "Enter password: " pass
        read -p "Kadaluarsa (Berapa Hari): " masaaktif
-       create_user | boxes -d dog
+       create_user | lolcat | boxes -d dog
 	    break
             ;;
 	"Buat User Trial")
