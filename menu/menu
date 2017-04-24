@@ -19,7 +19,7 @@ echo -e ""
 echo -e ""
 echo -e "_____________________________________" | boxes -d dog | lolcat
 echo -e "        Informasi Akun Baru SSH          " | lolcat
-echo -e "==========-Yusuf-Ardiansyah-=============" | lolcat
+echo -e "==========-Yusuf-Ardiansyah-===============" | lolcat
 echo -e "     Host: $myip" | lolcat
 echo -e "     Username: $uname" | lolcat
 echo -e "     Password: $pass                     " | lolcat
@@ -28,18 +28,18 @@ echo -e "     Port openSSH: 22,80                 " | lolcat
 echo -e "     Port squid: 8080                    " | lolcat
 echo -e "     Port OpenVPN default: 55            " | lolcat
 echo -e "     Auto kill user maximal login 2      " | lolcat
-echo -e "-----------------------------------------" | lolcat
+echo -e "-------------------------------------------" | lolcat
 echo -e "     Aktif Sampai: $exp                  " | lolcat
-echo -e "=========================================" | lolcat
+echo -e "===========================================" | lolcat
 echo -e "   DI LARANG:                            "| lolcat
 echo -e "   HACKING-DDOS-PHISING-SPAM-TORENT      " | lolcat
 echo -e "   CARDING-CRIMINAL CYBER.               "| lolcat
-echo -e "=========================================" | lolcat
+echo -e "===========================================" | lolcat
 echo -e "   Script by Yusuf Ardiansyah            "| lolcat
 myip=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0' | head -n1`;
 echo -e "   Config OVPN:                          "| lolcat
 echo -e "   http://$myip:8090/client.tar          " | lolcat
-echo -e "-----------------------------------------" | lolcat
+echo -e "-------------------------------------------" | lolcat
 echo -e ""
 echo -e ""
 }
