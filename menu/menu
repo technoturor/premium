@@ -338,7 +338,7 @@ pass=`</dev/urandom tr -dc a-f0-9 | head -c9`
 			break
 			;;
 			"Speedtest")
-			python speedtest.py --share | boxes -d dog | lolcat
+			python speedtest.py --share | lolcat
 			break		
 			;;
 		"Quit")
