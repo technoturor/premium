@@ -183,7 +183,7 @@ echo ""
 echo ""
 echo "" | lolcat
 echo "" | lolcat
-echo "           [SELAMAT DATANG DI VPS YUSUF ARDIANSYAH]    "| boxes -d doglolcat
+echo "           [SELAMAT DATANG DI VPS YUSUF ARDIANSYAH]    "| boxes -d dog | lolcat
 echo "        ====================================================="| lolcat
 echo "        #           WhatsApp     : 082139743432             #"| lolcat
 echo "        #           Telegram     : e-Server                 #"| lolcat
