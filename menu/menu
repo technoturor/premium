@@ -16,10 +16,6 @@ echo ""
 echo ""
 echo ""
 echo ""
-echo ""
-echo ""
-echo ""
-echo ""
 useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $uname
 exp="$(chage -l $uname | grep "Account expires" | awk -F": " '{print $2}')"
 echo -e "$pass\n$pass\n"|passwd $uname &> /dev/null
@@ -185,7 +181,8 @@ echo "--------------------------------------------------"| lolcat
 }
 
 clear
-echo "             ==========================================="| boxes -d dog | lolcat
+echo ""
+echo "          ================================================="| boxes -d dog | lolcat
 echo "        ====================================================="| lolcat
 echo "        #     [SELAMAT DATANG DI VPS YUSUF ARDIANSYAH]      #"| lolcat
 echo "        ====================================================="| lolcat
