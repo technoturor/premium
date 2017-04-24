@@ -1,4 +1,5 @@
 #!/bin/bash
+clear
 
 myip=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0' | head -n1`;
 
@@ -12,14 +13,14 @@ clear
 clear
 echo ""
 echo ""
-echo ""
-echo ""
-echo ""
+echo ""| lolcat
+echo ""| lolcat
+echo ""| lolcat
 echo ""
 useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $uname
 exp="$(chage -l $uname | grep "Account expires" | awk -F": " '{print $2}')"
 echo -e "$pass\n$pass\n"|passwd $uname &> /dev/null
-echo -e ""
+echo -e "" | lolcat
 echo -e "
 =========================================
         Informasi Akun Baru SSH
