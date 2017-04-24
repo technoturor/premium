@@ -169,11 +169,7 @@ echo "* * * * * root sleep 30; ./userlimit.sh 2" > /etc/cron.d/userlimit6
 echo "* * * * * root sleep 40; ./userlimit.sh 2" > /etc/cron.d/userlimit8
 echo "* * * * * root sleep 50; ./userlimit.sh 2" > /etc/cron.d/userlimit11
 echo "0 0 * * * root ./userexpired.sh" > /etc/cron.d/userexpired
-echo "* * * * * root sleep 11; ./clearcache.sh" > /etc/cron.d/clearcache1
-echo "* * * * * root sleep 21; ./clearcache.sh" > /etc/cron.d/clearcache2
-echo "* * * * * root sleep 31; ./clearcache.sh" > /etc/cron.d/clearcache3
-echo "* * * * * root sleep 41; ./clearcache.sh" > /etc/cron.d/clearcache4
-echo "* * * * * root sleep 51; ./clearcache.sh" > /etc/cron.d/clearcache5
+echo "* * * * * root sleep 25; ./clearcache.sh" > /etc/cron.d/clearcache1
 
 # auto kill dropbear
 #wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/userlimit.sh"
