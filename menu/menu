@@ -9,18 +9,9 @@ echo
 
 function create_user() {
 #myip=`dig +short myip.opendns.com @resolver1.opendns.com`
-clear
-clear
-echo ""
-echo ""
-echo ""| lolcat
-echo ""| lolcat
-echo ""| lolcat
-echo ""
 useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $uname
 exp="$(chage -l $uname | grep "Account expires" | awk -F": " '{print $2}')"
 echo -e "$pass\n$pass\n"|passwd $uname &> /dev/null
-echo -e ""
 echo -e "=========================================" | lolcat
 echo -e "        Informasi Akun Baru SSH" | lolcat
 echo -e "==========-Yusuf-Ardiansyah-=============" | lolcat
@@ -43,11 +34,9 @@ echo -e "=========================================" | lolcat
 echo -e "   Script by Yusuf Ardiansyah"| lolcat
 echo -e ""
 myip=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0' | head -n1`;
-echo "Config OVPN (http://$myip:8090/client.tar)" | lolcat
-echo ""
-echo ""
+echo -e "   Config OVPN: "| lolcat
+echo -e "   (http://$myip:8090/client.tar)" | lolcat
 }
-
 function renew_user() {
 	echo "Kadaluarsa User: $uname Di Perbarui Sampai: $expdate"| lolcat;
 	usermod -e $expdate $uname
@@ -216,7 +205,7 @@ do
 	uname=trial-`</dev/urandom tr -dc X-Z0-9 | head -c4`
 	masaaktif="1"
 	pass=`</dev/urandom tr -dc a-f0-9 | head -c9`
-	create_user | boxes -d dog
+	create_user
 	break
 	;;
         "Perbarui User")
