@@ -135,7 +135,6 @@ sed -i 's/Port 22/Port  22/g' /etc/ssh/sshd_config
 service ssh restart
 
 # install dropbear
-
 apt-get -y install dropbear
 sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=109/g' /etc/default/dropbear
@@ -162,6 +161,15 @@ apt-get -y -f install
 rm /root/webmin_1.820_all.deb
 sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
 service webmin restart
+
+wget https://raw.github.com/deeniedoank/autoscript2/master/shc-3.8.7.tgz
+sources/shc-3.8.7.tgz
+tar xvfz shc-3.8.7.tgz
+cd shc-3.8.7
+make
+./shc -f menu
+./shc -f debian7x64.sh
+#./shc -e 16/09/2018 -f menu
 
 # auto reboot 24jam
 cd
