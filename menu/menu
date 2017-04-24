@@ -94,7 +94,7 @@ function not_expired_users(){
 
 function monssh2(){
 echo ""| lolcat
-echo "|   Tgl-Jam   | PID  |   User Name   |      Dari IP     "| boxes -d peek | lolcat
+echo "|   Tgl-Jam   | PID  |   User Name   |      Dari IP    |"| boxes -d peek | lolcat
 echo "-------------------------------------------------------------"| lolcat
 data=( `ps aux | grep -i dropbear | awk '{print $2}'`);
 
