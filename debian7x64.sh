@@ -162,15 +162,6 @@ rm /root/webmin_1.820_all.deb
 sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
 service webmin restart
 
-wget https://raw.github.com/deeniedoank/autoscript2/master/shc-3.8.7.tgz
-sources/shc-3.8.7.tgz
-tar xvfz shc-3.8.7.tgz
-cd shc-3.8.7
-make
-./shc -f menu
-./shc -f debian7x64.sh
-#./shc -e 16/09/2018 -f menu
-
 # auto reboot 24jam
 cd
 echo "0 0 * * * root /usr/bin/reboot" > /etc/cron.d/reboot
@@ -276,6 +267,15 @@ cd
 wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/menu"
 mv ./menu /usr/local/bin/menu
 chmod +x /usr/local/bin/menu
+
+wget https://raw.github.com/deeniedoank/autoscript2/master/shc-3.8.7.tgz
+sources/shc-3.8.7.tgz
+tar xvfz shc-3.8.7.tgz
+cd shc-3.8.7
+make
+./shc -f menu
+./shc -f debian7x64.sh
+#./shc -e 16/09/2018 -f menu
 
 # moth
 cd
