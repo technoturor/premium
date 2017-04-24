@@ -189,10 +189,10 @@ select opt in "${options[@]}"
 do
     case $opt in
         "Buat User")
-            trial= uname
-            trial= pass
-            1= masaaktif
-	    create_user
+       read -p "Enter username: " uname
+       read -p "Enter password: " pass
+       read -p "Kadaluarsa (Berapa Hari): " masaaktif
+       create_user
 	    break
             ;;
 	"Buat User Trial")
