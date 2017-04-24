@@ -58,6 +58,10 @@ apt-get -y install build-essential
 apt-get -y install bmon iftop htop nmap axel nano iptables traceroute sysv-rc-conf dnsutils bc nethogs openvpn vnstat less screen psmisc apt-file whois ptunnel ngrep mtr git zsh mrtg snmp snmpd snmp-mibs-downloader unzip tar zip unrar rsyslog debsums rkhunter
 
 apt-get update;apt-get -y upgrade;apt-get -y install wget curl
+
+#text gambar
+apt-get install boxes
+
 echo "
 INSTALLER PROCESS PLEASE WAIT
 TAKE TIME 5-10 MINUTE
@@ -321,7 +325,7 @@ echo "Tambahan Script: Otomatis Reboot 24 Jam sekali" | lolcat
 echo "----------------------------------------"| lolcat
 echo "LOG INSTALL  --> /root/log-install.txt"| lolcat
 echo "----------------------------------------"| lolcat
-echo " CREATED BY YUSUF ARDIANSYAH - JUAL AKUN SSH - VPS - SCRIPT INSTALLER PREMIUM"| lolcat
+echo " CREATED BY YUSUF ARDIANSYAH - JUAL AKUN SSH - VPS - SCRIPT INSTALLER PREMIUM"| boxes -d dog
 echo "========================================"  | tee -a log-install.txt
 echo "      SILAHKAN REBOOT VPS ANDA !" | lolcat
 echo "========================================"  | tee -a log-install.txt
