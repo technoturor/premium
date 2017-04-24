@@ -30,13 +30,14 @@ echo -e "     Auto kill user maximal login 2" | lolcat
 echo -e "-----------------------------------------" | lolcat
 echo -e "     Aktif Sampai: $exp" | lolcat
 echo -e "=========================================" | lolcat
-echo -e "   Script by Yusuf Ardiansyah" | lolcat
-echo -e "   DI LARANG: HACKING-DDOS" | lolcat
-echo -e "          PHISING-SPAM-TORENT-CARDING." | lolcat
+echo -e "   DI LARANG: "| lolcat
+echo -e "   HACKING-DDOS-PHISING-SPAM-TORENT" | lolcat
+echo -e "   CARDING-CRIMINAL CYBER."| lolcat
 echo -e "=========================================" | lolcat
+echo -e "   Script by Yusuf Ardiansyah"| lolcat
 echo -e ""
-	myip=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0' | head -n1`;
-	echo "Config OVPN (http://$myip:8090/client.tar)" | lolcat
+myip=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0' | head -n1`;
+echo "Config OVPN (http://$myip:8090/client.tar)" | lolcat
 }
 
 function renew_user() {
