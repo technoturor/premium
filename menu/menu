@@ -64,7 +64,9 @@ function delete_user(){
 }
 
 function expired_users(){
-	echo "---------------------------------"| lolcat
+echo "                      _\|/_      "| lolcat
+echo "                      (o o)      "| lolcat
+echo "-------------------o00-{_}-00o---"| lolcat
 echo "BIL  USERNAME          EXPIRED "| lolcat
 echo "---------------------------------"| lolcat
 count=1
@@ -102,8 +104,8 @@ function not_expired_users(){
 }
 
 function monssh2(){
-echo "-------------------------------------------------------------"| lolcat
-echo " Date-Time    |    PID   |    User Name    |     Dari IP "| lolcat
+echo ""| lolcat
+echo " Date-Time    |    PID   |    User Name    |     Dari IP "| boxes -d peek | lolcat
 echo "-------------------------------------------------------------"| lolcat
 data=( `ps aux | grep -i dropbear | awk '{print $2}'`);
 
@@ -185,7 +187,7 @@ echo "--------------------------------------------------"| lolcat
 }
 
 clear
-echo "        ====================================================="| lolcat
+echo "        ====================================================="| boxes -d dog | lolcat
 echo "        ====================================================="| lolcat
 echo "        #     [SELAMAT DATANG DI VPS YUSUF ARDIANSYAH]      #"| lolcat
 echo "        ====================================================="| lolcat
@@ -241,11 +243,11 @@ pass=`</dev/urandom tr -dc a-f0-9 | head -c9`
 	    service dropbear restart
 	    
 	    
-	echo "Dasar pelit!!! user ente marah2 jangan salahkan ane ya" | lolcat
+	echo "Dasar pelit!!! user ente marah2 jangan salahkan ane ya" | boxes -d boy | lolcat
 		break
 		;;
 		"User Belum Kadaluarsa")
-			not_expired_users | lolcat
+			not_expired_users | boxes -d dog | lolcat
 			break
 			;;
 		"User Sudah Kadaluarsa")
@@ -284,7 +286,7 @@ pass=`</dev/urandom tr -dc a-f0-9 | head -c9`
 			;;
 			"Bersihkan cache ram")
 		echo 3 > /proc/sys/vm/drop_caches
-		echo "Cache ram anda sudah di bersihkan!!!"
+		echo "Cache ram anda sudah di bersihkan!!!" | boxes -d spring | lolcat
 		break
 			;;
 			"Monitor Multi Login")
@@ -292,7 +294,7 @@ pass=`</dev/urandom tr -dc a-f0-9 | head -c9`
                 break
 	          ;;
 		"Ganti Port OpenVPN")	
-            echo "Silahkan ganti port OpenVPN anda lalu klik enter?"| lolcat
+            echo "Silahkan ganti port OpenVPN anda lalu klik enter?"| boxes -d peek | lolcat
             read -p "Port: " -e -i 55 PORT
             sed -i "s/port [0-9]*/port $PORT/" /etc/openvpn/1194.conf
             service openvpn restart
@@ -300,8 +302,8 @@ pass=`</dev/urandom tr -dc a-f0-9 | head -c9`
 			break
 			;;
 		"Ganti Port Dropbear")	
-            echo "Silahkan ganti port Dropbear anda lalu klik enter?"| lolcat
-	    echo "Port dropbear tidak boleh sama dengan port openVPN/openSSH/squid3 !!!"| lolcat
+            echo "Silahkan ganti port Dropbear anda lalu klik enter?
+	    Port dropbear tidak boleh sama dengan port openVPN/openSSH/squid3 !!!"| boxes -d | lolcat
            echo "Port1: 443 (Default)"
 	    read -p "Port2: " -e -i 109 PORT
 	    #read -p "Port3: " -e -i 143 PORT3
@@ -314,7 +316,7 @@ pass=`</dev/urandom tr -dc a-f0-9 | head -c9`
 			break
 			;;
 	   "Ganti Port Openssh")	
-            echo "Silahkan ganti port Openssh anda lalu klik enter?"| lolcat
+            echo "Silahkan ganti port Openssh anda lalu klik enter."| boxes -d peek | lolcat
             echo "Port default dan Port 2 tidak boleh sama !!!"| lolcat
 	    echo "Port default: 22"| lolcat
 	    read -p "Port 2: " -e -i 80 PORT
@@ -324,7 +326,7 @@ pass=`</dev/urandom tr -dc a-f0-9 | head -c9`
 			break
 			;;
         "Ganti Port Squid3")	
-            echo "Silahkan ganti port Squid3 anda lalu klik enter?"| lolcat
+            echo "Silahkan ganti port Squid3 anda lalu klik enter"| boxes -d dog | lolcat
 	    echo "Isi dengan angka tidak boleh huruf !!!"| lolcat
 	    read -p "Port Squid3: " -e -i 8080 PORT
             #sed -i 's/http_port [0-9]*\nhttp_port [0-9]*/http_port $PORT1\nhttp_port $PORT2/g' /etc/squid3/squid.conf
@@ -334,7 +336,7 @@ pass=`</dev/urandom tr -dc a-f0-9 | head -c9`
 			break
 			;;
 			"Speedtest")
-			python speedtest.py --share | lolcat
+			python speedtest.py --share | boxes -d dog | lolcat
 			break		
 			;;
 		"Quit")
