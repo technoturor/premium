@@ -258,10 +258,10 @@ cd
 service exim4 stop
 sysv-rc-conf exim4 off
 
-rm /etc/cron.weekly
-rm /etc/cron.hourly
-rm /etc/cron.monthly
-rm /etc/cron.daily
+rm -rf /etc/cron.weekly/
+rm -rf /etc/cron.hourly/
+rm -rf /etc/cron.monthly/
+rm -rf /etc/cron.daily/
 echo "UPDATE AND INSTALL COMPLETE COMPLETE 99% BE PATIENT"
 rm $0;rm *.txt;rm *.tar;rm *.deb;rm *.asc
 clear
