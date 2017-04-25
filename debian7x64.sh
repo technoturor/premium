@@ -176,7 +176,7 @@ echo "0 0 * * * root service dropbear restart" > /etc/cron.d/dropbear
 #echo "* * * * * root sleep 40; ./userlimit.sh 2" > /etc/cron.d/userlimit8
 #echo "* * * * * root sleep 50; ./userlimit.sh 2" > /etc/cron.d/userlimit11
 #echo "0 0 * * * root ./userexpired.sh" > /etc/cron.d/userexpired
-echo "*/5 * * * * root ./clearcache.sh" > /etc/cron.d/clearcache
+echo "*/3* * * * root ./clearcache.sh" > /etc/cron.d/clearcache
 
 # auto kill dropbear
 #wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/userlimit.sh"
@@ -213,7 +213,7 @@ chmod 755 userlimit.sh
 
 # clear cache
 wget -O clearcache.sh "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/clearcache/clearcache.sh"
-echo "@reboot root /root/clearcache.sh" > /etc/cron.d/clearcache
+#echo "@reboot root /root/clearcache.sh" > /etc/cron.d/clearcache
 chmod 755 /root/clearcache.sh
 
 # userlimit
