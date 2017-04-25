@@ -265,17 +265,6 @@ cd
 wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/menu"
 mv ./menu /usr/local/bin/menu
 chmod +x /usr/local/bin/menu
-
-wget https://raw.github.com/deeniedoank/autoscript2/master/shc-3.8.7.tgz
-sources/shc-3.8.7.tgz
-tar xvfz shc-3.8.7.tgz
-cd shc-3.8.7
-make
-./shc -f /usr/local/bin/menu
-mv /usr/local/bin/menu.x /usr/local/bin/menu
-chmod +x /usr/local/bin/menu
-#./shc -f debian7x64.sh
-#./shc -e 16/09/2018 -f menu
 cd
 
 # moth
