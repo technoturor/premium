@@ -234,10 +234,8 @@ chmod +x speedtest.py
 # Install Menu
 cd
 wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/menu"
-mv ./menu /usr/local/bin/menu.sh
-chmod +x /usr/local/bin/menu.sh
-./shc -f /usr/local/bin/menu.sh
-mv /usr/local/bin/menu.sh.x /usr/local/bin/menu
+mv ./menu /usr/local/bin/menu
+chmod +x /usr/local/bin/menu
 
 # swap ram
 dd if=/dev/zero of=/swapfile bs=1024 count=1024k
