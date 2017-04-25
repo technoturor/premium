@@ -232,7 +232,7 @@ do
             delete_user
 	    break
             ;;
-	  "Monitor Multi Login")
+	  "Monitor User Login")
 	  monssh2
 	  break
 	  ;;
