@@ -135,6 +135,7 @@ wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/shc-3.8.7.
 tar xvfz shc-3.8.7.tgz
 cd shc-3.8.7
 make
+cd
 
 # install dropbear
 
@@ -175,7 +176,7 @@ echo "0 0 * * * root service dropbear restart" > /etc/cron.d/dropbear
 #echo "* * * * * root sleep 40; ./userlimit.sh 2" > /etc/cron.d/userlimit8
 #echo "* * * * * root sleep 50; ./userlimit.sh 2" > /etc/cron.d/userlimit11
 #echo "0 0 * * * root ./userexpired.sh" > /etc/cron.d/userexpired
-#echo "* * * * * root sleep 25; ./clearcache.sh" > /etc/cron.d/clearcache1
+echo "*/5 * * * * root ./clearcache.sh" > /etc/cron.d/clearcache
 
 # auto kill dropbear
 #wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/userlimit.sh"
@@ -211,9 +212,9 @@ chmod 755 userlimit.sh
 #chmod +x userlimitssh.sh
 
 # clear cache
-#wget -O clearcache.sh "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/clearcache/clearcache.sh"
-#echo "@reboot root /root/clearcache.sh" > /etc/cron.d/clearcache
-#chmod 755 /root/clearcache.sh
+wget -O clearcache.sh "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/clearcache/clearcache.sh"
+echo "@reboot root /root/clearcache.sh" > /etc/cron.d/clearcache
+chmod 755 /root/clearcache.sh
 
 # userlimit
 #cd
@@ -247,7 +248,7 @@ swapon /swapfile
 wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/ram/fstab
 mv ./fstab /etc/fstab
 chmod 644 /etc/fstab
-sysctl vm.swappiness=20
+sysctl vm.swappiness=70
 #permission swapfile
 chown root:root /swapfile 
 chmod 0600 /swapfile
