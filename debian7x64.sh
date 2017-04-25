@@ -46,7 +46,7 @@ apt-get -y --purge remove sendmail*;
 apt-get -y --purge remove postfix*;
 apt-get -y --purge remove bind*;
 apt-get -y --purge remove dropbear*;
-
+apt-get -y --purge remove cron*;
 
 echo "
 UPDATE AND UPGRADE PROCESS 
@@ -55,7 +55,7 @@ PLEASE WAIT TAKE TIME 1-5 MINUTE
 "
 # install essential package
 apt-get -y install build-essential
-apt-get -y install bmon cron iftop htop nmap axel nano iptables traceroute sysv-rc-conf dnsutils bc nethogs openvpn vnstat less screen psmisc apt-file whois ptunnel ngrep mtr git zsh mrtg snmp snmpd snmp-mibs-downloader unzip tar zip unrar rsyslog debsums rkhunter
+apt-get -y install bmon iftop htop nmap axel nano iptables traceroute sysv-rc-conf dnsutils bc nethogs openvpn vnstat less screen psmisc apt-file whois ptunnel ngrep mtr git zsh mrtg snmp snmpd snmp-mibs-downloader unzip tar zip unrar rsyslog debsums rkhunter
 
 apt-get update;apt-get -y upgrade;apt-get -y install wget curl
 
