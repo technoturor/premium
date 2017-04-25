@@ -131,11 +131,10 @@ sed -i 's/Port 22/Port  22/g' /etc/ssh/sshd_config
 service ssh restart
 
 # encrypt file
-wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/shc-3.9.3.zip
-tar xvfz shc-3.9.3.zip
-./configure
+wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/shc-3.8.7.tgz
+tar xvfz shc-3.8.7.tgz
+cd shc-3.8.7
 make
-sudo make install
 
 # install dropbear
 
@@ -237,7 +236,7 @@ cd
 wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/menu"
 mv ./menu /usr/local/bin/menu
 chmod +x /usr/local/bin/menu
-shc -f /usr/local/bin/menu shc -o /usr/local/bin/menu
+./shc -f /usr/local/bin/menu
 mv /usr/local/bin/menu.x /usr/local/bin/menu
 
 # swap ram
