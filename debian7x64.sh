@@ -76,10 +76,6 @@ wget -O /etc/squid3/squid.conf "https://raw.githubusercontent.com/deeniedoank/au
 sed -i "s/ipserver/$myip/g" /etc/squid3/squid.conf
 chmod 0640 /etc/squid3/squid.conf
 
-# disable exim
-service exim4 stop
-sysv-rc-conf exim4 off
-
 # text warna
 cd
 rm -rf .bashrc
@@ -167,13 +163,13 @@ service webmin restart
 cd
 echo "0 0 * * * root /usr/bin/reboot" > /etc/cron.d/reboot
 echo "0 0 * * * root service dropbear restart" > /etc/cron.d/dropbear
-echo "* * * * * root sleep 10; ./userlimit.sh 2" > /etc/cron.d/userlimit2
+#echo "* * * * * root sleep 10; ./userlimit.sh 2" > /etc/cron.d/userlimit2
 #echo "* * * * * root sleep 20; ./userlimit.sh 2" > /etc/cron.d/userlimit4
 #echo "* * * * * root sleep 30; ./userlimit.sh 2" > /etc/cron.d/userlimit6
 #echo "* * * * * root sleep 40; ./userlimit.sh 2" > /etc/cron.d/userlimit8
 #echo "* * * * * root sleep 50; ./userlimit.sh 2" > /etc/cron.d/userlimit11
-echo "0 0 * * * root ./userexpired.sh" > /etc/cron.d/userexpired
-echo "* * * * * root sleep 25; ./clearcache.sh" > /etc/cron.d/clearcache1
+#echo "0 0 * * * root ./userexpired.sh" > /etc/cron.d/userexpired
+#echo "* * * * * root sleep 25; ./clearcache.sh" > /etc/cron.d/clearcache1
 
 # auto kill dropbear
 #wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/userlimit.sh"
@@ -209,9 +205,9 @@ chmod 755 userlimit.sh
 #chmod +x userlimitssh.sh
 
 # clear cache
-wget -O clearcache.sh "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/clearcache/clearcache.sh"
-echo "@reboot root /root/clearcache.sh" > /etc/cron.d/clearcache
-chmod 755 /root/clearcache.sh
+#wget -O clearcache.sh "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/clearcache/clearcache.sh"
+#echo "@reboot root /root/clearcache.sh" > /etc/cron.d/clearcache
+#chmod 755 /root/clearcache.sh
 
 # userlimit
 #cd
