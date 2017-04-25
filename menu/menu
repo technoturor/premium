@@ -194,7 +194,7 @@ echo "        #        Copyright © yusuf-ardiansyah™  2017        #"| lolcat
 echo "        ====================================================="| lolcat
 echo ""
 PS3='Silahkan ketik nomor pilihan anda lalu tekan ENTER: '
-options=("Buat User" "Buat User Trial" "Perbarui User" "Semua User" "Hapus User" "Monitor User Login" "Kill Multi Login" "User Belum Kadaluarsa" "User Sudah Kadaluarsa" "Restart Server" "Ganti Password User" "Ganti Password VPS" "Used Data By Users" "bench-network" "Ram Status" "Bersihkan cache ram" "Ganti Port OpenVPN" "Ganti Port Dropbear" "Ganti Port Openssh" "Ganti Port Squid3" "Speedtest" "Quit")
+options=("Buat User" "Buat User Trial" "Perbarui User" "Semua User" "Hapus User" "Monitor User Login" "Aktifkan Kill Multi Login" "Matikan Kill Multi Login" "User Belum Kadaluarsa" "User Sudah Kadaluarsa" "Restart Server" "Ganti Password User" "Ganti Password VPS" "Used Data By Users" "bench-network" "Ram Status" "Bersihkan cache ram" "Ganti Port OpenVPN" "Ganti Port Dropbear" "Ganti Port Openssh" "Ganti Port Squid3" "Speedtest" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -236,18 +236,31 @@ do
 	  monssh2
 	  break
 	  ;;
-	    "Kill Multi Login")
-	    #read -p "Batas multy login ketik angka 1 atau 2 (tidak bisa lebih): " batas
-	    #sed -i "s/userlimit.sh [1-9]*/userlimit.sh $batas/g" /etc/crontab
-	    #sed -i "s/userlimitssh.sh [1-9]*/userlimitssh.sh $batas/g" /etc/crontab
-	    ./userlimit.sh 2 | boxes -d dog
+	    "Aktifkan Kill Multi Login")
+	   echo "* * * * * root ./userlimit 2" > /etc/cron.d/userlimit1
+	   echo "* * * * * root sleep 10; ./userlimit.sh 2" > /etc/cron.d/userlimit2
+           echo "* * * * * root sleep 20; ./userlimit.sh 2" > /etc/cron.d/userlimit3
+           echo "* * * * * root sleep 30; ./userlimit.sh 2" > /etc/cron.d/userlimit4
+           echo "* * * * * root sleep 40; ./userlimit.sh 2" > /etc/cron.d/userlimit5
+           echo "* * * * * root sleep 50; ./userlimit.sh 2" > /etc/cron.d/userlimit6
+	    service cron restart
 	    service ssh restart
 	    service dropbear restart
-	    
+	    echo "AUTO KILL SUDAH AKTIFKAN"| lolcat
 	    
 	echo "Dasar pelit!!! user ente marah2 jangan salahkan ane ya" | boxes -d boy | lolcat
 		break
 		;;
+	"Matikan Kill Multi Login")
+	rm -rf /etc/cron.d/userlimit1
+	rm -rf /etc/cron.d/userlimit2
+	rm -rf /etc/cron.d/userlimit3
+	rm -rf /etc/cron.d/userlimit4
+	rm -rf /etc/cron.d/userlimit5
+	rm -rf /etc/cron.d/userlimit6
+	echo "AUTO KILL USER YANG MULTI LOGIN,SUDAH DI MAIKAN BOS!!!" | boxes -d boy | lolcat
+	break
+	;;
 		"User Belum Kadaluarsa")
 			not_expired_users | boxes -d dog | lolcat
 			break
