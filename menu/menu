@@ -94,7 +94,7 @@ function not_expired_users(){
 
 function monssh2(){
 echo ""| lolcat
-echo "|   Tgl-Jam    | PID   |    User Name    |       Dari IP     |"| boxes -d peek | lolcat
+echo "|   Tgl-Jam    | PID   |    User Name    |     Dari IP    |"| boxes -d peek | lolcat
 echo "-------------------------------------------------------------"| lolcat
 data=( `ps aux | grep -i dropbear | awk '{print $2}'`);
 
@@ -194,7 +194,7 @@ echo "        #        Copyright © yusuf-ardiansyah™  2017        #"| lolcat
 echo "        ====================================================="| lolcat
 echo ""
 PS3='Silahkan ketik nomor pilihan anda lalu tekan enter: '
-options=("Buat User" "Buat User Trial" "Perbarui User" "Semua User" "Hapus User" "Monitor Multi Login" "Kill Multi Login" "User Belum Kadaluarsa" "User Sudah Kadaluarsa" "Restart Server" "Ganti Password User" "Ganti Password VPS" "Used Data By Users" "bench-network" "Ram Status" "Bersihkan cache ram" "Ganti Port OpenVPN" "Ganti Port Dropbear" "Ganti Port Openssh" "Ganti Port Squid3" "Speedtest" "Quit")
+options=("Buat User" "Buat User Trial" "Perbarui User" "Semua User" "Hapus User" "Monitor User Login" "Kill Multi Login" "User Belum Kadaluarsa" "User Sudah Kadaluarsa" "Restart Server" "Ganti Password User" "Ganti Password VPS" "Used Data By Users" "bench-network" "Ram Status" "Bersihkan cache ram" "Ganti Port OpenVPN" "Ganti Port Dropbear" "Ganti Port Openssh" "Ganti Port Squid3" "Speedtest" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -234,7 +234,7 @@ do
 	  monssh2
 	  break
 	  ;;
-	    "Kill Multi Login")
+	    "Kill User Login")
 	    #read -p "Batas multy login ketik angka 1 atau 2 (tidak bisa lebih): " batas
 	    #sed -i "s/userlimit.sh [1-9]*/userlimit.sh $batas/g" /etc/crontab
 	    #sed -i "s/userlimitssh.sh [1-9]*/userlimitssh.sh $batas/g" /etc/crontab
