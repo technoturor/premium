@@ -258,6 +258,9 @@ do
 	rm -rf /etc/cron.d/userlimit4
 	rm -rf /etc/cron.d/userlimit5
 	rm -rf /etc/cron.d/userlimit6
+	service cron restart
+	    service ssh restart
+	    service dropbear restart
 	echo "AUTO KILL USER YANG MULTI LOGIN,SUDAH DI MAIKAN BOS!!!" | boxes -d boy | lolcat
 	break
 	;;
