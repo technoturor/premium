@@ -286,7 +286,7 @@ do
 		break
 			;;
 			"Monitor Multi Login")
-			monssh2 | boxes -d dog
+			monssh2
                 break
 	          ;;
 		"Ganti Port OpenVPN")	
