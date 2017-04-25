@@ -246,9 +246,9 @@ service vnstat restart
 #chmod +x /usr/local/bin/monssh
 
 # antiddos
-wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/antiddos/install.sh
-chmod 700 install.sh
-./install.sh
+#wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/antiddos/install.sh
+#chmod 700 install.sh
+#./install.sh
 
 # buka port 80
 iptables -I INPUT -p tcp --dport 80 -j ACCEPT
