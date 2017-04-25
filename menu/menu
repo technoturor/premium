@@ -227,7 +227,7 @@ do
 	    break
             ;;		
 		"Semua User")
-            user-list | boxes -d dog
+            user-list
             break
             ;;
 	    "Kill Multy Login")
