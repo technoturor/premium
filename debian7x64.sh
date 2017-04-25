@@ -55,7 +55,7 @@ PLEASE WAIT TAKE TIME 1-5 MINUTE
 "
 # install essential package
 apt-get -y install build-essential
-apt-get -y install bmon iftop htop nmap axel nano iptables traceroute sysv-rc-conf dnsutils bc nethogs less screen psmisc apt-file whois ptunnel ngrep mtr git zsh mrtg snmp snmpd snmp-mibs-downloader unzip tar zip unrar rsyslog debsums rkhunter
+apt-get -y install bmon iftop htop nmap axel nano iptables traceroute sysv-rc-conf nethogs less screen psmisc apt-file whois ptunnel git unzip tar zip unrar rsyslog debsums rkhunter
 
 apt-get update;apt-get -y upgrade;apt-get -y install wget curl
 
@@ -166,7 +166,7 @@ echo "* 2 * * * root service dropbear restart" > /etc/cron.d/dropbear
 #echo "* * * * * root sleep 30; ./userlimit.sh 2" > /etc/cron.d/userlimit6
 #echo "* * * * * root sleep 50; ./userlimit.sh 2" > /etc/cron.d/userlimit11
 #echo "0 0 * * * root ./userexpired.sh" > /etc/cron.d/userexpired
-#echo "* * * * * root ./clearcache.sh" > /etc/cron.d/clearcache
+echo "* * * * * root ./clearcache.sh" > /etc/cron.d/clearcache
 
 # auto kill dropbear
 #wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/userlimit.sh"
@@ -180,7 +180,7 @@ echo "* 2 * * * root service dropbear restart" > /etc/cron.d/dropbear
 #chmod +x /usr/bin/userlimitssh.sh
 
 # cranjob
-#sudo apt-get install cron
+sudo apt-get install cron
 #wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/clearcache/crontab
 #mv crontab /etc/
 #chmod 644 /etc/crontab
@@ -211,22 +211,6 @@ chmod 755 /root/clearcache.sh
 #wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/conf/limits.conf"
 #mv limits.conf /etc/security/limits.conf
 #chmod 644 /etc/security/limits.conf
-
-apt-get install vnstat
-cd /home/vps/public_html/
-wget http://www.sqweek.com/sqweek/files/vnstat_php_frontend-1.5.1.tar.gz
-tar xf vnstat_php_frontend-1.5.1.tar.gz
-rm vnstat_php_frontend-1.5.1.tar.gz
-mv vnstat_php_frontend-1.5.1 vnstat
-cd vnstat
-sed -i "s/eth0/venet0/g" config.php
-sed -i "s/\$iface_list = array('venet0', 'sixxs');/\$iface_list = array('venet0');/g" config.php
-sed -i "s/\$language = 'nl';/\$language = 'en';/g" config.php
-sed -i "s/Internal/Internet/g" config.php
-sed -i "/SixXS IPv6/d" config.php
-# setting vnstat
-#vnstat -u -i venet0
-service vnstat restart
 
 # user-list
 #cd
@@ -261,12 +245,6 @@ cd
 wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/menu"
 mv ./menu /usr/local/bin/menu
 chmod +x /usr/local/bin/menu
-cd
-
-# moth
-#cd
-#wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/motd"
-#mv ./motd /etc/motd
 
 # swap ram
 dd if=/dev/zero of=/swapfile bs=1024 count=1024k
@@ -291,7 +269,6 @@ echo "UPDATE AND INSTALL COMPLETE COMPLETE 99% BE PATIENT"
 rm $0;rm *.txt;rm *.tar;rm *.deb;rm *.asc
 clear
 service cron restart
-service vnstat restart
 service openvpn restart
 service squid3 restart
 service ssh restart
