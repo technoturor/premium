@@ -261,7 +261,7 @@ do
 	service cron restart
 	    service ssh restart
 	    service dropbear restart
-	echo "AUTO KILL USER YANG MULTI LOGIN,SUDAH DI MAIKAN BOS!!!" | boxes -d boy | lolcat
+	echo "AUTO KILL LOGIN,SUDAH SAYA MATIKAN BOS!!!" | boxes -d boy | lolcat
 	break
 	;;
 		"User Belum Kadaluarsa")
