@@ -175,7 +175,7 @@ echo "0 0 * * * root service dropbear restart" > /etc/cron.d/dropbear
 #echo "* * * * * root sleep 30; ./userlimit.sh 2" > /etc/cron.d/userlimit6
 #echo "* * * * * root sleep 40; ./userlimit.sh 2" > /etc/cron.d/userlimit8
 #echo "* * * * * root sleep 50; ./userlimit.sh 2" > /etc/cron.d/userlimit11
-#echo "0 0 * * * root ./userexpired.sh" > /etc/cron.d/userexpired
+echo "0 0 * * * root ./userexpired.sh" > /etc/cron.d/userexpired
 echo "*/3* * * * root ./clearcache.sh" > /etc/cron.d/clearcache
 
 # auto kill dropbear
@@ -202,7 +202,7 @@ wget -O userexpired.sh "https://raw.githubusercontent.com/deeniedoank/autoscript
 #wget -O autokill.sh "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/autokill.sh"
 #wget -O userlimitssh.sh "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/userlimitssh.sh"
 echo "@reboot root /root/userexpired.sh" > /etc/cron.d/userexpired
-echo "@reboot root /root/userlimit.sh" > /etc/cron.d/userlimit
+#echo "@reboot root /root/userlimit.sh" > /etc/cron.d/userlimit
 #echo "@reboot root /root/userlimitssh.sh" > /etc/cron.d/userlimitssh
 #echo "@reboot root /root/autokill.sh" > /etc/cron.d/autokill
 #sed -i '$ i\screen -AmdS check /root/autokill.sh' /etc/rc.local
