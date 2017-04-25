@@ -275,19 +275,19 @@ do
 			used_data | boxes -d boy | lolcat
  			break
 			;;
-			"bench-network")
+		"bench-network")
 			bench-network2 | lolcat
 			break
 			;;
-			"Ram Status")
+		"Ram Status")
 			free -h | grep -v + > /tmp/ramcache
 			cat /tmp/ramcache | grep -v "Swap"
 			break
 			;;
-			"Bersihkan cache ram")
-		echo 3 > /proc/sys/vm/drop_caches
-		echo "SUKSES..!!!Cache ram anda sudah di bersihkan." | boxes -d spring | lolcat
-		break
+		"Bersihkan cache ram")
+	                echo 3 > /proc/sys/vm/drop_caches && swapoff -a && swapon -a
+			echo "SUKSES..!!!Cache ram anda sudah di bersihkan." | boxes -d spring | lolcat
+		        break
 			;;
 		"Ganti Port OpenVPN")	
             echo "Silahkan ganti port OpenVPN anda lalu klik enter?"| boxes -d peek | lolcat
