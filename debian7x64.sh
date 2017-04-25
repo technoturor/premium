@@ -46,7 +46,7 @@ apt-get -y --purge remove sendmail*;
 apt-get -y --purge remove postfix*;
 apt-get -y --purge remove bind*;
 apt-get -y --purge remove dropbear*;
-apt-get -y --purge remove cron*;
+#apt-get -y --purge remove cron*;
 
 echo "
 UPDATE AND UPGRADE PROCESS 
