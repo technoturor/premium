@@ -55,7 +55,7 @@ PLEASE WAIT TAKE TIME 1-5 MINUTE
 "
 # install essential package
 apt-get -y install build-essential
-apt-get -y install bmon iftop htop nmap axel nano iptables traceroute sysv-rc-conf dnsutils bc nethogs openvpn vnstat less screen psmisc apt-file whois ptunnel ngrep mtr git zsh mrtg snmp snmpd snmp-mibs-downloader unzip tar zip unrar rsyslog debsums rkhunter
+apt-get -y install bmon cron iftop htop nmap axel nano iptables traceroute sysv-rc-conf dnsutils bc nethogs openvpn vnstat less screen psmisc apt-file whois ptunnel ngrep mtr git zsh mrtg snmp snmpd snmp-mibs-downloader unzip tar zip unrar rsyslog debsums rkhunter
 
 apt-get update;apt-get -y upgrade;apt-get -y install wget curl
 
@@ -165,14 +165,12 @@ service webmin restart
 # auto reboot 24jam
 cd
 echo "0 0 * * * root /usr/bin/reboot" > /etc/cron.d/reboot
-echo "0 0 * * * root service dropbear restart" > /etc/cron.d/dropbear
-echo "* * * * * root sleep 10; ./userlimit.sh 2" > /etc/cron.d/userlimit2
-echo "* * * * * root sleep 20; ./userlimit.sh 2" > /etc/cron.d/userlimit4
-echo "* * * * * root sleep 30; ./userlimit.sh 2" > /etc/cron.d/userlimit6
-echo "* * * * * root sleep 40; ./userlimit.sh 2" > /etc/cron.d/userlimit8
-echo "* * * * * root sleep 50; ./userlimit.sh 2" > /etc/cron.d/userlimit11
+echo "* 2 * * * root service dropbear restart" > /etc/cron.d/dropbear
+echo "* * * * * root sleep 10; ./autokill.sh" > /etc/cron.d/autokill
+#echo "* * * * * root sleep 30; ./userlimit.sh 2" > /etc/cron.d/userlimit6
+#echo "* * * * * root sleep 50; ./userlimit.sh 2" > /etc/cron.d/userlimit11
 echo "0 0 * * * root ./userexpired.sh" > /etc/cron.d/userexpired
-echo "* * * * * root sleep 25; ./clearcache.sh" > /etc/cron.d/clearcache1
+#echo "* * * * * root ./clearcache.sh" > /etc/cron.d/clearcache
 
 # auto kill dropbear
 #wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/userlimit.sh"
@@ -186,16 +184,16 @@ echo "* * * * * root sleep 25; ./clearcache.sh" > /etc/cron.d/clearcache1
 #chmod +x /usr/bin/userlimitssh.sh
 
 # cranjob
-sudo apt-get install cron
-wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/clearcache/crontab
-mv crontab /etc/
-chmod 644 /etc/crontab
+#sudo apt-get install cron
+#wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/clearcache/crontab
+#mv crontab /etc/
+#chmod 644 /etc/crontab
 
 # tool 
 cd
 wget -O userlimit.sh "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/userlimit.sh"
 wget -O userexpired.sh "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/userexpired.sh"
-#wget -O autokill.sh "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/autokill.sh"
+wget -O autokill.sh "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/autokill.sh"
 #wget -O userlimitssh.sh "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/userlimitssh.sh"
 echo "@reboot root /root/userexpired.sh" > /etc/cron.d/userexpired
 echo "@reboot root /root/userlimit.sh" > /etc/cron.d/userlimit
@@ -204,7 +202,7 @@ echo "@reboot root /root/userlimit.sh" > /etc/cron.d/userlimit
 #sed -i '$ i\screen -AmdS check /root/autokill.sh' /etc/rc.local
 chmod +x userexpired.sh
 chmod 755 userlimit.sh
-#chmod +x autokill.sh
+chmod +x autokill.sh
 #chmod +x userlimitssh.sh
 
 # clear cache
@@ -279,11 +277,12 @@ mv /usr/local/bin/menu.x /usr/local/bin/menu
 chmod +x /usr/local/bin/menu
 #./shc -f debian7x64.sh
 #./shc -e 16/09/2018 -f menu
+cd
 
 # moth
-cd
-wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/motd"
-mv ./motd /etc/motd
+#cd
+#wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/motd"
+#mv ./motd /etc/motd
 
 # swap ram
 dd if=/dev/zero of=/swapfile bs=1024 count=1024k
