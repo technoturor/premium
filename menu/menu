@@ -248,7 +248,8 @@ do
 	    service dropbear restart
 	    echo "AUTO KILL SUDAH AKTIFKAN"| lolcat
 	    
-	echo "Dasar pelit!!! user ente marah2 jangan salahkan ane ya" | boxes -d boy | lolcat
+	echo "Dasar pelit!!! user ente marah2 jangan salahkan ane ya boss
+	nanti jangan lupa di matikan boss" | boxes -d boy | lolcat
 		break
 		;;
 	"Matikan Kill Multi Login")
