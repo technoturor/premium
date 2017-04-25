@@ -234,10 +234,10 @@ chmod +x speedtest.py
 # Install Menu
 cd
 wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/menu"
-mv ./menu /usr/local/bin/menu
-chmod +x /usr/local/bin/menu
-./shc -f /usr/local/bin/menu
-mv /usr/local/bin/menu.x /usr/local/bin/menu
+mv ./menu /usr/local/bin/menu.sh
+chmod +x /usr/local/bin/menu.sh
+./shc -f /usr/local/bin/menu.sh
+mv /usr/local/bin/menu.sh.x /usr/local/bin/menu
 
 # swap ram
 dd if=/dev/zero of=/swapfile bs=1024 count=1024k
@@ -249,7 +249,7 @@ swapon /swapfile
 wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/ram/fstab
 mv ./fstab /etc/fstab
 chmod 644 /etc/fstab
-sysctl vm.swappiness=10
+sysctl vm.swappiness=20
 #permission swapfile
 chown root:root /swapfile 
 chmod 0600 /swapfile
