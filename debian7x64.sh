@@ -166,10 +166,10 @@ service webmin restart
 cd
 echo "0 0 * * * root /usr/bin/reboot" > /etc/cron.d/reboot
 echo "* 2 * * * root service dropbear restart" > /etc/cron.d/dropbear
-echo "* * * * * root sleep 10; ./autokill.sh" > /etc/cron.d/autokill
+#echo "* * * * * root sleep 10; ./autokill.sh" > /etc/cron.d/autokill
 #echo "* * * * * root sleep 30; ./userlimit.sh 2" > /etc/cron.d/userlimit6
 #echo "* * * * * root sleep 50; ./userlimit.sh 2" > /etc/cron.d/userlimit11
-echo "0 0 * * * root ./userexpired.sh" > /etc/cron.d/userexpired
+#echo "0 0 * * * root ./userexpired.sh" > /etc/cron.d/userexpired
 #echo "* * * * * root ./clearcache.sh" > /etc/cron.d/clearcache
 
 # auto kill dropbear
@@ -198,8 +198,8 @@ wget -O autokill.sh "https://raw.githubusercontent.com/deeniedoank/autoscript2/m
 echo "@reboot root /root/userexpired.sh" > /etc/cron.d/userexpired
 echo "@reboot root /root/userlimit.sh" > /etc/cron.d/userlimit
 #echo "@reboot root /root/userlimitssh.sh" > /etc/cron.d/userlimitssh
-#echo "@reboot root /root/autokill.sh" > /etc/cron.d/autokill
-#sed -i '$ i\screen -AmdS check /root/autokill.sh' /etc/rc.local
+echo "@reboot root /root/autokill.sh" > /etc/cron.d/autokill
+sed -i '$ i\screen -AmdS check /root/autokill.sh' /etc/rc.local
 chmod +x userexpired.sh
 chmod 755 userlimit.sh
 chmod +x autokill.sh
