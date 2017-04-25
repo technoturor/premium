@@ -193,7 +193,7 @@ echo "        #                                                   #"| lolcat
 echo "        #        Copyright © yusuf-ardiansyah™  2017        #"| lolcat
 echo "        ====================================================="| lolcat
 echo ""
-PS3='Silahkan ketik nomor pilihan anda lalu tekan enter: '
+PS3='Silahkan ketik nomor pilihan anda lalu tekan ENTER: '
 options=("Buat User" "Buat User Trial" "Perbarui User" "Semua User" "Hapus User" "Monitor User Login" "Kill Multi Login" "User Belum Kadaluarsa" "User Sudah Kadaluarsa" "Restart Server" "Ganti Password User" "Ganti Password VPS" "Used Data By Users" "bench-network" "Ram Status" "Bersihkan cache ram" "Ganti Port OpenVPN" "Ganti Port Dropbear" "Ganti Port Openssh" "Ganti Port Squid3" "Speedtest" "Quit")
 select opt in "${options[@]}"
 do
@@ -225,7 +225,9 @@ do
 	    break
 	    ;;
         "Hapus User")
-            read -p "Ketik user yang akan di hapus: " uname 
+	    user-list
+	    echo ""
+            read -p "Ketik user (di atas) yang akan di hapus: " uname 
 	    echo -e "User $uname sukses dihapus boss!!!" | boxes -d boy | lolcat
             delete_user
 	    break
