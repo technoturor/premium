@@ -156,15 +156,14 @@ while read mumetndase
 do
         USER="$(echo $mumetndase | cut -d: -f1)"
         ID="$(echo $mumetndase | grep -v nobody | cut -d: -f3)"
-        exp="$(chage -l $USER | grep "Account expires" | awk -F": " '{print $2}')"
-        #online="$(cat /var/log/auth.log | grep -Eom 1 $USER | grep -Eom 1 $USER)"
-        online=`cat /var/log/auth.log | grep -i dropbear | grep -i "Password auth succeeded" | grep "dropbear\[$PID\]" | aek -F '{print $9}' | grep -Eom 1 $user`;
-	if [[ $ID -ge 500 ]]; then
-        if [[ -z $online ]]; then
-        printf "%-4s %-15s %-10s %-3s\n" "$C." "$USER" "OFFLINE" "$exp"
+        EXP="$(chage -l $USER | grep "Account expires" | awk -F": " '{print $2}')"
+        ONLINE="$(cat /etc/openvpn/log.log | grep -Eom 1 $USER | grep -Eom 1 $USER)"
+        if [[ $ID -ge 500 ]]; then
+        if [[ -z $ONLINE ]]; then
+        printf "%-4s %-15s %-10s %-3s\n" "$C." "$USER" "OFFLINE" "$EXP"
         OFF=$((OFF+1))
         else
-        printf "%-4s %-15s %-10s %-3s\n" "$C." "$USER" "ONLINE" "$exp"
+        printf "%-4s %-15s %-10s %-3s\n" "$C." "$USER" "ONLINE" "$EXP"
         ON=$((ON+1))
         fi
         C=$((C+1))
