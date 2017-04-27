@@ -17,7 +17,7 @@ wget https://raw.githubusercontent.com/deeniedoank/autoscript3/master/debian7.sh
 # Debian7x64
 ```
 cd
-wget https://raw.githubusercontent.com/deeniedoank/autoscript3/master/debian7x64.sh && chmod +x debian7x64.sh && ./debian7x64.sh
+wget https://raw.githubusercontent.com/deeniedoank/autoscript3/master/debian7x64vult.sh && chmod +x debian7x64vult.sh && ./debian7x64vult.sh
 ```
 # Virtual Ram
 ```
