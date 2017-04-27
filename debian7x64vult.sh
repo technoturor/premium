@@ -72,14 +72,14 @@ apt-get install boxes
 # squid3
 apt-get update
 apt-get -y install squid3
-wget -O /etc/squid3/squid.conf "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/squid/squid.conf"
+wget -O /etc/squid3/squid.conf "https://raw.githubusercontent.com/deeniedoank/autoscript3/master/squid/squid.conf"
 sed -i "s/ipserver/$myip/g" /etc/squid3/squid.conf
 chmod 0640 /etc/squid3/squid.conf
 
 # text warna
 cd
 rm -rf .bashrc
-wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/text%20warna/.bashrc
+wget https://raw.githubusercontent.com/deeniedoank/autoscript3/master/text%20warna/.bashrc
 
 # text pelangi
 sudo apt-get install ruby -y
@@ -89,23 +89,23 @@ sudo gem install lolcat
 apt-get -y install nginx php5-fpm php5-cli
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/conf/nginx.conf"
+wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/deeniedoank/autoscript3/master/conf/nginx.conf"
 mkdir -p /home/vps/public_html
 echo "<pre>Setup by YusufArdiansyah | telegram : e-Server | Pin BBM : yu-suf</pre>" > /home/vps/public_html/index.php
 echo "<?php phpinfo(); ?>" > /home/vps/public_html/info.php
-wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/conf/vps.conf"
+wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/deeniedoank/autoscript3/master/conf/vps.conf"
 sed -i 's/listen = \/var\/run\/php5-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php5/fpm/pool.d/www.conf
 
 # install openvpn
 apt-get install openvpn -y
-wget -O /etc/openvpn/openvpn.tar "https://raw.github.com/deeniedoank/autoscript2/master/conf/openvpn-debian.tar"
+wget -O /etc/openvpn/openvpn.tar "https://raw.github.com/deeniedoank/autoscript3/master/conf/openvpn-debian.tar"
 cd /etc/openvpn/
 tar xf openvpn.tar
-wget -O /etc/openvpn/1194.conf "https://raw.github.com/deeniedoank/autoscript2/master/conf/1194.conf"
+wget -O /etc/openvpn/1194.conf "https://raw.github.com/deeniedoank/autoscript3/master/conf/1194.conf"
 service openvpn restart
 sysctl -w net.ipv4.ip_forward=1
 sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf
-wget -O /etc/iptables.conf "https://raw.github.com/deeniedoank/autoscript2/master/conf/iptables.conf"
+wget -O /etc/iptables.conf "https://raw.github.com/deeniedoank/autoscript3/master/conf/iptables.conf"
 sed -i '$ i\iptables-restore < /etc/iptables.conf' /etc/rc.local
 
 myip2="s/ipserver/$myip/g";
@@ -115,7 +115,7 @@ service openvpn restart
 
 # configure openvpn client config
 cd /etc/openvpn/
-wget -O /etc/openvpn/1194-client.ovpn "https://raw.github.com/deeniedoank/autoscript2/master/conf/1194-client.conf"
+wget -O /etc/openvpn/1194-client.ovpn "https://raw.github.com/deeniedoank/autoscript3/master/conf/1194-client.conf"
 sed -i $myip2 /etc/openvpn/1194-client.ovpn;
 PASS= `cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 15 | head -n 1`;
 usermod -s /bin/false mail
@@ -131,7 +131,7 @@ sed -i 's/Port 22/Port  22/g' /etc/ssh/sshd_config
 service ssh restart
 
 # encrypt file
-wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/shc-3.8.7.tgz
+wget https://raw.githubusercontent.com/deeniedoank/autoscript3/master/shc-3.8.7.tgz
 tar xvfz shc-3.8.7.tgz
 cd shc-3.8.7
 make
@@ -148,7 +148,7 @@ service ssh restart
 service dropbear restart
 
 # bannerssh
-wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/bannersshlink.sh
+wget https://raw.githubusercontent.com/deeniedoank/autoscript3/master/menu/bannersshlink.sh
 chmod 700 bannersshlink.sh
 ./bannersshlink.sh
 rm bannersshlink.sh
@@ -180,28 +180,28 @@ echo "0 1 * * * root ./userexpired.sh" >> /etc/cron.d/reboot
 echo "*/3 * * * * root ./clearcache.sh" > /etc/cron.d/clearcache
 
 # auto kill dropbear
-#wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/userlimit.sh"
+#wget "https://raw.githubusercontent.com/deeniedoank/autoscript3/master/menu/userlimit.sh"
 #mv ./userlimit /usr/bin/userlimit.sh
 #chmod +x /usr/bin/userlimit.sh
 #echo " /etc/security/limits.conf" > /etc/security/limits.conf
 
 # auto kill openssh
-#wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/userlimitssh.sh"
+#wget "https://raw.githubusercontent.com/deeniedoank/autoscript3/master/menu/userlimitssh.sh"
 #mv ./userlimitssh.sh /usr/bin/userlimitssh.sh
 #chmod +x /usr/bin/userlimitssh.sh
 
 # cranjob
 #sudo apt-get install cron
-#wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/clearcache/crontab
+#wget https://raw.githubusercontent.com/deeniedoank/autoscript3/master/clearcache/crontab
 #mv crontab /etc/
 #chmod 644 /etc/crontab
 
 # tool 
 cd
-wget -O userlimit.sh "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/userlimit.sh"
-wget -O userexpired.sh "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/userexpired.sh"
-#wget -O autokill.sh "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/autokill.sh"
-#wget -O userlimitssh.sh "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/userlimitssh.sh"
+wget -O userlimit.sh "https://raw.githubusercontent.com/deeniedoank/autoscript3/master/menu/userlimit.sh"
+wget -O userexpired.sh "https://raw.githubusercontent.com/deeniedoank/autoscript3/master/menu/userexpired.sh"
+#wget -O autokill.sh "https://raw.githubusercontent.com/deeniedoank/autoscript3/master/menu/autokill.sh"
+#wget -O userlimitssh.sh "https://raw.githubusercontent.com/deeniedoank/autoscript3/master/menu/userlimitssh.sh"
 echo "@reboot root /root/userexpired.sh" > /etc/cron.d/userexpired
 #echo "@reboot root /root/userlimit.sh" > /etc/cron.d/userlimit
 #echo "@reboot root /root/userlimitssh.sh" > /etc/cron.d/userlimitssh
@@ -213,13 +213,13 @@ chmod 755 userlimit.sh
 #chmod +x userlimitssh.sh
 
 # clear cache
-wget -O clearcache.sh "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/clearcache/clearcache.sh"
+wget -O clearcache.sh "https://raw.githubusercontent.com/deeniedoank/autoscript3/master/clearcache/clearcache.sh"
 #echo "@reboot root /root/clearcache.sh" > /etc/cron.d/clearcache
 chmod 755 /root/clearcache.sh
 
 # userlimit
 #cd
-#wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/conf/limits.conf"
+#wget "https://raw.githubusercontent.com/deeniedoank/autoscript3/master/conf/limits.conf"
 #mv limits.conf /etc/security/limits.conf
 #chmod 644 /etc/security/limits.conf
 
@@ -230,12 +230,12 @@ iptables -I INPUT -p tcp --dport 80 -j ACCEPT
 # speedtest
 cd
 apt-get install python
-wget -O speedtest.py "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/speedtest.py"
+wget -O speedtest.py "https://raw.githubusercontent.com/deeniedoank/autoscript3/master/menu/speedtest.py"
 chmod +x speedtest.py
 
 # Install Menu
 cd
-wget "https://raw.githubusercontent.com/deeniedoank/autoscript2/master/menu/menu"
+wget "https://raw.githubusercontent.com/deeniedoank/autoscript3/master/menu/menu"
 mv ./menu /usr/local/bin/menu
 chmod +x /usr/local/bin/menu
 
@@ -246,7 +246,7 @@ mkswap /swapfile
 # jalan swapfile
 swapon /swapfile
 #auto star saat reboot
-wget https://raw.githubusercontent.com/deeniedoank/autoscript2/master/ram/fstab
+wget https://raw.githubusercontent.com/deeniedoank/autoscript3/master/ram/fstab
 mv ./fstab /etc/fstab
 chmod 644 /etc/fstab
 sysctl vm.swappiness=20
@@ -278,28 +278,28 @@ rm ./debian7x64.sh
 
 #clear
 echo "========================================"  
-echo "Service Autoscript VPS Yusuf Ardiansyah" | lolcat 
-echo "----------------------------------------" | lolcat
+echo "Service Autoscript VPS Yusuf Ardiansyah"
+echo "----------------------------------------"
 echo ""  | tee -a log-install.txt
-echo "Webmin   : http://$myip:10000/" | lolcat
-echo "Squid3   : 8080" | lolcat
-echo "OpenSSH  : 22, 80" | lolcat
-echo "Dropbear : 443, 109"| lolcat
-echo "OpenVPN  : TCP Port 55 (client config : http://$myip:8090/client.tar)" | lolcat
-echo "Timezone : Asia/Jakarta"| lolcat
-echo "Fail2Ban : [on]"| lolcat
-echo "Power By : Yusuf Ardiansyah"| lolcat
-echo "PIN BBM  : yu-suf " | lolcat
-echo "Telegram : e-Server"| lolcat
+echo "Webmin   : http://$myip:10000/"
+echo "Squid3   : 8080"
+echo "OpenSSH  : 22, 80" 
+echo "Dropbear : 443, 109"
+echo "OpenVPN  : TCP Port 55 (client config : http://$myip:8090/client.tar)"
+echo "Timezone : Asia/Jakarta"
+echo "Fail2Ban : [on]"
+echo "Power By : Yusuf Ardiansyah"
+echo "PIN BBM  : yu-suf " 
+echo "Telegram : e-Server"
 echo ""
-echo "Auto kill Multy Login Maximal Login 2"  | lolcat
-echo "Auto Install Virtual Ram 1 gb"| lolcat
-echo "Tambahan Script: Otomatis Reboot 24 Jam sekali" | lolcat
-echo "----------------------------------------"| lolcat
-echo "LOG INSTALL  --> /root/log-install.txt"| lolcat
-echo "----------------------------------------"| lolcat
-echo " CREATED BY YUSUF ARDIANSYAH - JUAL AKUN SSH - VPS - SCRIPT INSTALLER PREMIUM"| lolcat
+echo "Auto kill Multy Login Maximal Login 2" 
+echo "Auto Install Virtual Ram 1 gb"
+echo "Tambahan Script: Otomatis Reboot 24 Jam sekali" 
+echo "----------------------------------------"
+echo "LOG INSTALL  --> /root/log-install.txt"
+echo "----------------------------------------"
+echo " CREATED BY YUSUF ARDIANSYAH - JUAL AKUN SSH - VPS - SCRIPT INSTALLER PREMIUM"
 echo "========================================"  | tee -a log-install.txt
-echo "      SILAHKAN REBOOT VPS ANDA !" | lolcat
+echo "      SILAHKAN REBOOT VPS ANDA !" 
 echo "========================================"  | tee -a log-install.txt
 cat /dev/null > ~/.bash_history && history -c
