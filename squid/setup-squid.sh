@@ -1,6 +1,6 @@
 #!/bin/bash
-# editor: elang overdosis
-# Copyright 2012 (c) elang
+# editor: ntuser88
+# Copyright 2017 (c) ntuser88
 # 
 # Revisi 1:
 # Penambahan config agar proxy menjadi super elite
@@ -95,8 +95,8 @@ END
 
 echo "******************************************************************"
 echo "*                                                                *"
-echo "*                   INSTALLASI SQUID PROXY                            *"
-echo "*        HARAP ISI DENGAN BENAR by Elang overdosis                *"
+echo "*                   INSTALL SQUID PROXY                          *"
+echo "*              HARAP ISI DENGAN BETUL by ntuser88                *"
 echo "*                                                                *"
 echo "******************************************************************"
 
