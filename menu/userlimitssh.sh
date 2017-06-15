@@ -1,6 +1,6 @@
 #!/bin/bash
 # Program untuk membatasi jumlah login user sshd BUKAN dropbear
-# di tulis oleh mikodemos
+# di tulis oleh ntuser88
 # 
 PARAM=$1
 echo -n > /tmp/pid2

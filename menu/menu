@@ -18,8 +18,8 @@ useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $uname
 exp="$(chage -l $uname | grep "Account expires" | awk -F": " '{print $2}')"
 echo -e "$pass\n$pass\n"|passwd $uname &> /dev/null
 echo -e ""
-echo -e "|      Informasi Akun Baru SSH      |" | boxes -d dog
-echo -e "============-Yusuf-Ardiansyah-============" 
+echo -e "|      Informasi Akaun Baru SSH      |" | boxes -d dog
+echo -e "================-ntuser88-===============" 
 echo -e "     Host: $myip" 
 echo -e "     Username: $uname" 
 echo -e "     Password: $pass                     " 
@@ -35,7 +35,7 @@ echo -e "   DI LARANG:                            "
 echo -e "   HACKING-DDOS-PHISING-SPAM-TORENT      "
 echo -e "   CARDING-CRIMINAL CYBER.               "
 echo -e "==========================================="
-echo -e "   Script by Yusuf Ardiansyah            "
+echo -e "      Script by ntuser88                 "
 myip=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0' | head -n1`;
 echo -e "   Config OVPN:                          "
 echo -e "   http://$myip:8090/client.tar          "
@@ -183,14 +183,13 @@ echo ""
 echo ""
 echo "" 
 echo "" 
-echo "        ----[SELAMAT DATANG DI VPS YUSUF ARDIANSYAH]---"| boxes -d dog
+echo "        ----[SELAMAT DATANG KE ntuser88 VPS MENU]---"| boxes -d dog
 echo "        ====================================================="
-echo "        #           WhatsApp     : 082139743432             #"
-echo "        #           Telegram     : e-Server                 #"
-echo "        #           Facebook     : fb.com/t34mh4ck3r        #"
-echo "        #           Pin-BBM      : yu-suf                   #"
+echo "        #           WhatsApp     : xxxxxxxxxxxx             #"
+echo "        #           Telegram     : xxxxxxxx                 #"
+echo "        #           Facebook     : xxxxxxxxxxxxxxxxx        #"
 echo "        #                                                   #"
-echo "        #        Copyright © yusuf-ardiansyah™  2017        #"
+echo "        #           Copyright © ntuser88™  2017             #"
 echo "        ====================================================="
 echo ""
 PS3='Silahkan ketik nomor pilihan anda lalu tekan ENTER: '
@@ -228,7 +227,7 @@ do
 	    user-list | boxes -d dog
 	    echo ""
             read -p "Ketik user (di atas) yang akan di hapus: " uname 
-	    echo -e "User $uname sukses dihapus boss!!!" | boxes -d boy
+	    echo -e "User $uname berjaya dihapus boss!!!" | boxes -d boy
             delete_user
 	    break
             ;;

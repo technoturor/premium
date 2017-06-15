@@ -21,8 +21,7 @@ echo -e "Password: $pass"
 echo -e "-----------------------------"
 echo -e "Aktif Sampai: $exp"
 echo -e "==========================="
-echo -e "Script by Mastah YusufArdiansyah"
-echo -e "Team: Deny siswanto (newbie)"	
+echo -e "Script by ntuser88"
 #useradd -s /bin/false -M $uname
 	#echo "$uname:$pass" | chpasswd
 	#usermod -e $expdate $uname
@@ -123,14 +122,13 @@ clear
 echo "        =====================================================
         =====================================================
         #                                                   #
-        #     [SELAMAT DATANG DI VPS YUSUF ARDIANSYAH]      #
+        #      [SELAMAT DATANG KE VPS MENU ntuser88]        #
         #                                                   #
-        #           WhatsApp     : 082139743432             #
-        #           Telegram     : e-Server                 #
-        #           Facebook     : fb.com/t34mh4ck3r        #
-        #           Pin-BBM      : yu-suf                   #
+        #           WhatsApp     : xxxxxxxxxxxx             #
+        #           Telegram     : xxxxxxxx                 #
+        #           Facebook     : xxxxxxxxxxxxxxxxx        #
         #                                                   #
-        #            Copyright © yusuf-ardiansyah           #
+        #                Copyright © ntuser88               #
         =====================================================
 
 ";
