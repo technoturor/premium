@@ -18,7 +18,7 @@ useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $uname
 exp="$(chage -l $uname | grep "Account expires" | awk -F": " '{print $2}')"
 echo -e "$pass\n$pass\n"|passwd $uname &> /dev/null
 echo -e ""
-echo -e "|      Informasi Akaun Baru SSH      |" | boxes -d dog
+echo -e "|      Maklumat Akaun Baru SSH      |" | boxes -d dog
 echo -e "================-ntuser88-===============" 
 echo -e "     Host: $myip" 
 echo -e "     Username: $uname" 
@@ -44,7 +44,7 @@ echo -e ""
 echo -e ""
 }
 function renew_user() {
-	echo "Kadaluarsa User: $uname Di Perbarui Sampai: $expdate";
+	echo "Xpired User: $uname Di Perbarui Sampai: $expdate";
 	usermod -e $expdate $uname
 }
 
@@ -192,15 +192,15 @@ echo "        #                                                   #"
 echo "        #           Copyright © ntuser88™  2017             #"
 echo "        ====================================================="
 echo ""
-PS3='Silahkan ketik nomor pilihan anda lalu tekan ENTER: '
-options=("Buat User" "Buat User Trial" "Perbarui User" "Semua User" "Hapus User" "Monitor User Login" "Aktifkan Kill Multi Login" "Matikan Kill Multi Login" "User Belum Kadaluarsa" "User Sudah Kadaluarsa" "Restart Server" "Ganti Password User" "Ganti Password VPS" "Used Data By Users" "bench-network" "Ram Status" "Bersihkan cache ram" "Ganti Port OpenVPN" "Ganti Port Dropbear" "Ganti Port Openssh" "Ganti Port Squid3" "Speedtest" "Quit")
+PS3='Silakan taip nombor pilihan anda lalu tekan ENTER: '
+options=("Buat User" "Buat User Trial" "Perbaharui User" "Semua User" "Hapus User" "Monitor User Login" "Aktifkan Kill Multi Login" "Matikan Kill Multi Login" "User Belum Xpired" "User Sudah Xpired" "Restart Server" "Ganti Password User" "Ganti Password VPS" "Used Data By Users" "bench-network" "Ram Status" "Bersihkan cache ram" "Ganti Port OpenVPN" "Ganti Port Dropbear" "Ganti Port Openssh" "Ganti Port Squid3" "Speedtest" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
         "Buat User")
        read -p "Enter username: " uname
        read -p "Enter password: " pass
-       read -p "Kadaluarsa (Berapa Hari): " masaaktif
+       read -p "Xpired (Berapa Hari): " masaaktif
        clear
        create_user
 	    break
@@ -245,7 +245,7 @@ do
 	    service cron restart
 	    service ssh restart
 	    service dropbear restart
-	    echo "AUTO KILL 2 LOGIN SUDAH DI AKTIFKAN, TUNGGU SEBENTAR NTAR PADA LOGOUT SENDIRI"
+	    echo "AUTO KILL 2 LOGIN SUDAH DI AKTIFKAN"
 	    
 	echo "Dasar pelit!!! user ente marah2 jangan salahkan ane ya boss
 	nanti jangan lupa di matikan boss" | boxes -d boy
@@ -264,11 +264,11 @@ do
 	echo "AUTO KILL LOGIN,SUDAH SAYA MATIKAN BOS!!!" | boxes -d boy
 	break
 	;;
-		"User Belum Kadaluarsa")
+		"User Belum Xpired")
 			not_expired_users | boxes -d dog
 			break
 			;;
-		"User Sudah Kadaluarsa")
+		"User Sudah Xpired")
 			expired_users | boxes -d dog
 			break
 			;;		
